@@ -4,10 +4,10 @@
   "private": true,
   "version": "0.17.0",
   "description": "Native desktop shell for AgentFOXXY Agent.",
-  "author": "Nous Research",
+  "author": "usmanxg58-byte",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NousResearch/hermes-agent.git"
+    "url": "git+https://github.com/usmanxg58-byte/AgentFOXXY.git"
   },
   "type": "module",
   "main": "dist/electron-main.mjs",
@@ -187,7 +187,7 @@
   },
   "build": {
     "electronVersion": "40.10.2",
-    "appId": "com.nousresearch.agentfoxxy",
+    "appId": "com.agentfoxxy.app",
     "productName": "AgentFOXXY",
     "executableName": "AgentFOXXY",
     "protocols": [
@@ -287,7 +287,7 @@
     },
     "linux": {
       "category": "Development",
-      "maintainer": "Nous Research <support@nousresearch.com>",
+      "maintainer": "usmanxg58-byte <usmanxg58-byte@users.noreply.github.com>",
       "synopsis": "Native desktop shell for AgentFOXXY Agent.",
       "target": [
         "AppImage",
