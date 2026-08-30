@@ -39,15 +39,32 @@ And it is **self-improving**: it builds skills from experience, sharpens them as
 
 ---
 
-## 🚀 Quick Install
+## 🚀 Download & Install
 
-### Linux · macOS · WSL2 · Termux
+There are three ways to get AgentFOXXY — pick whichever suits you.
+
+### 1. 🖥️ Desktop App (easiest — Windows)
+
+Download the installer, double-click, done. No terminal needed.
+
+**➡️ [Download the latest release](https://github.com/usmanxg58-byte/AgentFOXXY/releases/latest)**
+
+| File | For |
+|---|---|
+| `AgentFOXXY-*-win-x64.exe` | Normal install (recommended) |
+| `AgentFOXXY-*-win-x64.msi` | Company / silent deployment |
+
+> On first launch Windows may show an "unknown publisher" notice — click **More info → Run anyway**. The app is safe; it just is not paid-signed.
+
+### 2. ⌨️ Command-line install (Linux · macOS · WSL2 · Termux · Windows)
+
+**Linux / macOS / WSL2 / Termux:**
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/usmanxg58-byte/AgentFOXXY/main/scripts/install.sh | bash
 ```
 
-### Windows (native, PowerShell)
+**Windows (native, PowerShell):**
 
 ```powershell
 iex (irm https://raw.githubusercontent.com/usmanxg58-byte/AgentFOXXY/main/scripts/install.ps1)
@@ -59,6 +76,15 @@ Then reload your shell and start chatting:
 
 ```bash
 source ~/.bashrc    # or: source ~/.zshrc
+agentfoxxy
+```
+
+### 3. 🛠️ From source (developers)
+
+```bash
+git clone https://github.com/usmanxg58-byte/AgentFOXXY.git
+cd AgentFOXXY
+uv pip install -e ".[all]"
 agentfoxxy
 ```
 
