@@ -1,5 +1,17 @@
-MIT License
+AgentFOXXY
+Copyright (c) 2026 usmanxg58-byte. All rights reserved.
 
+AgentFOXXY and all modifications, additions, branding, and original work in
+this repository are the property of usmanxg58-byte.
+
+Licensed under the MIT License (below).
+
+
+-------------------------------------------------------------------------------
+MIT License
+-------------------------------------------------------------------------------
+
+Copyright (c) 2026 usmanxg58-byte
 Copyright (c) 2025 Nous Research
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -19,3 +31,16 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+
+-------------------------------------------------------------------------------
+Third-Party Attribution
+-------------------------------------------------------------------------------
+
+AgentFOXXY is built on the Hermes Agent open-source project by Nous Research,
+used and redistributed under the MIT License. The Nous Research copyright
+notice above is retained as that license requires. Nous Research does not
+endorse, sponsor, or support AgentFOXXY.
+
+Additional bundled components (skills, plugins, and dependencies) carry their
+own licenses. See the LICENSE file inside each component directory.
