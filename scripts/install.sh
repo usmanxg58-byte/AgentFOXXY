@@ -6,7 +6,7 @@
 # Uses uv for desktop/server installs and Python's stdlib venv + pip on Termux.
 #
 # Usage:
-#   curl -fsSL https://raw.githubusercontent.com/YOUR-GITHUB-USER/agentfoxxy/main/scripts/install.sh | bash
+#   curl -fsSL https://raw.githubusercontent.com/usmanxg58-byte/AgentFOXXY/main/scripts/install.sh | bash
 #
 # Or with options:
 #   curl -fsSL ... | bash -s -- --no-venv --skip-setup
@@ -46,7 +46,7 @@ BOLD='\033[1m'
 # Source repository for AgentFOXXY. Override with AGENTFOXXY_REPO_SLUG=owner/repo to
 # install from a fork. Replace the default with your own GitHub owner/repo
 # before publishing an install one-liner.
-AGENTFOXXY_REPO_SLUG="${AGENTFOXXY_REPO_SLUG:-YOUR-GITHUB-USER/agentfoxxy}"
+AGENTFOXXY_REPO_SLUG="${AGENTFOXXY_REPO_SLUG:-usmanxg58-byte/AgentFOXXY}"
 REPO_URL_SSH="git@github.com:${AGENTFOXXY_REPO_SLUG}.git"
 REPO_URL_HTTPS="https://github.com/${AGENTFOXXY_REPO_SLUG}.git"
 AGENTFOXXY_HOME="${AGENTFOXXY_HOME:-$HOME/.agentfoxxy}"
@@ -539,7 +539,7 @@ detect_os() {
             OS="windows"
             DISTRO="windows"
             log_error "Windows detected. Please use the PowerShell installer:"
-            log_info "  iex (irm https://raw.githubusercontent.com/YOUR-GITHUB-USER/agentfoxxy/main/scripts/install.ps1)"
+            log_info "  iex (irm https://raw.githubusercontent.com/usmanxg58-byte/AgentFOXXY/main/scripts/install.ps1)"
             exit 1
             ;;
         *)

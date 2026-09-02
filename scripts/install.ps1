@@ -5,7 +5,7 @@
 # Uses uv for fast Python provisioning and package management.
 #
 # Usage:
-#   iex (irm https://raw.githubusercontent.com/YOUR-GITHUB-USER/agentfoxxy/main/scripts/install.ps1)
+#   iex (irm https://raw.githubusercontent.com/usmanxg58-byte/AgentFOXXY/main/scripts/install.ps1)
 #
 # Or download and run with options:
 #   .\install.ps1 -NoVenv -SkipSetup
@@ -386,7 +386,7 @@ $script:ResolvedPathReport = @{
 # Source repository for AgentFOXXY. Override with $env:AGENTFOXXY_REPO_SLUG =
 # 'owner/repo' to install from a fork. Replace the default with your own GitHub
 # owner/repo before publishing an install one-liner.
-$RepoSlug = if ($env:AGENTFOXXY_REPO_SLUG) { $env:AGENTFOXXY_REPO_SLUG } else { 'YOUR-GITHUB-USER/agentfoxxy' }
+$RepoSlug = if ($env:AGENTFOXXY_REPO_SLUG) { $env:AGENTFOXXY_REPO_SLUG } else { 'usmanxg58-byte/AgentFOXXY' }
 $RepoUrlSsh = "git@github.com:$RepoSlug.git"
 $RepoUrlHttps = "https://github.com/$RepoSlug.git"
 $PythonVersion = "3.11"
@@ -4895,7 +4895,7 @@ try {
     Write-Err "Installation failed: $_"
     Write-Host ""
     Write-Info "If the error is unclear, try downloading and running the script directly:"
-    Write-Host "  Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/YOUR-GITHUB-USER/agentfoxxy/main/scripts/install.ps1' -OutFile install.ps1" -ForegroundColor Yellow
+    Write-Host "  Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/usmanxg58-byte/AgentFOXXY/main/scripts/install.ps1' -OutFile install.ps1" -ForegroundColor Yellow
     Write-Host "  .\install.ps1" -ForegroundColor Yellow
     Write-Host ""
 }
