@@ -8,7 +8,7 @@ platforms: [linux, macos, windows]
 metadata:
   agentfoxxy:
     tags: [agentfoxxy, setup, configuration, multi-agent, spawning, cli, gateway, bots, bot-mode, features, themes, skins, desktop-plugins, tui-widgets, petdex, development]
-    homepage: https://github.com/NousResearch/hermes-agent
+    homepage: https://github.com/usmanxg58-byte/AgentFOXXY
     related_skills: [claude-code, codex, opencode]
 ---
 
@@ -28,7 +28,7 @@ What makes AgentFOXXY different:
 
 **This skill is a hub.** The body covers identity, quick start, spawning/orchestration, and hard invariants. Everything else lives in reference files — **load the matching reference (below) before answering**; do not answer detail questions from the body alone.
 
-**Docs:** https://hermes-agent.nousresearch.com/docs/
+**Docs:** https://github.com/usmanxg58-byte/AgentFOXXY/tree/main/website/docs
 
 ## Scope & Verification
 
@@ -36,9 +36,9 @@ This skill is a concise operating guide, not the complete source of truth for ev
 
 Good verification targets, cheapest first:
 
-- **Every shipped feature, one line each: https://hermes-agent.nousresearch.com/docs/llms.txt.** Start here for any "can AgentFOXXY do X?" or "how do I do X?" — it indexes the entire documentation set with a link to the page that answers. It is generated from the docs tree on every build, so it is never behind the product. Fetch it with `web_extract`, or `curl -s https://hermes-agent.nousresearch.com/docs/llms.txt` when web tools are off. The whole documentation set in one file is at `/docs/llms-full.txt`.
+- **Every shipped feature, one line each: https://github.com/usmanxg58-byte/AgentFOXXY/tree/main/website/docs** Start here for any "can AgentFOXXY do X?" or "how do I do X?" — it indexes the entire documentation set with a link to the page that answers. It is generated from the docs tree on every build, so it is never behind the product. Fetch it with `web_extract`, or `curl -s https://github.com/usmanxg58-byte/AgentFOXXY/tree/main/website/docs` when web tools are off. The whole documentation set in one file is at `/docs/llms-full.txt`.
 - CLI commands: `agentfoxxy --help`, `agentfoxxy <command> --help`, and `agentfoxxy_cli/main.py`
-- Source tree: https://github.com/NousResearch/hermes-agent
+- Source tree: https://github.com/usmanxg58-byte/AgentFOXXY
 
 Never answer "AgentFOXXY can't do that" from memory. AgentFOXXY ships far more than this skill body describes, and the index exists so a negative answer is always checkable.
 
@@ -46,7 +46,7 @@ Never answer "AgentFOXXY can't do that" from memory. AgentFOXXY ships far more t
 
 ```bash
 # Install (shell installer — sets up uv, Python, the venv, and the launcher)
-curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/usmanxg58-byte/AgentFOXXY/main/scripts/install.sh | bash
 
 # Interactive chat (default surface; set display.interface: tui to launch the Ink TUI instead)
 agentfoxxy
@@ -88,7 +88,7 @@ Profiles use `~/.agentfoxxy/profiles/<name>/` with the same layout. When a profi
 
 | User wants... | Load |
 |---|---|
-| **Anything not listed below — "can AgentFOXXY do X?", "how do I set up X?"** | **https://hermes-agent.nousresearch.com/docs/llms.txt** |
+| **Anything not listed below — "can AgentFOXXY do X?", "how do I set up X?"** | **https://github.com/usmanxg58-byte/AgentFOXXY/tree/main/website/docs** |
 | Bots that chat, run routines, or message each other; the Bots tab | docs: `/user-guide/bot-mode` |
 | CLI commands, subcommands, flags, "how do I run X" | `references/cli-reference.md` |
 | In-session slash commands | `references/slash-commands.md` |

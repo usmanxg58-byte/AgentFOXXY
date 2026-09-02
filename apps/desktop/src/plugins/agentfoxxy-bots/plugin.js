@@ -9888,13 +9888,13 @@ function AdvancedProfileConfig({ bot, state, setState }) {
 }
 
 // ── skills hub section: the REAL hub page (docs) embedded as a picker ──────
-// https://hermes-agent.nousresearch.com/docs/skills?embed=picker hides the
+// https://github.com/usmanxg58-byte/AgentFOXXY/tree/main/website/docs?embed=picker hides the
 // docs chrome and adds "+ Add to this Agent" per card, posting
 // {type: 'agentfoxxy-skill-pick', ...} to us (agentfoxxy-agent#86243). We validate
 // the origin, install via skills.manage, and bubble onInstalled so the
 // checklist above gains the row. Search-box fallback kept for offline use.
 
-const HUB_ORIGIN = 'https://hermes-agent.nousresearch.com'
+const HUB_ORIGIN = 'https://github.com/usmanxg58-byte/AgentFOXXY'
 const HUB_PICKER_URL = HUB_ORIGIN + '/docs/skills?embed=picker'
 
 function HubSkillsSection({ forProfile, onInstalled }) {

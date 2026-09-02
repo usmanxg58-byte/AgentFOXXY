@@ -3333,7 +3333,7 @@ class OptionalSkillSource(SkillSource):
     (search / install / inspect) and labelled "official" with "builtin" trust.
     """
 
-    OFFICIAL_REPO = "NousResearch/hermes-agent"
+    OFFICIAL_REPO = "usmanxg58-byte/AgentFOXXY"
     OPTIONAL_SKILLS_PREFIX = "optional-skills"
 
     def __init__(self, auth: Optional[GitHubAuth] = None):
@@ -4217,10 +4217,19 @@ def check_for_skill_updates(
 
 
 # ---------------------------------------------------------------------------
-# AgentFOXXY centralized index source
+# Centralized skills index source
+#
+# This is an upstream community data feed (~16 MB JSON, rebuilt daily by the
+# publisher's CI), in the same category as the skills.sh and lobehub indexes
+# above -- not AgentFOXXY branding. It is read-only, needs no auth, and the
+# loader below degrades gracefully to the stale cache / other hub sources if
+# it is ever unreachable. Set AGENTFOXXY_SKILLS_INDEX_URL to self-host.
 # ---------------------------------------------------------------------------
 
-AGENTFOXXY_INDEX_URL = "https://hermes-agent.nousresearch.com/docs/api/skills-index.json"
+AGENTFOXXY_INDEX_URL = os.environ.get(
+    "AGENTFOXXY_SKILLS_INDEX_URL",
+    "https://nousresearch.github.io/hermes-agent/docs/api/skills-index.json",
+)
 AGENTFOXXY_INDEX_TTL = 6 * 3600  # 6 hours
 
 

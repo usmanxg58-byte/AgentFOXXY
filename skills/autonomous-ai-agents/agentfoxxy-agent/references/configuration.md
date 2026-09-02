@@ -1,7 +1,7 @@
 # Configuration, Toolsets & Voice
 
 Edit with `agentfoxxy config edit` or `agentfoxxy config set section.key value`.
-Full reference: https://hermes-agent.nousresearch.com/docs/user-guide/configuration
+Full reference: https://github.com/usmanxg58-byte/AgentFOXXY/blob/main/website/docs/user-guide/configuration.md
 
 ### Config Sections (most-used keys)
 

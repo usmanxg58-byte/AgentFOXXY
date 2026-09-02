@@ -508,7 +508,7 @@ def detect_install_method(project_root: Optional[Path] = None) -> str:
     The supported installs self-identify via the code-scoped stamp:
       - the curl installer (scripts/install.sh, the README/website install
         command) git-clones the repo and stamps ``git`` next to the code;
-      - the published ``nousresearch/hermes-agent`` image bakes a ``docker``
+      - the published ``usmanxg58-byte/AgentFOXXY`` image bakes a ``docker``
         stamp into ``/opt/agentfoxxy`` at build time.
     An unsupported manual install dropped into a container (no stamp) falls
     through to the ``.git`` checks and behaves like any off-path install.
@@ -625,7 +625,7 @@ def recommended_update_command_for_method(method: str) -> str:
     if is_nix_install_method(method):
         return _NIX_UPDATE_MSG
     if method == "docker":
-        return "docker pull nousresearch/hermes-agent:latest"
+        return "docker pull usmanxg58-byte/AgentFOXXY:latest"
     if method == "apt":
         # By contract, the current "apt" install method is the Termux APT
         # distribution. It deliberately uses Termux's `pkg` frontend.
@@ -663,23 +663,23 @@ def recommended_update_command() -> str:
 _DOCKER_UPDATE_MESSAGE = """\
 ✗ ``agentfoxxy update`` doesn't apply inside the Docker container.
 
-AgentFOXXY Agent runs as a published image (nousresearch/hermes-agent), not a
+AgentFOXXY Agent runs as a published image (usmanxg58-byte/AgentFOXXY), not a
 git checkout — the container has no working tree to pull into.  Update by
 pulling a fresh image and restarting your container instead:
 
-  docker pull nousresearch/hermes-agent:latest
+  docker pull usmanxg58-byte/AgentFOXXY:latest
   # then restart whatever started the container, e.g.:
   docker compose up -d --force-recreate agentfoxxy-agent
   # or, for ad-hoc runs, exit the current container and `docker run` again
 
 Verify the new version after restart:
-  docker run --rm nousresearch/hermes-agent:latest --version
+  docker run --rm usmanxg58-byte/AgentFOXXY:latest --version
 
 Notes:
   • If you pinned a specific tag (e.g. ``:v0.14.0``) the ``:latest`` tag
     won't move your container — pull the newer tag you actually want, or
     switch to ``:latest`` / ``:main`` for rolling updates.  See available
-    tags at https://hub.docker.com/r/nousresearch/hermes-agent/tags
+    tags at https://hub.docker.com/r/usmanxg58-byte/AgentFOXXY/tags
   • Your config and session history live under ``$AGENTFOXXY_HOME`` (``/opt/data``
     in the container, typically bind-mounted from the host) and persist
     across image upgrades — re-pulling doesn't lose any state.

@@ -1,7 +1,7 @@
 # AgentFOXXY CLI Reference
 
 Live sources when anything looks stale: `agentfoxxy --help`, `agentfoxxy <command> --help`,
-https://hermes-agent.nousresearch.com/docs/reference/cli-commands
+https://github.com/usmanxg58-byte/AgentFOXXY/blob/main/website/docs/reference/cli-commands.md
 
 ### Global Flags
 
@@ -79,7 +79,7 @@ agentfoxxy gateway run|install|start|stop|restart|status|setup
 ```
 
 20+ platforms: Telegram, Discord, Slack, WhatsApp (Baileys + Business Cloud API), iMessage (Photon — `agentfoxxy photon setup`), Signal, Email, SMS, Matrix, Mattermost, Teams, LINE, SimpleX, ntfy, Google Chat, Home Assistant, DingTalk, Feishu, WeCom, Weixin, API Server, Webhooks. Open WebUI connects via the API Server adapter. Most adapters ship under `plugins/platforms/`.
-Docs: https://hermes-agent.nousresearch.com/docs/user-guide/messaging/
+Docs: https://github.com/usmanxg58-byte/AgentFOXXY/tree/main/website/docs/user-guide/messaging
 
 ### Sessions
 
@@ -141,10 +141,10 @@ Plugin- and provider-supplied subcommands (e.g. `agentfoxxy photon setup`) only 
 
 | Looking for... | Location |
 |---|---|
-| Config options | `agentfoxxy config edit` · [Configuration docs](https://hermes-agent.nousresearch.com/docs/user-guide/configuration) |
-| Tools / toolsets | `agentfoxxy tools list` · [Tools reference](https://hermes-agent.nousresearch.com/docs/reference/tools-reference) |
-| Skills catalog | `agentfoxxy skills browse` · [Skills catalog](https://hermes-agent.nousresearch.com/docs/reference/skills-catalog) |
-| Provider setup | `agentfoxxy model` · [Providers guide](https://hermes-agent.nousresearch.com/docs/integrations/providers) |
-| Env variables | `agentfoxxy config env-path` · [Env vars reference](https://hermes-agent.nousresearch.com/docs/reference/environment-variables) |
+| Config options | `agentfoxxy config edit` · [Configuration docs](https://github.com/usmanxg58-byte/AgentFOXXY/blob/main/website/docs/user-guide/configuration.md) |
+| Tools / toolsets | `agentfoxxy tools list` · [Tools reference](https://github.com/usmanxg58-byte/AgentFOXXY/blob/main/website/docs/reference/tools-reference.md) |
+| Skills catalog | `agentfoxxy skills browse` · [Skills catalog](https://github.com/usmanxg58-byte/AgentFOXXY/blob/main/website/docs/reference/skills-catalog.md) |
+| Provider setup | `agentfoxxy model` · [Providers guide](https://github.com/usmanxg58-byte/AgentFOXXY/blob/main/website/docs/integrations/providers.md) |
+| Env variables | `agentfoxxy config env-path` · [Env vars reference](https://github.com/usmanxg58-byte/AgentFOXXY/blob/main/website/docs/reference/environment-variables.md) |
 | Gateway logs | `~/.agentfoxxy/logs/gateway.log` (or `agentfoxxy logs`) |
 | Sessions | `agentfoxxy sessions browse` (reads state.db) |

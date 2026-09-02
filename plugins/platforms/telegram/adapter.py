@@ -518,7 +518,7 @@ _DISCONNECT_STEP_TIMEOUT = 2.0
 # after _drain_polling_connections(), particularly when both primary and fallback
 # Telegram endpoints are unreachable. Bounding start_polling() prevents the
 # reconnect ladder from stalling indefinitely and allows the heartbeat loop to
-# trigger its own recovery path. Refs: NousResearch/hermes-agent#59614
+# trigger its own recovery path. Refs: usmanxg58-byte/AgentFOXXY#59614
 _UPDATER_START_TIMEOUT = 30.0
 # Initial connect is not healthy until the dedicated getUpdates request completes
 # one successful round trip. Unlike reconnect, initial bootstrap must fail closed
@@ -530,7 +530,7 @@ _INITIAL_POLLING_PROGRESS_TIMEOUT = 60.0
 # whole reconnect ladder (the tracked _polling_error_task never completes, so
 # every escalation path stays gated behind its in-flight guard). Bound the drain
 # so the ladder always advances toward the fatal-restart escalation. Matches
-# _UPDATER_STOP_TIMEOUT. Refs: NousResearch/hermes-agent#66377
+# _UPDATER_STOP_TIMEOUT. Refs: usmanxg58-byte/AgentFOXXY#66377
 _DRAIN_TIMEOUT = 15.0
 # Cause-agnostic wedged-recovery watchdog (#66377). Every recovery path (the
 # reconnect ladder's re-entry, the pending-update probe, PTB's error callback)
@@ -3016,7 +3016,7 @@ class TelegramAdapter(BasePlatformAdapter):
                     # "in-flight" and skips triggering a new reconnect, and
                     # the gateway silently drops messages for hours.
                     # Bounding stop() lets the reconnect ladder always advance.
-                    # Refs: NousResearch/hermes-agent#58270
+                    # Refs: usmanxg58-byte/AgentFOXXY#58270
                     await _await_with_thread_deadline(
                         app.updater.stop(), timeout=_UPDATER_STOP_TIMEOUT
                     )
@@ -4785,7 +4785,7 @@ class TelegramAdapter(BasePlatformAdapter):
                         "TELEGRAM_WEBHOOK_URL is set. Without it, the "
                         "webhook endpoint accepts forged updates from "
                         "anyone who can reach it — see "
-                        "https://github.com/NousResearch/hermes-agent/"
+                        "https://github.com/usmanxg58-byte/AgentFOXXY/"
                         "security/advisories/GHSA-3vpc-7q5r-276h.\n\n"
                         "Generate a secret and set it in your .env:\n"
                         "  export TELEGRAM_WEBHOOK_SECRET=\"$(openssl rand -hex 32)\"\n\n"

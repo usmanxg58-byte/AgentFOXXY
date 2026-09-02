@@ -261,22 +261,22 @@ test('compareApiUrl builds the GitHub compare URL for HTTPS origins', () => {
   assert.equal(
     compareApiUrl({
       currentSha: SHA_A,
-      originUrl: 'https://github.com/NousResearch/hermes-agent.git',
+      originUrl: 'https://github.com/usmanxg58-byte/AgentFOXXY.git',
       targetSha: SHA_B
     }),
-    `https://api.github.com/repos/NousResearch/hermes-agent/compare/${SHA_A}...${SHA_B}`
+    `https://api.github.com/repos/usmanxg58-byte/AgentFOXXY/compare/${SHA_A}...${SHA_B}`
   )
 })
 
 test('compareApiUrl handles SSH origin forms', () => {
   for (const originUrl of [
-    'git@github.com:NousResearch/hermes-agent.git',
-    'ssh://git@github.com/NousResearch/hermes-agent.git',
-    'git@github.com:NousResearch/hermes-agent'
+    'git@github.com:usmanxg58-byte/AgentFOXXY.git',
+    'ssh://git@github.com/usmanxg58-byte/AgentFOXXY.git',
+    'git@github.com:usmanxg58-byte/AgentFOXXY'
   ]) {
     assert.equal(
       compareApiUrl({ currentSha: SHA_A, originUrl, targetSha: SHA_B }),
-      `https://api.github.com/repos/NousResearch/hermes-agent/compare/${SHA_A}...${SHA_B}`
+      `https://api.github.com/repos/usmanxg58-byte/AgentFOXXY/compare/${SHA_A}...${SHA_B}`
     )
   }
 })

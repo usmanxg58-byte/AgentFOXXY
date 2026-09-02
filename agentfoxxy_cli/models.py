@@ -5475,7 +5475,7 @@ def opencode_zen_free_headers() -> dict:
         _v = "0"
     return {
         "Authorization": "",
-        "HTTP-Referer": "https://hermes-agent.nousresearch.com",
+        "HTTP-Referer": "https://github.com/usmanxg58-byte/AgentFOXXY",
         "X-Title": "AgentFOXXY Agent",
         "User-Agent": f"AgentFOXXYAgent/{_v}",
     }

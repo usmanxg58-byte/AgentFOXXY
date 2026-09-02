@@ -33,7 +33,7 @@ logger = logging.getLogger(__name__)
 
 PROJECT_ROOT = Path(__file__).parent.parent.resolve()
 
-_DOCS_BASE = "https://hermes-agent.nousresearch.com/docs"
+_DOCS_BASE = "https://github.com/usmanxg58-byte/AgentFOXXY/blob/main/website/docs"
 
 
 def _model_config_dict(config: Dict[str, Any]) -> Dict[str, Any]:
@@ -963,7 +963,7 @@ def setup_model_provider(config: dict, *, quick: bool = False):
 
     print_header("Inference Provider")
     print_info("Choose how to connect to your main chat model.")
-    print_info(f"   Guide: {_DOCS_BASE}/integrations/providers")
+    print_info(f"   Guide: {_DOCS_BASE}/integrations/providers.md")
     print()
 
     # Delegate to the shared agentfoxxy model flow — handles provider picker,
@@ -1404,7 +1404,7 @@ def setup_terminal_backend(config: dict):
     print_header("Terminal Backend")
     print_info("Choose where AgentFOXXY runs shell commands and code.")
     print_info("This affects tool execution, file access, and isolation.")
-    print_info(f"   Guide: {_DOCS_BASE}/user-guide/configuration#terminal-backend-configuration")
+    print_info(f"   Guide: {_DOCS_BASE}/user-guide/configuration.md#terminal-backend-configuration")
     print()
 
     current_backend = cfg_get(config, "terminal", "backend", default="local")
@@ -1799,7 +1799,7 @@ def setup_agent_settings(config: dict):
     """Configure agent behavior: iterations, progress display, compression, session reset."""
 
     print_header("Agent Settings")
-    print_info(f"   Guide: {_DOCS_BASE}/user-guide/configuration")
+    print_info(f"   Guide: {_DOCS_BASE}/user-guide/configuration.md")
     print()
 
     # ── Max Iterations ──
@@ -2228,7 +2228,7 @@ def _setup_webhooks():
     print_warning("   internet. For security, run the gateway in a sandboxed environment")
     print_warning("   (Docker, VM, etc.) to limit blast radius from prompt injection.")
     print()
-    print_info("   Full guide: https://hermes-agent.nousresearch.com/docs/user-guide/messaging/webhooks/")
+    print_info("   Full guide: https://github.com/usmanxg58-byte/AgentFOXXY/blob/main/website/docs/user-guide/messaging/webhooks.md")
     print()
 
     port = prompt("Webhook port (default 8644)")
@@ -2255,7 +2255,7 @@ def _setup_webhooks():
     print_info("      http://your-server:8644/webhooks/<route-name>")
     print()
     print_info("   Route configuration guide:")
-    print_info("   https://hermes-agent.nousresearch.com/docs/user-guide/messaging/webhooks/#configuring-routes")
+    print_info("   https://github.com/usmanxg58-byte/AgentFOXXY/blob/main/website/docs/user-guide/messaging/webhooks.md#configuring-routes")
     print()
     print_info("   Open config in your editor:  agentfoxxy config edit")
     print_info("   Open config in your editor:  agentfoxxy config edit")

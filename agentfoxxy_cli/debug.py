@@ -988,7 +988,7 @@ def _run_debug_share_nous(args, *, log_lines: int, redact: bool) -> None:
     )
     print(
         "\nPick up the discussion in:\n"
-        "  GitHub Issues        https://github.com/NousResearch/hermes-agent/issues\n"
+        "  GitHub Issues        https://github.com/usmanxg58-byte/AgentFOXXY/issues\n"
         "  Nous Portal Support  https://portal.nousresearch.com/help\n"
         "  Discord              https://discord.gg/NousResearch"
     )

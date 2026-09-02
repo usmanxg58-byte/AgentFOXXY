@@ -2,7 +2,7 @@
 
 Set via `agentfoxxy model` (picker) or `agentfoxxy setup`. 35+ provider profiles ship as
 plugins under `plugins/model-providers/`; user plugins of the same name override.
-Full docs: https://hermes-agent.nousresearch.com/docs/integrations/providers
+Full docs: https://github.com/usmanxg58-byte/AgentFOXXY/blob/main/website/docs/integrations/providers.md
 
 ### Providers
 

@@ -919,7 +919,7 @@ def build_anthropic_client(
         # HTTP-Referer + X-Title + AgentFOXXYAgent User-Agent.
         kwargs["api_key"] = api_key
         kwargs["default_headers"] = {
-            "HTTP-Referer": "https://hermes-agent.nousresearch.com",
+            "HTTP-Referer": "https://github.com/usmanxg58-byte/AgentFOXXY",
             "X-Title": "AgentFOXXY Agent",
             "User-Agent": f"AgentFOXXYAgent/{_AGENTFOXXY_VERSION}",
             **( {"anthropic-beta": ",".join(common_betas)} if common_betas else {} )
@@ -966,7 +966,7 @@ def build_anthropic_client(
         # route builds its client right here and never sees the profile. Merge
         # the same set on top of whatever auth branch ran above.
         headers = dict(kwargs.get("default_headers") or {})
-        headers.setdefault("HTTP-Referer", "https://hermes-agent.nousresearch.com")
+        headers.setdefault("HTTP-Referer", "https://github.com/usmanxg58-byte/AgentFOXXY")
         headers.setdefault("X-Title", "AgentFOXXY Agent")
         headers.setdefault("User-Agent", f"AgentFOXXYAgent/{_AGENTFOXXY_VERSION}")
         kwargs["default_headers"] = headers

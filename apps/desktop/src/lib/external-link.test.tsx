@@ -302,7 +302,7 @@ describe('external link helpers', () => {
   it('prefixes a pretty link to a known host with its brand glyph', () => {
     installDesktopBridge()
 
-    const url = 'https://github.com/NousResearch/hermes-agent/pull/123'
+    const url = 'https://github.com/usmanxg58-byte/AgentFOXXY/pull/123'
 
     render(<PrettyLink fallbackLabel="#123" href={url} />)
 

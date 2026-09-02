@@ -26,7 +26,7 @@ Results append to $ABEVAL_ROOT/results/<model>/<arm>/meta.jsonl (resume-safe:
 completed run_ids are skipped). ATOF traces land beside the meta file.
 
 This is the harness used for the August 2026 core-toolset performance batch
-(tracker: NousResearch/hermes-agent#77056).
+(tracker: usmanxg58-byte/AgentFOXXY#77056).
 """
 import json
 import os

