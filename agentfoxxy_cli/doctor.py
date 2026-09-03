@@ -261,9 +261,50 @@ def _termux_install_all_fallback_notes() -> list[str]:
     ]
 
 
+def _env_assignment_names(content: str) -> list[str]:
+    """Return the names of non-empty assignments in a .env file body.
+
+    Commented-out lines and empty values are skipped, so a documented-but-unset
+    ``# OPENAI_API_KEY=`` never reads as configured.
+    """
+    names: list[str] = []
+    for raw in content.splitlines():
+        line = raw.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        name, _, value = line.partition("=")
+        name = name.strip()
+        if name.startswith("export "):        # .env files are often shell-sourced too
+            name = name[len("export "):].strip()
+        if name and value.strip().strip("\"'"):
+            names.append(name)
+    return names
+
+
 def _has_provider_env_config(content: str) -> bool:
-    """Return True when ~/.agentfoxxy/.env contains provider auth/base URL settings."""
-    return any(key in content for key in _PROVIDER_ENV_HINTS)
+    """Return True when ~/.agentfoxxy/.env contains provider auth/base URL settings.
+
+    The explicit hint list covers the providers we ship named support for, but
+    it can never be complete: for a custom OpenAI-compatible endpoint the
+    runtime derives ``<VENDOR>_API_KEY`` from the base_url host (see
+    ``_host_derived_api_key`` in runtime_provider.py), so a perfectly working
+    setup can authenticate with a variable this module has never heard of --
+    TABITOKEN_API_KEY for https://tabitoken.com/v1, say. Without the generic
+    fallback below, those users are told "No API key found" and pointed at
+    ``agentfoxxy setup`` while the agent is in fact running fine.
+
+    A bare ``*_BASE_URL`` counts on its own because keyless local endpoints
+    (Ollama, llama.cpp) are configured by base URL alone -- consistent with
+    OPENAI_BASE_URL / ACTUAL_BASE_URL already being treated as hints.
+
+    Both paths match parsed assignment names rather than searching the raw
+    text, so the commented-out template ``agentfoxxy setup`` writes ("#
+    OPENAI_API_KEY=") no longer reports as configured.
+    """
+    names = _env_assignment_names(content)
+    if any(name in _PROVIDER_ENV_HINTS for name in names):
+        return True
+    return any(name.endswith(("_API_KEY", "_TOKEN", "_BASE_URL")) for name in names)
 
 
 def _honcho_is_configured_for_doctor() -> bool:

@@ -66,6 +66,31 @@ class TestProviderEnvDetection:
         assert not _has_provider_env_config(content)
 
 
+    def test_detects_host_derived_vendor_key(self):
+        """A custom endpoint authenticates with <VENDOR>_API_KEY derived from
+        its host (runtime_provider._host_derived_api_key), so the hint list can
+        never be complete -- doctor must not tell a working install that it has
+        no API key."""
+        content = "TABITOKEN_API_KEY=***\nAGENTFOXXY_MODEL=claude-opus-5\n"
+        assert _has_provider_env_config(content)
+
+
+    def test_detects_keyless_custom_base_url(self):
+        """Local endpoints (Ollama, llama.cpp) are configured by base URL alone."""
+        assert _has_provider_env_config("CUSTOM_BASE_URL=http://127.0.0.1:11434/v1\n")
+
+
+    def test_ignores_commented_and_empty_assignments(self):
+        """The commented template `agentfoxxy setup` writes is not a configured
+        provider, and neither is a declared-but-blank key."""
+        assert not _has_provider_env_config("# OPENAI_API_KEY=\n# NOUS_API_KEY=x\n")
+        assert not _has_provider_env_config('OPENAI_API_KEY=\nZAI_API_KEY=""\n')
+
+
+    def test_detects_export_prefixed_assignment(self):
+        assert _has_provider_env_config('export ACME_API_KEY="sk-1"\n')
+
+
 class TestDoctorToolAvailabilitySummary:
     def test_missing_api_key_summary_ignores_disabled_toolsets(self, monkeypatch):
         unavailable = [

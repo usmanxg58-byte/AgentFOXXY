@@ -1,3 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <text y=".9em" font-size="90">⚕</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <title>AgentFOXXY</title>
+  <polygon points="145,95 330,300 300,430 119,440" fill="#d6651a"/>
+  <polygon points="879,95 694,300 724,430 905,440" fill="#d6651a"/>
+  <polygon points="215,205 330,300 296,372" fill="#a93e12"/>
+  <polygon points="809,205 694,300 728,372" fill="#a93e12"/>
+  <polygon points="119,440 352,606 368,800 196,646" fill="#a93e12"/>
+  <polygon points="905,440 672,606 656,800 828,646" fill="#a93e12"/>
+  <polygon points="196,646 368,800 512,902 512,830" fill="#d6651a"/>
+  <polygon points="828,646 656,800 512,902 512,830" fill="#d6651a"/>
+  <polygon points="119,440 330,300 512,480 352,606" fill="#ff8a2b"/>
+  <polygon points="905,440 694,300 512,480 672,606" fill="#ff8a2b"/>
+  <polygon points="330,300 512,245 694,300 512,480" fill="#ffad5c"/>
+  <polygon points="512,500 404,628 424,792 512,884 600,792 620,628" fill="#fff3e2"/>
+  <polygon points="296,470 404,452 424,536 316,552" fill="#2b1a12"/>
+  <polygon points="728,470 620,452 600,536 708,552" fill="#2b1a12"/>
+  <polygon points="512,842 462,772 562,772" fill="#2b1a12"/>
 </svg>
