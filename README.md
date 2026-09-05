@@ -2,84 +2,143 @@
 
 # 🦊 AgentFOXXY
 
-### An AI agent that does real work — and gets better as it goes
+### An AI agent that finishes the job
 
-**One agent. Any model. Works in your terminal, on a server, or from your phone.**
+**One agent. Any model. Runs in your terminal, on a server, or from your phone.**
 
 <p>
   <img src="https://img.shields.io/badge/Python-3.11-FB923C?style=for-the-badge&logo=python&logoColor=white" alt="Python 3.11">
   <img src="https://img.shields.io/badge/Platforms-Linux%20%7C%20macOS%20%7C%20Windows-FBBF24?style=for-the-badge" alt="Platforms">
-  <img src="https://img.shields.io/badge/Tools-40%2B-EA580C?style=for-the-badge" alt="40+ tools">
+  <img src="https://img.shields.io/badge/Providers-35%2B-EA580C?style=for-the-badge" alt="35+ model providers">
+  <img src="https://img.shields.io/badge/Tools-40%2B-F59E0B?style=for-the-badge" alt="40+ tools">
 </p>
+
+**English** · [简体中文](README.zh-CN.md) · [اردو](README.ur-pk.md)
 
 </div>
 
 ---
 
-## What is AgentFOXXY?
+## The short version
 
-AgentFOXXY is an AI agent that actually finishes jobs. It writes and runs code, uses a browser, makes images and audio, searches the web, remembers what matters, and starts its own helper agents when a job is big — all from one command.
+Most AI tools answer questions. AgentFOXXY does the work.
 
-**It works with any model.** Use OpenAI, OpenRouter, a model on your own machine, or any OpenAI-compatible endpoint. Switch with one command. No code changes, no lock-in.
+You describe a job in plain words. It plans the steps, writes the code, runs it, reads the errors, fixes them, and keeps going until the job is done — using a real terminal, a real browser, and real files on your machine.
 
-**It gets better as you use it.** It turns what it learns into reusable skills, improves them over time, searches its own past chats, and builds up a picture of how you like to work.
-
----
-
-## ✨ Highlights
-
-| | |
-|---|---|
-| 🧠 **It learns** | Turns experience into skills, keeps its own notes, and can search every past chat. The more you use it, the better it gets. |
-| 🦾 **A proper terminal app** | Multi-line typing, slash-command autocomplete, chat history, stop-and-redirect any time, and tool output that streams live. |
-| 💬 **Works where you are** | Talk to it from the terminal, Telegram, Discord, Slack, WhatsApp, or Signal — same conversation everywhere. |
-| 🐝 **Splits big jobs** | Starts separate helper agents (the TeamFOXXY swarm) so several parts of a job run at once. |
-| ⏰ **Runs on a schedule** | Built-in scheduler for daily reports, nightly backups, weekly checks. Just describe it in plain words. |
-| 🌍 **Runs anywhere** | Your machine, Docker, SSH, or a cloud sandbox. A $5 VPS or a GPU cluster — it is not stuck on your laptop. |
+Then it does something unusual: **it writes down what it learned.** The next time a similar job comes up, it already knows how.
 
 ---
 
-## 🚀 Download & Install
+## See it work
 
-There are three ways to get AgentFOXXY — pick whichever suits you.
+**Give it a job and walk away:**
 
-### 1. 🖥️ Desktop App (easiest — Windows)
+```bash
+agentfoxxy -z "read sales.csv, find the 5 worst months, chart them, save as report.png"
+```
 
-Download the installer, double-click, done. No terminal needed.
+It opens the file, works out the numbers, writes the plotting code, runs it, looks at the image it produced, and fixes the chart if it came out wrong.
 
-**➡️ [Download the latest release](https://github.com/usmanxg58-byte/AgentFOXXY/releases/latest)**
+**Let it drive a browser:**
 
-| File | For |
+```bash
+agentfoxxy
+> log into the admin panel, export last month's orders, and email me the totals
+```
+
+Not HTML scraping — a real browser it can see, click, and type into.
+
+**Message it from your phone:**
+
+```bash
+agentfoxxy gateway start
+```
+
+Now text it on Telegram, Discord, Slack, WhatsApp, or Signal. Same agent, same memory, same conversation you left open in the terminal.
+
+**Give it a standing order:**
+
+```
+> every weekday at 8am, check my repos for failed builds and message me a summary
+```
+
+No cron syntax. It sets the schedule up itself.
+
+---
+
+## What makes it different
+
+Plenty of tools call themselves agents. Here is what is actually different, and how it works.
+
+### 🧠 It gets better — and you can read why
+
+When AgentFOXXY works out something awkward, it saves the method as a **skill**: a plain markdown file in your skills folder. You can open it, edit it, delete it, or send it to a colleague. Nothing is locked in a black box.
+
+It also keeps its own searchable notes and can look back through every past conversation, so you stop re-explaining your setup every morning.
+
+### 🔌 It is not tied to one AI company
+
+35+ providers work out of the box — OpenAI, Anthropic, Gemini, DeepSeek, Qwen, xAI, Bedrock, Azure, OpenRouter, Ollama, and any OpenAI-compatible endpoint you point it at.
+
+```bash
+agentfoxxy model        # pick a provider and model, or switch mid-conversation
+```
+
+One command to switch. No code changes. If a provider goes down, gets slow, or gets expensive, you move — and your history, skills, and settings come with you.
+
+### 🐝 Big jobs get split up
+
+When a job has independent parts, it starts helper agents that run at the same time (the TeamFOXXY swarm) and gathers their results. A ten-file refactor does not have to be ten steps in a row.
+
+### 🖥️ It is a real program, not a chat box
+
+A proper terminal app: multi-line input, slash-command autocomplete, tool output that streams live, and you can cut in and redirect it mid-thought. There is a Windows desktop app and a web dashboard too.
+
+### 🌍 It runs where you need it
+
+Your laptop, Docker, a $5 VPS over SSH, a cloud sandbox, or Termux on Android. Native Windows is fully supported — no WSL needed.
+
+---
+
+## 🚀 Install
+
+Three ways in. Pick one.
+
+### 1. Desktop app — easiest (Windows)
+
+Download, double-click, done. No terminal.
+
+**➡️ [Get the latest release](https://github.com/usmanxg58-byte/AgentFOXXY/releases/latest)**
+
+| File | Use it for |
 |---|---|
-| `AgentFOXXY-*-win-x64.exe` | Normal install (recommended) |
+| `AgentFOXXY-*-win-x64.exe` | Normal install — start here |
 | `AgentFOXXY-*-win-x64.msi` | Company / silent deployment |
 
-> On first launch Windows may show an "unknown publisher" notice — click **More info → Run anyway**. The app is safe; it just is not paid-signed.
+> Windows may warn about an "unknown publisher" the first time — click **More info → Run anyway**. That warning means the installer is not paid-signed yet, not that something is wrong with it.
 
-### 2. ⌨️ Command-line install (Linux · macOS · WSL2 · Termux · Windows)
-
-**Linux / macOS / WSL2 / Termux:**
+### 2. One command (Linux · macOS · WSL2 · Termux)
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/usmanxg58-byte/AgentFOXXY/main/scripts/install.sh | bash
 ```
 
-**Windows (native, PowerShell):**
+**Windows PowerShell:**
 
 ```powershell
 iex (irm https://raw.githubusercontent.com/usmanxg58-byte/AgentFOXXY/main/scripts/install.ps1)
 ```
 
-The installer sets up everything for you — `uv`, Python 3.11, Node.js, ripgrep, ffmpeg, and a portable Git Bash on Windows (no admin required, fully isolated from any system Git). Native Windows is fully supported: CLI, gateway, TUI, and tools all run without WSL.
+The installer brings its own `uv`, Python 3.11, Node.js, ripgrep and ffmpeg — plus a portable Git Bash on Windows. No admin rights, and it leaves whatever is already on your system alone.
 
-Then reload your shell and start chatting:
+Then:
 
 ```bash
 source ~/.bashrc    # or: source ~/.zshrc
 agentfoxxy
 ```
 
-### 3. 🛠️ From source (developers)
+### 3. From source (developers)
 
 ```bash
 git clone https://github.com/usmanxg58-byte/AgentFOXXY.git
@@ -90,60 +149,73 @@ agentfoxxy
 
 ---
 
-## 🎯 Getting Started
+## 🎯 Your first five minutes
 
 ```bash
-agentfoxxy              # Interactive CLI — start a conversation
-agentfoxxy model        # Choose your LLM provider and model
-agentfoxxy tools        # Configure which tools are enabled
-agentfoxxy gateway      # Start the messaging gateway (Telegram, Discord, …)
-agentfoxxy setup        # Full setup wizard — configure everything at once
-agentfoxxy update       # Update to the latest version
-agentfoxxy doctor       # Diagnose any issues
+agentfoxxy setup        # one wizard: model, keys, tools — all of it
+agentfoxxy              # start talking
 ```
 
-Point AgentFOXXY at any provider you like:
+Handy after that:
 
 ```bash
-agentfoxxy model        # pick a provider + model interactively
-agentfoxxy -z "build me a REST API in FastAPI with tests"   # one-shot task
+agentfoxxy model        # switch provider or model
+agentfoxxy tools        # turn tools on and off
+agentfoxxy gateway      # connect Telegram / Discord / Slack / WhatsApp / Signal
+agentfoxxy -z "..."     # run one job and exit — no chat
+agentfoxxy update       # update in place
+agentfoxxy doctor       # something broken? start here
 ```
 
 ---
 
-## 🧰 What it can do
+## 🧰 What it can actually do
 
-- **Code and computer work** — read, write, and run code; run shell commands; drive a real browser; control a whole desktop.
-- **Helper agents** — hand a big job to a group of agents that work at the same time.
-- **Media** — make images, video, and speech from text.
-- **Web and search** — search the web and X, open and read pages.
-- **Memory** — keeps its own notes, and can search everything you talked about before.
-- **MCP** — plug in any Model Context Protocol server to add more abilities.
-- **40+ built-in tools** — terminal, code running, to-do tracking, messaging, skills, and more.
+| | |
+|---|---|
+| **Code** | Read, write, and run code. Run shell commands. Whole-project edits, not snippets. |
+| **Browser** | Drive a real browser — see the page, click, type, log in. |
+| **Computer** | Take over a full desktop when a browser is not enough. |
+| **Media** | Make images, video, and speech from text. |
+| **Search** | Search the web and X, then open and read the results. |
+| **Memory** | Its own notes, plus search across every conversation you have had. |
+| **Skills** | 16 built in, and 21 optional packs — finance, security, devops, research, and more. |
+| **Schedules** | Recurring jobs described in plain words. |
+| **MCP** | Plug in any Model Context Protocol server to add more tools. |
+
+Over 40 tools in total.
 
 ---
 
-## 💬 CLI vs Messaging
+## 💬 Terminal or phone — same agent
 
-AgentFOXXY has two front doors: the terminal UI (`agentfoxxy`), or the gateway you talk to from Telegram, Discord, Slack, WhatsApp, or Signal. Most slash commands work in both.
+Two front doors into one agent. Most slash commands work in both.
 
-| Action | CLI | Messaging |
+| What you want | Terminal | Telegram · Discord · Slack · WhatsApp · Signal |
 |---|---|---|
-| Start chatting | `agentfoxxy` | `agentfoxxy gateway setup` + `gateway start`, then message the bot |
-| Fresh conversation | `/new` or `/reset` | `/new` or `/reset` |
-| Change model | `/model [provider:model]` | `/model [provider:model]` |
-| Set a personality | `/personality [name]` | `/personality [name]` |
+| Start | `agentfoxxy` | `agentfoxxy gateway setup`, then `gateway start`, then message the bot |
+| Start fresh | `/new` | `/new` |
+| Change model | `/model` | `/model` |
+| Change personality | `/personality` | `/personality` |
 | Retry / undo | `/retry`, `/undo` | `/retry`, `/undo` |
-| Context & usage | `/compress`, `/usage` | `/compress`, `/usage` |
-| Skills | `/skills` or `/<skill-name>` | `/<skill-name>` |
-| Interrupt | `Ctrl+C` or new message | `/stop` or new message |
+| Shrink context / see cost | `/compress`, `/usage` | `/compress`, `/usage` |
+| Run a skill | `/skills`, `/<name>` | `/<name>` |
+| Stop it | `Ctrl+C` | `/stop` |
+
+---
+
+## 🔍 Good to know
+
+- **It asks before it runs risky commands.** Approve once, or add a pattern to your allowlist so it stops asking. `agentfoxxy approvals` will even suggest allowlist entries based on what you keep approving.
+- **Your keys are yours.** You pick the provider and the agent talks to it directly. Shared gateways and subscription routing exist if you would rather have one bill than ten API keys — but they are opt-in, never the default.
+- **Bring your own model.** Point it at Ollama on your own machine and nothing leaves the building.
+- **Requirements:** Python 3.11+ on Linux, macOS, or Windows. The installer handles the rest.
 
 ---
 
 ## 🤝 Contributing
 
-Use the installer, then work from the git checkout it creates at
-`$AGENTFOXXY_HOME/agentfoxxy-agent` (usually `~/.agentfoxxy/agentfoxxy-agent`):
+Run the installer, then work from the checkout it creates:
 
 ```bash
 cd "${AGENTFOXXY_HOME:-$HOME/.agentfoxxy}/agentfoxxy-agent"
@@ -153,8 +225,16 @@ scripts/run_tests.sh
 
 ---
 
+## 📄 License
+
+MIT. Built on the Hermes Agent open-source project — see [NOTICE.md](NOTICE.md) for attribution.
+
 <div align="center">
 
 🦊 **AgentFOXXY** — built and maintained by [@usmanxg58-byte](https://github.com/usmanxg58-byte)
 
 </div>
+
+
+
+
