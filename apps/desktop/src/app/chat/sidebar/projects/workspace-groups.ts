@@ -1,5 +1,5 @@
-import type { AgentFOXXYGitWorktree } from '@/global'
 import type { ProjectInfo, SessionInfo } from '@/agentfoxxy'
+import type { AgentFOXXYGitWorktree } from '@/global'
 import { normalize } from '@/lib/text'
 
 import { rankSessions } from '../order'

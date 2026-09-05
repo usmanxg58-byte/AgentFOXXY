@@ -47,7 +47,7 @@ import {
 import { dashboardFallbackArgs, sourceDeclaresServe } from './backend-command'
 import { createBackendConnectionState } from './backend-connection-state'
 import { BackendDialClaims } from './backend-dial-claim'
-import { buildDesktopBackendEnv, agentfoxxyManagedNodePathEntries, normalizeAgentFOXXYHomeRoot } from './backend-env'
+import { agentfoxxyManagedNodePathEntries, buildDesktopBackendEnv, normalizeAgentFOXXYHomeRoot } from './backend-env'
 import {
   isReauthRequiredError,
   makeNousCloudBackendDownError,
@@ -402,13 +402,13 @@ import {
   MIN_HEIGHT as WINDOW_MIN_HEIGHT,
   MIN_WIDTH as WINDOW_MIN_WIDTH
 } from './window-state'
-import { hiddenWindowsChildOptions } from './windows-child-options'
 import {
   buildPathExtCandidates,
   chooseUpdaterArgs,
   getVenvSitePackagesEntries,
   resolveVenvAgentFOXXYCommand
 } from './windows-agentfoxxy-path'
+import { hiddenWindowsChildOptions } from './windows-child-options'
 import {
   connectWindowsRemote,
   detectRemotePlatform,
@@ -1307,7 +1307,7 @@ if (IS_WINDOWS) {
 app.setAboutPanelOptions({
   applicationName: APP_NAME,
   applicationVersion: resolveAgentFOXXYVersion(),
-  copyright: 'Copyright © 2026 Nous Research'
+  copyright: 'Copyright © 2026 AgentFOXXY'
 })
 
 // Custom scheme for streaming audio/video into the renderer. Local paths read
@@ -16921,7 +16921,7 @@ function showAboutPanelFresh() {
       applicationVersion: skew.outOfSync
         ? `${resolveAgentFOXXYVersion()} — app build out of date, update the desktop app`
         : resolveAgentFOXXYVersion(),
-      copyright: 'Copyright © 2026 Nous Research'
+      copyright: 'Copyright © 2026 AgentFOXXY'
     })
     app.showAboutPanel()
   })

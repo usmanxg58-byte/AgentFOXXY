@@ -1,5 +1,5 @@
 {
-  description = "AgentFOXXY Agent - AI agent framework by Nous Research";
+  description = "AgentFOXXY Agent - autonomous AI agent framework";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";

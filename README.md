@@ -2,9 +2,9 @@
 
 # 🦊 AgentFOXXY
 
-### The self-improving autonomous AI agent
+### An AI agent that does real work — and gets better as it goes
 
-**One agent. Every model. Real work — in your terminal, on a server, or from your phone.**
+**One agent. Any model. Works in your terminal, on a server, or from your phone.**
 
 <p>
   <img src="https://img.shields.io/badge/Python-3.11-FB923C?style=for-the-badge&logo=python&logoColor=white" alt="Python 3.11">
@@ -18,11 +18,11 @@
 
 ## What is AgentFOXXY?
 
-AgentFOXXY is an autonomous AI agent that actually gets things done. It writes and runs code, controls a browser, generates media, searches the web, remembers what matters, and spawns its own helper agents for parallel work — all from a single command.
+AgentFOXXY is an AI agent that actually finishes jobs. It writes and runs code, uses a browser, makes images and audio, searches the web, remembers what matters, and starts its own helper agents when a job is big — all from one command.
 
-It is **model-agnostic**: bring OpenAI, OpenRouter, a local endpoint, or any OpenAI-compatible gateway. Switch with one command, no code changes, no lock-in.
+**It works with any model.** Use OpenAI, OpenRouter, a model on your own machine, or any OpenAI-compatible endpoint. Switch with one command. No code changes, no lock-in.
 
-And it is **self-improving**: it builds skills from experience, sharpens them as it uses them, searches its own past conversations, and builds a deeper model of who you are across every session.
+**It gets better as you use it.** It turns what it learns into reusable skills, improves them over time, searches its own past chats, and builds up a picture of how you like to work.
 
 ---
 
@@ -30,12 +30,12 @@ And it is **self-improving**: it builds skills from experience, sharpens them as
 
 | | |
 |---|---|
-| 🧠 **A closed learning loop** | Creates and refines its own skills, curates persistent memory, and recalls past sessions with full-text search. It gets better the more you use it. |
-| 🦾 **A real terminal UI** | Multiline editing, slash-command autocomplete, conversation history, interrupt-and-redirect, and live streaming tool output. |
-| 💬 **Lives where you do** | Talk to it from the CLI, Telegram, Discord, Slack, WhatsApp, or Signal — one gateway, continuous conversations across platforms. |
-| 🐝 **Delegates and parallelizes** | Spawns isolated sub-agents (the TeamFOXXY swarm) for parallel workstreams and multi-step pipelines. |
-| ⏰ **Scheduled automations** | A built-in cron scheduler runs daily reports, nightly backups, and weekly audits unattended — described in plain language. |
-| 🌍 **Runs anywhere** | Local, Docker, SSH, or serverless sandboxes. Put it on a $5 VPS or a GPU cluster — it is not tied to your laptop. |
+| 🧠 **It learns** | Turns experience into skills, keeps its own notes, and can search every past chat. The more you use it, the better it gets. |
+| 🦾 **A proper terminal app** | Multi-line typing, slash-command autocomplete, chat history, stop-and-redirect any time, and tool output that streams live. |
+| 💬 **Works where you are** | Talk to it from the terminal, Telegram, Discord, Slack, WhatsApp, or Signal — same conversation everywhere. |
+| 🐝 **Splits big jobs** | Starts separate helper agents (the TeamFOXXY swarm) so several parts of a job run at once. |
+| ⏰ **Runs on a schedule** | Built-in scheduler for daily reports, nightly backups, weekly checks. Just describe it in plain words. |
+| 🌍 **Runs anywhere** | Your machine, Docker, SSH, or a cloud sandbox. A $5 VPS or a GPU cluster — it is not stuck on your laptop. |
 
 ---
 
@@ -113,13 +113,13 @@ agentfoxxy -z "build me a REST API in FastAPI with tests"   # one-shot task
 
 ## 🧰 What it can do
 
-- **Code & computer work** — read, write, and run code; execute shell commands; drive a real browser; control a full desktop.
-- **Sub-agents** — delegate big jobs to a swarm of specialist agents working in parallel.
-- **Media** — generate images, video, and speech from text.
-- **Web & search** — search the web and X, fetch and read pages.
-- **Memory** — persistent, self-curated memory plus full-text search over past sessions.
-- **MCP** — connect any Model Context Protocol server to extend its abilities.
-- **40+ built-in tools** — terminal, code execution, todo tracking, messaging, skills, and more.
+- **Code and computer work** — read, write, and run code; run shell commands; drive a real browser; control a whole desktop.
+- **Helper agents** — hand a big job to a group of agents that work at the same time.
+- **Media** — make images, video, and speech from text.
+- **Web and search** — search the web and X, open and read pages.
+- **Memory** — keeps its own notes, and can search everything you talked about before.
+- **MCP** — plug in any Model Context Protocol server to add more abilities.
+- **40+ built-in tools** — terminal, code running, to-do tracking, messaging, skills, and more.
 
 ---
 

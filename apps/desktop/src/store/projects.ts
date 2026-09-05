@@ -1,12 +1,12 @@
 import { atom } from 'nanostores'
 
+import { agentfoxxyApi, type AgentFOXXYGateway, getAgentFOXXYConfig } from '@/agentfoxxy'
 import {
   liveSessionProjectId,
   NO_PROJECT_ID,
   type SidebarProjectTree
 } from '@/app/chat/sidebar/projects/workspace-groups'
 import type { AgentFOXXYGitBaseBranch, AgentFOXXYGitBranch } from '@/global'
-import { getAgentFOXXYConfig, agentfoxxyApi, type AgentFOXXYGateway } from '@/agentfoxxy'
 import { translateNow } from '@/i18n'
 import { desktopDefaultCwd, isDesktopFsRemoteMode, selectDesktopPaths, writeDesktopFileText } from '@/lib/desktop-fs'
 import { desktopGit } from '@/lib/desktop-git'

@@ -4,8 +4,8 @@ import { act, cleanup, render, waitFor } from '@testing-library/react'
 import { useEffect, useMemo, useRef } from 'react'
 import { afterEach, beforeEach, describe, expect, it, type Mock, vi } from 'vitest'
 
-import { createSessionRpcDispatcher } from '@/app/contrib/session-rpc-dispatcher'
 import { getSession } from '@/agentfoxxy'
+import { createSessionRpcDispatcher } from '@/app/contrib/session-rpc-dispatcher'
 import {
   activeGateway,
   activeGatewayConnectionId,

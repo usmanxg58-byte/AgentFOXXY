@@ -21,7 +21,7 @@ This page covers the **web dashboard** (`agentfoxxy dashboard`) plugin system �
 :::
 
 :::note How the pieces compose
-Themes and plugins are independent but synergistic. A theme can stand alone (just a YAML file). A plugin can stand alone (just a tab). Together they let you build a complete visual reskin with custom HUDs — the example `strike-freedom-cockpit` demo (lives in the `agentfoxxy-example-plugins` companion repo — see [Combined theme + plugin demo](#combined-theme--plugin-demo) for install steps) does exactly that.
+Themes and plugins are independent but synergistic. A theme can stand alone (just a YAML file). A plugin can stand alone (just a tab). Together they let you build a complete visual reskin with custom HUDs — the example `strike-freedom-cockpit` demo (lives in the `hermes-example-plugins` companion repo — see [Combined theme + plugin demo](#combined-theme--plugin-demo) for install steps) does exactly that.
 :::
 
 ---
@@ -701,7 +701,7 @@ Key points:
 - Multiple plugins can claim the same page-scoped slot. They render stacked in registration order.
 - Zero footprint when no plugin registers: the built-in page renders exactly as before.
 
-A reference plugin (`example-dashboard` in [`agentfoxxy-example-plugins`](https://github.com/NousResearch/agentfoxxy-example-plugins/tree/main/example-dashboard)) ships a live demo that injects a banner into `sessions:top` — install it to see the pattern end-to-end.
+A reference plugin (`example-dashboard` in [`hermes-example-plugins`](https://github.com/NousResearch/hermes-example-plugins/tree/main/example-dashboard)) ships a live demo that injects a banner into `sessions:top` — install it to see the pattern end-to-end.
 
 ### Slot-only plugins (`tab.hidden`)
 
@@ -838,7 +838,7 @@ If a plugin's script fails to load (404, syntax error, exception during IIFE), t
 
 ## Combined theme + plugin demo
 
-The [`strike-freedom-cockpit`](https://github.com/NousResearch/agentfoxxy-example-plugins/tree/main/strike-freedom-cockpit) plugin (companion repo `agentfoxxy-example-plugins`) is a complete reskin demo. It pairs a theme YAML with a slot-only plugin to produce a cockpit-style HUD without forking the dashboard.
+The [`strike-freedom-cockpit`](https://github.com/NousResearch/hermes-example-plugins/tree/main/strike-freedom-cockpit) plugin (companion repo `hermes-example-plugins`) is a complete reskin demo. It pairs a theme YAML with a slot-only plugin to produce a cockpit-style HUD without forking the dashboard.
 
 **What it demonstrates:**
 
@@ -852,14 +852,14 @@ The [`strike-freedom-cockpit`](https://github.com/NousResearch/agentfoxxy-exampl
 **Install:**
 
 ```bash
-git clone https://github.com/NousResearch/agentfoxxy-example-plugins.git
+git clone https://github.com/NousResearch/hermes-example-plugins.git
 
 # Theme
-cp agentfoxxy-example-plugins/strike-freedom-cockpit/theme/strike-freedom.yaml \
+cp hermes-example-plugins/strike-freedom-cockpit/theme/strike-freedom.yaml \
    ~/.agentfoxxy/dashboard-themes/
 
 # Plugin
-cp -r agentfoxxy-example-plugins/strike-freedom-cockpit ~/.agentfoxxy/plugins/
+cp -r hermes-example-plugins/strike-freedom-cockpit ~/.agentfoxxy/plugins/
 ```
 
 Open the dashboard, pick **Strike Freedom** from the theme switcher. The cockpit sidebar appears, the crest shows in the header, the tagline replaces the footer. Switch back to **AgentFOXXY Teal** and the plugin remains installed but invisible (the `sidebar` slot only renders under the `cockpit` layout variant).

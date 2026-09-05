@@ -178,7 +178,7 @@ MODEL_STRATEGIES = {
             ),
         },
     },
-    # Nous/AgentFOXXY models — already uncensored, just needs clean prompt
+    # Nous Hermes models — already uncensored, just needs clean prompt
     "agentfoxxy": {
         "order": ["prefill_only"],
         "system_templates": {},

@@ -5,9 +5,10 @@ import sandboxArt from '@/assets/tiers/feature-sandbox.webp'
 import { cn } from '@/lib/utils'
 
 // Reproduces the portal's tier-card hero treatment at thumbnail size: each webp sits
-// over a solid Nous-blue well and blends into it. This blue well is the ONLY place
-// Nous blue appears in the billing page — everything else stays on the app's own tokens.
-const NOUS_BLUE = '#0000f2'
+// over a solid well and blends into it. The well is the ONLY hard-coded brand color on
+// the billing page — everything else stays on the app's own tokens. It carries the
+// Foxxy orange rather than the portal's blue, so the blended art reads warm.
+const WELL = '#c2410c'
 
 const BLEND_CLASS = {
   lighten: 'mix-blend-lighten',
@@ -42,7 +43,7 @@ export function resolveTierArt(tierName?: null | string): null | TierArtSpec {
 }
 
 /**
- * Small rounded thumbnail (~40px) rendering the tier art over a Nous-blue well.
+ * Small rounded thumbnail (~40px) rendering the tier art over an accent-tinted well.
  * Returns null for unknown tiers so the caller lays out a text-only card without
  * reserving empty art space. Imported via vite static imports so the URLs resolve
  * under a packaged `file://` origin with webSecurity on.
@@ -57,7 +58,7 @@ export function TierArt({ className, name, size = 40 }: { className?: string; na
   return (
     <div
       className={cn('relative shrink-0 overflow-hidden rounded-md', className)}
-      style={{ background: NOUS_BLUE, height: size, width: size }}
+      style={{ background: WELL, height: size, width: size }}
     >
       <img
         alt=""

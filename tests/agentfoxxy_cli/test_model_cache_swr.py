@@ -152,7 +152,7 @@ class TestCatalogSWR:
     def test_stale_disk_catalog_served_with_background_refresh(self, tmp_path, monkeypatch):
         import agentfoxxy_cli.model_catalog as mc
 
-        manifest = {"version": 1, "providers": {"nous": {"models": [{"id": "agentfoxxy-4"}]}}}
+        manifest = {"version": 1, "providers": {"nous": {"models": [{"id": "hermes-4"}]}}}
         monkeypatch.setattr(mc, "_catalog_cache", None)
         monkeypatch.setattr(mc, "_catalog_cache_source_mtime", 0.0)
         with patch.object(mc, "_load_catalog_config", return_value={

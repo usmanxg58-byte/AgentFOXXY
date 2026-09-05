@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 
 import { Settings2, Wrench } from '@/lib/icons'
-import type { ConfigFieldSchema, AgentFOXXYConfigRecord } from '@/types/agentfoxxy'
+import type { AgentFOXXYConfigRecord, ConfigFieldSchema } from '@/types/agentfoxxy'
 
 import {
   buildConfigSearchEntries,

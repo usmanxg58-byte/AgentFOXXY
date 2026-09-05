@@ -3426,7 +3426,7 @@ def get_model_context_length(
                 return or_ctx
 
     # 7. Query local server before hardcoded defaults — model names like
-    # ``AgentFOXXY-3-Llama-3.1-70B`` substring-match ``llama`` (131072) even when
+    # ``Hermes-3-Llama-3.1-70B`` substring-match ``llama`` (131072) even when
     # vLLM is running at a lower ``--max-model-len`` (e.g. 32768 on limited VRAM).
     if base_url and is_local_endpoint(base_url):
         local_ctx = _query_local_context_length(model, base_url, api_key=api_key)

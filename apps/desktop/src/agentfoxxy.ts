@@ -5,10 +5,10 @@
 // capabilityScoped are shared across api/ but must not reach call sites, or
 // request scoping stops having a single owner.
 export {
-  getApiRequestConnection,
-  getApiRequestProfile,
   agentfoxxyApi,
   AgentFOXXYGateway,
+  getApiRequestConnection,
+  getApiRequestProfile,
   profileScopeKey,
   PROMPT_SUBMIT_REQUEST_TIMEOUT_MS,
   setApiRequestConnection,
@@ -31,6 +31,8 @@ export * from './api/toolsets'
 export type {
   ActionResponse,
   ActionStatusResponse,
+  AgentFOXXYConfig,
+  AgentFOXXYConfigRecord,
   AnalyticsDailyEntry,
   AnalyticsModelEntry,
   AnalyticsResponse,
@@ -63,8 +65,6 @@ export type {
   ElevenLabsVoicesResponse,
   EnvVarInfo,
   GatewayReadyPayload,
-  AgentFOXXYConfig,
-  AgentFOXXYConfigRecord,
   LogsResponse,
   McpCatalogEntry,
   McpCatalogResponse,

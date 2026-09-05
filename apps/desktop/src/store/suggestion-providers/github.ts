@@ -1,5 +1,5 @@
-import { requestComposerFocus, requestComposerInsert } from '@/app/chat/composer/focus'
 import { getGhAuthStatus } from '@/agentfoxxy'
+import { requestComposerFocus, requestComposerInsert } from '@/app/chat/composer/focus'
 import { translateNow } from '@/i18n'
 import { type ComposerSuggestion, registerDraftProvider } from '@/store/composer-suggestions'
 

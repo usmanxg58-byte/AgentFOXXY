@@ -1,6 +1,6 @@
 import type { McpCatalogResponse, McpServerSummary } from '@/types/agentfoxxy'
 
-import { capabilityScoped, agentfoxxyApi, type ProfileScope, profileScoped } from './client'
+import { agentfoxxyApi, capabilityScoped, type ProfileScope, profileScoped } from './client'
 
 export interface McpTestResult {
   ok: boolean

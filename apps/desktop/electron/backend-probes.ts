@@ -210,10 +210,10 @@ function verifyAgentFOXXYCli(agentfoxxyCommand: string, opts?: { shell?: boolean
 }
 
 export {
+  agentfoxxyRuntimeImportProbe,
   canImportAgentFOXXYCli,
   DEFAULT_PROBE_TIMEOUT_MS,
   execProbeSync,
-  agentfoxxyRuntimeImportProbe,
   PROBE_TIMEOUT_MS,
   resolveProbeTimeoutMs,
   shouldTrustAgentFOXXYOverride,

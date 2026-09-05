@@ -13,9 +13,9 @@ import path from 'node:path'
 import { test } from 'vitest'
 
 import {
+  agentfoxxyRuntimeImportProbe,
   canImportAgentFOXXYCli,
   DEFAULT_PROBE_TIMEOUT_MS,
-  agentfoxxyRuntimeImportProbe,
   PROBE_TIMEOUT_MS,
   resolveProbeTimeoutMs,
   shouldTrustAgentFOXXYOverride,

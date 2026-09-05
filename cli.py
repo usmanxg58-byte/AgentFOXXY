@@ -8548,14 +8548,14 @@ class AgentFOXXYCLI(CLIAgentSetupMixin, CLICommandsMixin, CLIBillingMixin):
                     "[dim]   Fix: Set model.context_length in config.yaml, or increase your server's context setting[/]"
                 )
 
-        # Warn if the configured model is a Nous AgentFOXXY LLM (not agentic)
-        from agentfoxxy_cli.model_switch import is_nous_agentfoxxy_non_agentic
+        # Warn if the configured model is a Nous Hermes LLM (not agentic)
+        from agentfoxxy_cli.model_switch import is_nous_hermes_non_agentic
 
         model_name = getattr(self, "model", "") or ""
-        if is_nous_agentfoxxy_non_agentic(model_name):
+        if is_nous_hermes_non_agentic(model_name):
             self._console_print()
             self._console_print(
-                "[bold yellow]⚠  Nous Research AgentFOXXY 3 & 4 models are NOT agentic and are not "
+                "[bold yellow]⚠  Nous Research Hermes 3 & 4 models are NOT agentic and are not "
                 "designed for use with AgentFOXXY.[/]"
             )
             self._console_print(

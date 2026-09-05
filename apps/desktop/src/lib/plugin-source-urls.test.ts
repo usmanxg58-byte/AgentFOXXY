@@ -4,9 +4,9 @@ import { resolvePluginSourceLinks } from './plugin-source-urls'
 
 describe('resolvePluginSourceLinks', () => {
   it('maps owner/repo to github browse and clone urls', () => {
-    expect(resolvePluginSourceLinks('NousResearch/agentfoxxy-example-plugins')).toEqual({
-      gitUrl: 'https://github.com/NousResearch/agentfoxxy-example-plugins.git',
-      browseUrl: 'https://github.com/NousResearch/agentfoxxy-example-plugins',
+    expect(resolvePluginSourceLinks('NousResearch/hermes-example-plugins')).toEqual({
+      gitUrl: 'https://github.com/NousResearch/hermes-example-plugins.git',
+      browseUrl: 'https://github.com/NousResearch/hermes-example-plugins',
       subdir: null
     })
   })

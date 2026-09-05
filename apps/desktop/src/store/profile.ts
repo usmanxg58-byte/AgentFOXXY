@@ -1,8 +1,8 @@
 import { LOCAL_CONNECTION_ID } from '@agentfoxxy/shared'
 import { atom, batch, computed } from 'nanostores'
 
+import { agentfoxxyApi, getProfiles, setApiRequestProfile, STARTUP_REQUEST_TIMEOUT_MS } from '@/agentfoxxy'
 import type { AgentFOXXYConnection } from '@/global'
-import { getProfiles, agentfoxxyApi, setApiRequestProfile, STARTUP_REQUEST_TIMEOUT_MS } from '@/agentfoxxy'
 import { invalidateProfileScopedQueries } from '@/lib/query-client'
 import {
   arraysEqual,

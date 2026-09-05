@@ -380,7 +380,7 @@ export const DARK_SEEDS: ThemeSeeds = {
   primary: '#FFD700',
   prompt: '#FFF8DC',
   selection: '#3a3a55',
-  shellDollar: '#4dabf7',
+  shellDollar: '#FF8A3D',
   statusBad: '#FF8C00',
   statusCritical: '#FF6B6B',
   statusGood: '#8FBC8F',
@@ -406,7 +406,7 @@ export const LIGHT_SEEDS: ThemeSeeds = {
   ok: '#367E39',
   primary: '#867000',
   prompt: '#2B2014',
-  shellDollar: '#377BB3',
+  shellDollar: '#C2410C',
   statusBad: '#A65A00',
   statusCritical: '#B94D4D',
   statusGood: '#5C7A5C',
@@ -598,7 +598,7 @@ export interface ThemeTones {
  *   light status #6F6F6F = grayOf(mix(text, bg, .30))            (err 1)
  *   light surface #F5F5F5 ≈ bg + softened accent                 (err 5)
  *   light chip  #E0D1BF = mix(surface, accent, .25)              (err 8)
- *   light selection #D4E4F7 ≈ mix(bg, shellDollar, .20)          (err 7)
+ *   light selection #F3D9CE ≈ mix(bg, shellDollar, .20)          (err 1)
  *
  * The light targets are the LIFT CANON: liftForContrast(dark literal,
  * white, 4.5) — what xterm's minimumContrastRatio showed on light hosts

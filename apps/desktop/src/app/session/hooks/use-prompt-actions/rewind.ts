@@ -11,8 +11,8 @@
 
 import type { AppendMessage, ThreadMessage } from '@assistant-ui/react'
 
-import type { ClientSessionState } from '@/app/types'
 import { PROMPT_SUBMIT_REQUEST_TIMEOUT_MS } from '@/agentfoxxy'
+import type { ClientSessionState } from '@/app/types'
 import {
   branchGroupForUser,
   type ChatMessage,

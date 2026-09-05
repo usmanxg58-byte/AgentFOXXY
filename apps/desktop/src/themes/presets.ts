@@ -161,20 +161,26 @@ export const githubTheme: DesktopTheme = {
 /** Catppuccin — Latte in light, Mocha in dark (Catppuccin.catppuccin-vsc). */
 
 /**
- * Nous — the canonical AgentFOXXY desktop identity: GitHub's chrome carrying Nous
- * blue. Forked from github.github-vscode-theme (Light Default / Dark Default),
- * with only the accent family re-seeded; every neutral is upstream's.
+ * Nous — the canonical AgentFOXXY desktop identity: GitHub's chrome carrying
+ * Foxxy orange. Forked from github.github-vscode-theme (Light Default / Dark
+ * Default), with only the accent family re-seeded; every neutral is upstream's.
  *
- * Two seeds, one blue. `#0053FD` is the brand color and reads at 5.4:1 on the
- * light sidebar, but only 3.6:1 on the near-black dark one — so dark carries
- * `#4a84fe`, the same hue (263°) lifted to clear AA at 5.9:1. The soft
- * surfaces below are mixed from those seeds in OKLab, which is what keeps a
- * saturated blue from drifting violet on its way to white.
+ * Two seeds, one orange. `#ab4a00` is the light accent — hue 48°, the fox
+ * orange, at the exact OKLab lightness and chroma the fork's predecessor blue
+ * held, which is what keeps it clearing AA at 5.3:1 on the light sidebar.
+ * Brighter oranges cannot: 4.5:1 against near-white is the ceiling, and above
+ * it section headers stop being readable. Dark carries `#d06c33`, the same hue
+ * lifted by this theme's own light→dark offset (L +0.110) to 5.7:1 on the
+ * near-black sidebar.
+ *
+ * Every soft surface below is `retintTheme`'s output for that seed, not a hand
+ * pick — so retinting to another hue and back is lossless, and the ACCENT_MIX
+ * ratios in retint.ts still describe the shipped palette exactly.
  */
 export const nousTheme: DesktopTheme = {
   name: 'nous',
-  label: 'Nous',
-  description: 'GitHub chrome, Nous blue accent',
+  label: 'Foxxy',
+  description: 'GitHub chrome, Foxxy orange accent',
   colors: {
     background: '#ffffff',
     foreground: '#1f2328',
@@ -184,23 +190,23 @@ export const nousTheme: DesktopTheme = {
     mutedForeground: '#656d76',
     popover: '#ffffff',
     popoverForeground: '#1f2328',
-    primary: '#0053fd',
+    primary: '#ab4a00',
     primaryForeground: '#ffffff',
-    secondary: '#deeaff',
+    secondary: '#f5e5de',
     secondaryForeground: '#1f2328',
-    accent: '#e3edff',
+    accent: '#f7e9e3',
     accentForeground: '#1f2328',
     border: '#d0d7de',
     input: '#ffffff',
-    ring: '#0053fd',
-    midground: '#0053fd',
+    ring: '#ab4a00',
+    midground: '#ab4a00',
     midgroundForeground: '#ffffff',
-    composerRing: '#0053fd',
+    composerRing: '#ab4a00',
     destructive: '#cf222e',
     destructiveForeground: '#ffffff',
     sidebarBackground: '#f6f8fa',
     sidebarBorder: '#d0d7de',
-    userBubble: '#dae7fd',
+    userBubble: '#efe3de',
     userBubbleBorder: '#d0d7de'
   },
   darkColors: {
@@ -212,23 +218,23 @@ export const nousTheme: DesktopTheme = {
     mutedForeground: '#7d8590',
     popover: '#161b22',
     popoverForeground: '#e6edf3',
-    primary: '#4a84fe',
+    primary: '#d06c33',
     primaryForeground: '#161616',
-    secondary: '#1d2e4f',
+    secondary: '#3e2a23',
     secondaryForeground: '#e6edf3',
-    accent: '#17243a',
+    accent: '#2c211f',
     accentForeground: '#e6edf3',
     border: '#30363d',
     input: '#0d1117',
-    ring: '#4a84fe',
-    midground: '#4a84fe',
+    ring: '#d06c33',
+    midground: '#d06c33',
     midgroundForeground: '#161616',
-    composerRing: '#4a84fe',
+    composerRing: '#d06c33',
     destructive: '#f85149',
     destructiveForeground: '#ffffff',
     sidebarBackground: '#010409',
     sidebarBorder: '#30363d',
-    userBubble: '#07162c',
+    userBubble: '#1b1414',
     userBubbleBorder: '#30363d'
   },
   typography: {
@@ -595,12 +601,16 @@ const nousAltTint = (pct: number) => `color-mix(in srgb, ${NOUS_ALT_BLUE} ${pct}
 const nousAltTintTransparent = (pct: number) => `color-mix(in srgb, ${NOUS_ALT_BLUE} ${pct}%, transparent)`
 
 /**
- * Nous Alt — the hand-authored Nous from before the GitHub fork. Light is
- * glass neutrals with brand blue; dark is cream on mission-blue.
+ * Mission Blue — the hand-authored palette from before the GitHub fork. Light is
+ * glass neutrals with a deep brand blue; dark is cream on mission-blue.
+ *
+ * The `nous-alt` key is frozen: it is persisted in user prefs and synced to the
+ * backend, so renaming it would silently reset anyone running this skin. The
+ * label is what the picker shows, and that is the part that carries the brand.
  */
 export const nousAltTheme: DesktopTheme = {
   name: 'nous-alt',
-  label: 'Nous Alt',
+  label: 'Mission Blue',
   description: 'Glass neutrals, cream on mission-blue',
   colors: {
     background: '#F8FAFF',

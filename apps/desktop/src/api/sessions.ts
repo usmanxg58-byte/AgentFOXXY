@@ -10,7 +10,7 @@ import type {
   SessionSearchResponse
 } from '@/types/agentfoxxy'
 
-import { capabilityScoped, getApiRequestConnection, agentfoxxyApi, type ProfileScope, profileScoped } from './client'
+import { agentfoxxyApi, capabilityScoped, getApiRequestConnection, type ProfileScope, profileScoped } from './client'
 
 const SESSION_LIST_REQUEST_TIMEOUT_MS = 60_000
 

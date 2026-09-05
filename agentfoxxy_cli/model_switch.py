@@ -355,24 +355,24 @@ def _fetch_picker_live_models(
 # Non-agentic model warning
 # ---------------------------------------------------------------------------
 
-_AGENTFOXXY_MODEL_WARNING = (
-    "Nous Research AgentFOXXY 3 & 4 models are NOT agentic and are not designed "
+_HERMES_MODEL_WARNING = (
+    "Nous Research Hermes 3 & 4 models are NOT agentic and are not designed "
     "for use with AgentFOXXY Agent. They lack the tool-calling capabilities "
     "required for agent workflows. Consider using an agentic model instead "
     "(Claude, GPT, Gemini, DeepSeek, etc.)."
 )
 
-# Match only the real Nous Research AgentFOXXY 3 / AgentFOXXY 4 chat families.
-# The previous substring check (`"agentfoxxy" in name.lower()`) false-positived on
-# unrelated local Modelfiles like ``agentfoxxy-brain:qwen3-14b-ctx16k`` that just
-# happen to carry "agentfoxxy" in their tag but are fully tool-capable.
+# Match only the real Nous Research Hermes 3 / Hermes 4 chat families.
+# The previous substring check (`"hermes" in name.lower()`) false-positived on
+# unrelated local Modelfiles like ``hermes-brain:qwen3-14b-ctx16k`` that just
+# happen to carry "hermes" in their tag but are fully tool-capable.
 #
 # Positive examples the regex must match:
-#   NousResearch/AgentFOXXY-3-Llama-3.1-70B, agentfoxxy-4-405b, openrouter/agentfoxxy3:70b
+#   NousResearch/Hermes-3-Llama-3.1-70B, hermes-4-405b, openrouter/hermes3:70b
 # Negative examples it must NOT match:
-#   agentfoxxy-brain:qwen3-14b-ctx16k, qwen3:14b, claude-opus-4-6
-_NOUS_AGENTFOXXY_NON_AGENTIC_RE = re.compile(
-    r"(?:^|[/:])agentfoxxy[-_ ]?[34](?:[-_.:]|$)",
+#   hermes-brain:qwen3-14b-ctx16k, qwen3:14b, claude-opus-4-6
+_NOUS_HERMES_NON_AGENTIC_RE = re.compile(
+    r"(?:^|[/:])hermes[-_ ]?[34](?:[-_.:]|$)",
     re.IGNORECASE,
 )
 
@@ -422,8 +422,8 @@ def format_model_for_display(model_name: str) -> str:
 
 
 # ---------------------------------------------------------------------------
-def is_nous_agentfoxxy_non_agentic(model_name: str) -> bool:
-    """Return True if *model_name* is a real Nous AgentFOXXY 3/4 chat model.
+def is_nous_hermes_non_agentic(model_name: str) -> bool:
+    """Return True if *model_name* is a real Nous Hermes 3/4 chat model.
 
     Used to decide whether to surface the non-agentic warning at startup.
     Callers in :mod:`cli.py` and here should go through this single helper
@@ -431,13 +431,13 @@ def is_nous_agentfoxxy_non_agentic(model_name: str) -> bool:
     """
     if not model_name:
         return False
-    return bool(_NOUS_AGENTFOXXY_NON_AGENTIC_RE.search(model_name))
+    return bool(_NOUS_HERMES_NON_AGENTIC_RE.search(model_name))
 
 
-def _check_agentfoxxy_model_warning(model_name: str) -> str:
-    """Return a warning string if *model_name* is a Nous AgentFOXXY 3/4 chat model."""
-    if is_nous_agentfoxxy_non_agentic(model_name):
-        return _AGENTFOXXY_MODEL_WARNING
+def _check_hermes_model_warning(model_name: str) -> str:
+    """Return a warning string if *model_name* is a Nous Hermes 3/4 chat model."""
+    if is_nous_hermes_non_agentic(model_name):
+        return _HERMES_MODEL_WARNING
     return ""
 
 
@@ -2179,9 +2179,9 @@ def switch_model(
     warnings: list[str] = []
     if validation.get("message"):
         warnings.append(validation["message"])
-    agentfoxxy_warn = _check_agentfoxxy_model_warning(new_model)
-    if agentfoxxy_warn:
-        warnings.append(agentfoxxy_warn)
+    hermes_warn = _check_hermes_model_warning(new_model)
+    if hermes_warn:
+        warnings.append(hermes_warn)
 
     # --- Build result ---
     return ModelSwitchResult(

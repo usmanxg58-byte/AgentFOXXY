@@ -56,7 +56,7 @@ def _switch_to_anthropic(agent):
 def test_switch_drops_old_primary_from_fallback_chain():
     agent = _make_agent([
         {"provider": "openrouter", "model": "x-ai/grok-4"},
-        {"provider": "nous", "model": "agentfoxxy-4"},
+        {"provider": "nous", "model": "hermes-4"},
     ])
 
     _switch_to_anthropic(agent)
@@ -66,7 +66,7 @@ def test_switch_drops_old_primary_from_fallback_chain():
     assert "openrouter" not in providers, "old primary must be pruned"
     assert "anthropic" not in providers, "new primary is redundant in the chain"
     assert providers == ["nous"]
-    assert agent._fallback_model == {"provider": "nous", "model": "agentfoxxy-4"}
+    assert agent._fallback_model == {"provider": "nous", "model": "hermes-4"}
 
 
 def test_switch_with_empty_chain_stays_empty():
@@ -81,7 +81,7 @@ def test_switch_with_empty_chain_stays_empty():
 def test_manual_switch_clears_provider_fallback_provenance():
     agent = _make_agent([
         {"provider": "openrouter", "model": "x-ai/grok-4"},
-        {"provider": "nous", "model": "agentfoxxy-4"},
+        {"provider": "nous", "model": "hermes-4"},
     ])
     agent._provider_fallback_active = True
     agent._provider_fallback_route = ("fallback-model", "fallback-provider")

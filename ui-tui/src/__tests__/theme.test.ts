@@ -446,7 +446,9 @@ describe('derived tone ladder', () => {
       [light.LIGHT_THEME.color.statusFg, '#6F6F6F', 'light statusFg'],
       [light.LIGHT_THEME.color.completionBg, '#F5F5F5', 'light surface'],
       [light.LIGHT_THEME.color.completionCurrentBg, '#e0d1bf', 'light chip'],
-      [light.LIGHT_THEME.color.selectionBg, '#D4E4F7', 'light selection']
+      // Light selection is the one entry that tracks the prompt color rather
+      // than the gold canon: mix(white, shellDollar, .20).
+      [light.LIGHT_THEME.color.selectionBg, '#F3D9CE', 'light selection']
     ]
 
     for (const [got, original, label] of cases) {

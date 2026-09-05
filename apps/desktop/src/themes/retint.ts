@@ -16,10 +16,10 @@
  * no-op.
  *
  * ONE color in, both modes out. A single hex can't serve both appearances
- * literally — Nous blue `#0053FD` is 5.4:1 on GitHub's light sidebar but only
- * 3.6:1 on its dark one, i.e. unreadable section headers. Dark therefore gets
- * the same hue and chroma at whatever lightness clears AA, which keeps the
- * brand color recognizably itself instead of washing it toward white.
+ * literally — Foxxy orange `#F97316` is 7.3:1 on GitHub's dark sidebar but only
+ * 2.6:1 on its light one, i.e. unreadable section headers. Each mode therefore
+ * gets the same hue and chroma at whatever lightness clears AA, which keeps the
+ * brand color recognizably itself instead of washing it toward the background.
  *
  * The chrome is deliberately untouched. GitHub's neutrals are a cool blue-gray
  * (hue ~210°) that reads as the app's surface, not as brand — rotating it with
@@ -132,8 +132,8 @@ function seedFor(colors: DesktopThemeColors, seed: string): string {
  * Carry a light-mode seed across to dark by the theme's OWN lightness offset.
  *
  * A theme that ships both palettes has already answered "how much lighter does
- * this accent get in dark mode" — nous's blues are OKLCH L 0.528 → 0.638 at the
- * same hue. Reapplying that delta means a picked color lands in dark exactly
+ * this accent get in dark mode" — nous's oranges are OKLCH L 0.527 → 0.638 at
+ * the same hue. Reapplying that delta means a picked color lands in dark exactly
  * where the author would have put it, and it makes the round trip exact:
  * retinting with the theme's own accent reproduces both palettes byte-for-byte.
  *

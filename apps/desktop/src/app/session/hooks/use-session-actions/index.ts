@@ -2,10 +2,6 @@ import { useStore } from '@nanostores/react'
 import { type MutableRefObject, useCallback, useEffect, useRef } from 'react'
 import type { NavigateFunction } from 'react-router'
 
-import { NO_PROJECT_ID } from '@/app/chat/sidebar/projects/workspace-groups'
-import { graftRefreshedTailOntoBackfill } from '@/app/chat/transcript-backfill'
-import { revealTreePane } from '@/components/pane-shell/tree/store'
-import { setWorkspaceScope } from '@/components/pane-shell/workspace-scope'
 import {
   deleteSession,
   fetchStoredTranscriptAcrossBackends,
@@ -13,6 +9,10 @@ import {
   getLatestSessionMessages,
   setSessionArchived
 } from '@/agentfoxxy'
+import { NO_PROJECT_ID } from '@/app/chat/sidebar/projects/workspace-groups'
+import { graftRefreshedTailOntoBackfill } from '@/app/chat/transcript-backfill'
+import { revealTreePane } from '@/components/pane-shell/tree/store'
+import { setWorkspaceScope } from '@/components/pane-shell/workspace-scope'
 import { useI18n } from '@/i18n'
 import {
   type ChatMessage,

@@ -46,12 +46,12 @@ class TestReadChain:
         cfg = {
             "fallback_providers": [
                 {"provider": "openrouter", "model": "anthropic/claude-sonnet-4.6"},
-                {"provider": "nous", "model": "AgentFOXXY-4-Llama-3.1-405B"},
+                {"provider": "nous", "model": "Hermes-4-Llama-3.1-405B"},
             ]
         }
         assert _read_chain(cfg) == [
             {"provider": "openrouter", "model": "anthropic/claude-sonnet-4.6"},
-            {"provider": "nous", "model": "AgentFOXXY-4-Llama-3.1-405B"},
+            {"provider": "nous", "model": "Hermes-4-Llama-3.1-405B"},
         ]
 
 
@@ -100,7 +100,7 @@ class TestListCommand:
             "model": {"provider": "anthropic", "default": "claude-sonnet-4-6"},
             "fallback_providers": [
                 {"provider": "openrouter", "model": "anthropic/claude-sonnet-4.6"},
-                {"provider": "nous", "model": "AgentFOXXY-4"},
+                {"provider": "nous", "model": "Hermes-4"},
             ],
         })
         from agentfoxxy_cli.fallback_cmd import cmd_fallback_list
@@ -108,7 +108,7 @@ class TestListCommand:
         out = capsys.readouterr().out
         assert "Fallback chain (2 entries)" in out
         assert "anthropic/claude-sonnet-4.6" in out
-        assert "AgentFOXXY-4" in out
+        assert "Hermes-4" in out
         # Primary should be shown too
         assert "claude-sonnet-4-6" in out
 
@@ -227,12 +227,12 @@ class TestRemoveCommand:
         _write_config(isolated_home, {
             "fallback_providers": [
                 {"provider": "openrouter", "model": "gpt-5.4"},
-                {"provider": "nous", "model": "AgentFOXXY-4"},
+                {"provider": "nous", "model": "Hermes-4"},
                 {"provider": "anthropic", "model": "claude-sonnet-4-6"},
             ],
         })
 
-        # Picker returns index 1 (the middle entry, "nous / AgentFOXXY-4")
+        # Picker returns index 1 (the middle entry, "nous / Hermes-4")
         with patch("agentfoxxy_cli.setup._curses_prompt_choice", return_value=1):
             from agentfoxxy_cli.fallback_cmd import cmd_fallback_remove
             cmd_fallback_remove(types.SimpleNamespace())
@@ -244,7 +244,7 @@ class TestRemoveCommand:
         ]
         out = capsys.readouterr().out
         assert "Removed fallback" in out
-        assert "AgentFOXXY-4" in out
+        assert "Hermes-4" in out
 
 
 # ---------------------------------------------------------------------------
@@ -257,7 +257,7 @@ class TestClearCommand:
         _write_config(isolated_home, {
             "fallback_providers": [
                 {"provider": "openrouter", "model": "gpt-5.4"},
-                {"provider": "nous", "model": "AgentFOXXY-4"},
+                {"provider": "nous", "model": "Hermes-4"},
             ],
         })
         monkeypatch.setattr("builtins.input", lambda *a, **kw: "y")

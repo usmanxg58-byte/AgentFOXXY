@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { formatRefValue, agentfoxxyDirectiveFormatter } from './directive-text'
+import { agentfoxxyDirectiveFormatter, formatRefValue } from './directive-text'
 
 describe('formatRefValue', () => {
   it('leaves simple paths untouched', () => {

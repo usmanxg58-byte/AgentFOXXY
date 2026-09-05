@@ -11,7 +11,7 @@ import {
   selectionInCatalog
 } from './model-options'
 
-const globalOptions = { model: 'agentfoxxy-4', provider: 'nous', providers: [] }
+const globalOptions = { model: 'hermes-4', provider: 'nous', providers: [] }
 
 vi.mock('@/agentfoxxy', () => ({
   getGlobalModelOptions: vi.fn(() => Promise.resolve(globalOptions))
@@ -207,7 +207,7 @@ describe('manualPickRemoved', () => {
   })
 
   it('never clobbers when the provider has an empty model list (re-auth)', () => {
-    expect(manualPickRemoved(providers, 'nous', 'agentfoxxy-4')).toBe(false)
+    expect(manualPickRemoved(providers, 'nous', 'hermes-4')).toBe(false)
   })
 
   it('never clobbers on a not-yet-loaded or empty catalog', () => {

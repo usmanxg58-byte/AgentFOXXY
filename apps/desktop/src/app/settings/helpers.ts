@@ -1,5 +1,5 @@
 import { asText, normalize } from '@/lib/text'
-import type { ConfigFieldSchema, AgentFOXXYConfigRecord, ToolsetInfo } from '@/types/agentfoxxy'
+import type { AgentFOXXYConfigRecord, ConfigFieldSchema, ToolsetInfo } from '@/types/agentfoxxy'
 
 import { BUILTIN_PERSONALITIES, ENUM_OPTIONS, PROVIDER_GROUPS, SECTIONS } from './constants'
 

@@ -12,9 +12,9 @@
 import './kanban.css'
 
 import {
+  type AgentFOXXYPlugin,
   cn,
   Codicon,
-  type AgentFOXXYPlugin,
   host,
   type KeybindContribution,
   KEYBINDS_AREA,

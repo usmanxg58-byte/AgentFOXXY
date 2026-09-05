@@ -1,3 +1,4 @@
+import { agentfoxxyApi } from '@/agentfoxxy'
 import type {
   AgentFOXXYGitBaseBranch,
   AgentFOXXYGitBranch,
@@ -7,7 +8,6 @@ import type {
   AgentFOXXYReviewList,
   AgentFOXXYReviewShipInfo
 } from '@/global'
-import { agentfoxxyApi } from '@/agentfoxxy'
 
 import { desktopFsProfile, isDesktopFsRemoteMode } from './desktop-fs'
 

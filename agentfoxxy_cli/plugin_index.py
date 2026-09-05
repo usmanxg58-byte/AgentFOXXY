@@ -27,8 +27,14 @@ from agentfoxxy_constants import get_agentfoxxy_home
 logger = logging.getLogger(__name__)
 
 # Canonical index location. Override via config key ``plugins.index_url``.
+#
+# This is the upstream community index — a third-party URL, not our branding, so
+# the repo name is the upstream one and must stay verbatim or the fetch resolves
+# to a repository that does not exist. If it is unreachable the fallback chain
+# above (cache, then the bundled seed) still serves a usable index, so point
+# ``plugins.index_url`` at your own index to publish a different catalog.
 DEFAULT_INDEX_URL = (
-    "https://raw.githubusercontent.com/NousResearch/agentfoxxy-plugin-index/main/index.json"
+    "https://raw.githubusercontent.com/NousResearch/hermes-plugin-index/main/index.json"
 )
 
 # Cache the fetched index for 24 hours; a stale cache is still preferred over

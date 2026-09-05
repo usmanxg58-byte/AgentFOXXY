@@ -4,7 +4,7 @@
  *  - BUNDLED: every `src/plugins/<name>/plugin.{js,ts,tsx}` default-exporting
  *    a `AgentFOXXYPlugin` registers automatically (vite glob — drop a folder in).
  *    `agentfoxxy-bots` (Bot Mode) ships in-tree and is ON by default; other
- *    reference/demo plugins live in the companion `agentfoxxy-example-plugins`
+ *    reference/demo plugins live in the companion `hermes-example-plugins`
  *    repo. `.js` entries are SDK-consumer plugins adopted from standalone
  *    repos — they keep the plain-ESM plugin.js form so the file stays
  *    loadable by older desktops' runtime door too.
@@ -13,7 +13,7 @@
  *    — the agent's/user's doors, watched + hot-reloaded by the runtime loader.
  */
 
-import { createPluginContext, type AgentFOXXYPlugin } from './plugin'
+import { type AgentFOXXYPlugin, createPluginContext } from './plugin'
 import { pluginActive, publishPlugin } from './plugins-store'
 import { watchRuntimePlugins } from './runtime-loader'
 

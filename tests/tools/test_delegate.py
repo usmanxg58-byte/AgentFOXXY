@@ -440,7 +440,7 @@ class TestDelegateTask(unittest.TestCase):
                 goal="Stay on chat completions",
                 context=None,
                 toolsets=None,
-                model="agentfoxxy-4-405b",
+                model="hermes-4-405b",
                 max_iterations=10,
                 parent_agent=parent,
                 task_count=1,
@@ -448,14 +448,14 @@ class TestDelegateTask(unittest.TestCase):
 
             _, kwargs = MockAgent.call_args
             self.assertEqual(kwargs["provider"], "nous")
-            self.assertEqual(kwargs["model"], "agentfoxxy-4-405b")
+            self.assertEqual(kwargs["model"], "hermes-4-405b")
             self.assertEqual(kwargs["api_mode"], "chat_completions")
 
         with patch("run_agent.AIAgent") as MockAgent:
             mock_child = MagicMock()
             MockAgent.return_value = mock_child
             parent.api_mode = "chat_completions"
-            parent.model = "agentfoxxy-4-405b"
+            parent.model = "hermes-4-405b"
 
             _build_child_agent(
                 task_index=0,

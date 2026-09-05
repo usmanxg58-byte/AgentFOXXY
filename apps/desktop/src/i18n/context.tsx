@@ -1,6 +1,6 @@
 import { createContext, type ReactNode, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react'
 
-import { getAgentFOXXYConfigRecord, type AgentFOXXYConfigRecord, saveAgentFOXXYConfig } from '@/agentfoxxy'
+import { type AgentFOXXYConfigRecord, getAgentFOXXYConfigRecord, saveAgentFOXXYConfig } from '@/agentfoxxy'
 
 import { TRANSLATIONS } from './catalog'
 import { DEFAULT_LOCALE, localeConfigValue, normalizeLocale } from './languages'

@@ -20,7 +20,7 @@ beforeEach(() => {
     providers: [
       { name: 'GitHub Copilot', slug: 'copilot', models: ['gpt-5-mini', 'gpt-5.4-mini'] },
       { name: 'OpenAI Codex', slug: 'openai-codex', models: ['gpt-5.4-mini'] },
-      { name: 'Nous', slug: 'nous', models: ['agentfoxxy-4'] }
+      { name: 'Nous', slug: 'nous', models: ['hermes-4'] }
     ]
   })
 })
@@ -107,7 +107,7 @@ describe('FallbackModelsField', () => {
     const rerender = await renderFieldWithRerender(CHAIN)
     expect(screen.getAllByLabelText('Remove')).toHaveLength(2)
 
-    rerender([{ provider: 'nous', model: 'agentfoxxy-4' }])
+    rerender([{ provider: 'nous', model: 'hermes-4' }])
 
     await waitFor(() => expect(screen.getAllByLabelText('Remove')).toHaveLength(1))
   })

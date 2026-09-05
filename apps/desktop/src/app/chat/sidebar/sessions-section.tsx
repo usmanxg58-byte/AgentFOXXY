@@ -3,11 +3,11 @@ import { useStore } from '@nanostores/react'
 import type * as React from 'react'
 import { useCallback, useMemo } from 'react'
 
+import type { SessionInfo } from '@/agentfoxxy'
 import { SidebarPanelLabel } from '@/app/shell/sidebar-label'
 import { DisclosureCaret } from '@/components/ui/disclosure-caret'
 import { SidebarGroup, SidebarGroupContent } from '@/components/ui/sidebar'
 import type { AgentFOXXYGitWorktree } from '@/global'
-import type { SessionInfo } from '@/agentfoxxy'
 import { useI18n } from '@/i18n'
 import { flattenSessionsWithBranches } from '@/lib/session-branch-tree'
 import {

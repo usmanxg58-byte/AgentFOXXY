@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 import { useEffect, useMemo, useRef, useState } from 'react'
 
-import { getElevenLabsVoices, getAgentFOXXYConfigSchema, saveAgentFOXXYConfig } from '@/agentfoxxy'
+import { getAgentFOXXYConfigSchema, getElevenLabsVoices, saveAgentFOXXYConfig } from '@/agentfoxxy'
 import { useI18n } from '@/i18n'
 import { notifyError } from '@/store/notifications'
 import type { AgentFOXXYConfigRecord } from '@/types/agentfoxxy'

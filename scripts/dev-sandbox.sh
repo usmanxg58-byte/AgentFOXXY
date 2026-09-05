@@ -266,12 +266,16 @@ if [ -n "$HTTP_ROOT" ]; then
   cp -a "$HTTP_ROOT/." "$SANDBOX_ROOT/root/http/"
 fi
 if [ "$INSTALL_SHORTCUT" = true ]; then
-  mkdir -p "$SANDBOX_ROOT/root/http/hermes-agent.nousresearch.com"
+  # Fake webroot for the installer URL the shortcut curls below, laid out as
+  # <host>/<path> so a host-routing proxy resolves it locally instead of
+  # hitting the network.
+  installer_webroot="$SANDBOX_ROOT/root/http/raw.githubusercontent.com/usmanxg58-byte/AgentFOXXY/main/scripts"
+  mkdir -p "$installer_webroot"
   if [ -n "$INSTALL_REF" ]; then
     git -C "$UPSTREAM_REPO" show "$UPSTREAM_COMMIT:scripts/install.sh" \
-      > "$SANDBOX_ROOT/root/http/hermes-agent.nousresearch.com/install.sh"
+      > "$installer_webroot/install.sh"
   else
-    cp -a "$INSTALLER_PATH" "$SANDBOX_ROOT/root/http/hermes-agent.nousresearch.com/install.sh"
+    cp -a "$INSTALLER_PATH" "$installer_webroot/install.sh"
   fi
   set -- bash -c '
     set +e

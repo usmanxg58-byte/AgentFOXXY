@@ -1,4 +1,4 @@
-import { getGlobalModelOptions, type AgentFOXXYGateway, type ModelOptionsResponse } from '@/agentfoxxy'
+import { type AgentFOXXYGateway, getGlobalModelOptions, type ModelOptionsResponse } from '@/agentfoxxy'
 import type { ModelOptionProvider } from '@/types/agentfoxxy'
 
 /**

@@ -2790,7 +2790,7 @@ def parse_model_input(raw: str, current_provider: str) -> tuple[str, str]:
     Supports ``provider:model`` syntax to switch providers at runtime::
 
         openrouter:anthropic/claude-sonnet-4.5  →  ("openrouter", "anthropic/claude-sonnet-4.5")
-        nous:agentfoxxy-3                           →  ("nous", "agentfoxxy-3")
+        nous:hermes-3                           →  ("nous", "hermes-3")
         anthropic/claude-sonnet-4.5             →  (current_provider, "anthropic/claude-sonnet-4.5")
         gpt-5.4                                 →  (current_provider, "gpt-5.4")
 

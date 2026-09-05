@@ -1,5 +1,5 @@
-import type { ThreadMessageLike } from '@assistant-ui/react'
 import { type BillingBlock } from '@agentfoxxy/shared'
+import type { ThreadMessageLike } from '@assistant-ui/react'
 
 import type { ErrorSurface } from '@/lib/error-surface'
 import type { MessageReaction, SessionMessage, UsageStats } from '@/types/agentfoxxy'

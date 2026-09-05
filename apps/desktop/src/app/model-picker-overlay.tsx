@@ -1,8 +1,8 @@
 import { useStore } from '@nanostores/react'
 
+import type { AgentFOXXYGateway } from '@/agentfoxxy'
 import type { ModelSelection } from '@/app/shell/model-menu-panel'
 import { ModelPickerDialog } from '@/components/model-picker'
-import type { AgentFOXXYGateway } from '@/agentfoxxy'
 import { useStoreSelector } from '@/lib/use-session-slice'
 import {
   $activeSessionId,

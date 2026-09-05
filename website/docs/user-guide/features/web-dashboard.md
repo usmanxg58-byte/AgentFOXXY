@@ -1189,7 +1189,7 @@ Built-in themes:
 |-------|-----------|
 | **AgentFOXXY Teal** (`default`) | Dark teal + cream, system fonts, comfortable spacing |
 | **AgentFOXXY Teal (Large)** (`default-large`) | Same as default with 18px text and roomier spacing |
-| **Nous Blue** (`nous-blue`) | Nous-branded blue accents with airy spacing |
+| **Vivid Blue** (`nous-blue`) | Vivid blue accents with airy spacing |
 | **Midnight** (`midnight`) | Deep blue-violet, Inter + JetBrains Mono |
 | **Ember** (`ember`) | Warm crimson + bronze, Spectral serif + IBM Plex Mono |
 | **Mono** (`mono`) | Grayscale, IBM Plex, compact |

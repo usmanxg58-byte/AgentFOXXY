@@ -8,7 +8,7 @@ import type {
   ModelOptionsResponse
 } from '@/types/agentfoxxy'
 
-import { capabilityScoped, agentfoxxyApi, type ProfileScope, profileScoped, STARTUP_REQUEST_TIMEOUT_MS } from './client'
+import { agentfoxxyApi, capabilityScoped, type ProfileScope, profileScoped, STARTUP_REQUEST_TIMEOUT_MS } from './client'
 
 export function getGlobalModelInfo(profile?: null | string): Promise<ModelInfoResponse> {
   return agentfoxxyApi<ModelInfoResponse>({

@@ -1,5 +1,5 @@
+import { agentfoxxyApi, getApiRequestConnection, getApiRequestProfile } from '@/agentfoxxy'
 import { profileScoped } from '@/api/client'
-import { getApiRequestConnection, getApiRequestProfile, agentfoxxyApi } from '@/agentfoxxy'
 
 /**
  * Client-direct voice: call the active profile's STT/TTS providers straight

@@ -1,7 +1,7 @@
 import { atom } from 'nanostores'
 
-import type { AgentFOXXYBranchPullRequest } from '@/global'
 import { scanSessionPullRequests, type SessionInfo } from '@/agentfoxxy'
+import type { AgentFOXXYBranchPullRequest } from '@/global'
 import { desktopGit } from '@/lib/desktop-git'
 import { Codecs, persistentAtom } from '@/lib/persisted'
 

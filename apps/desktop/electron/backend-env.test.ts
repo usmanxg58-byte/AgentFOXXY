@@ -4,10 +4,10 @@ import path from 'node:path'
 import { test } from 'vitest'
 
 import {
+  agentfoxxyManagedNodePathEntries,
   appendUniquePathEntries,
   buildDesktopBackendEnv,
   buildDesktopBackendPath,
-  agentfoxxyManagedNodePathEntries,
   normalizeAgentFOXXYHomeRoot,
   pathEnvKey,
   POSIX_SANE_PATH_ENTRIES

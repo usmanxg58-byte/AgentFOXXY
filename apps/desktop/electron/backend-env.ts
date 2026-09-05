@@ -150,11 +150,11 @@ function buildDesktopBackendEnv({
 }
 
 export {
+  agentfoxxyManagedNodePathEntries,
   appendUniquePathEntries,
   buildDesktopBackendEnv,
   buildDesktopBackendPath,
   delimiterForPlatform,
-  agentfoxxyManagedNodePathEntries,
   normalizeAgentFOXXYHomeRoot,
   pathEnvKey,
   POSIX_SANE_PATH_ENTRIES

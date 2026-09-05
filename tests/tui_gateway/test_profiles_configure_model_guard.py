@@ -90,11 +90,11 @@ def test_confirmed_resend_writes_the_guarded_model(home, contributor_guard):
 
 
 def test_unguarded_model_still_writes_without_confirmation(home, contributor_guard):
-    result = _configure({"model": "agentfoxxy-4.5-405b", "provider": "nous"})
+    result = _configure({"model": "hermes-4.5-405b", "provider": "nous"})
 
     assert not result.get("confirm_required")
     assert result["applied"].get("model") is True
-    assert _profile_model(home) == "agentfoxxy-4.5-405b"
+    assert _profile_model(home) == "hermes-4.5-405b"
 
 
 def test_other_sections_still_apply_while_model_awaits_confirmation(home, contributor_guard):

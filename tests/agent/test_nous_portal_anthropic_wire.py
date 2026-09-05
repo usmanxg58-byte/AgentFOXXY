@@ -68,7 +68,7 @@ class TestApiModeRouting:
             == "anthropic_messages"
         )
         assert (
-            determine_api_mode("nous", PORTAL_URL, model="agentfoxxy-4-405b")
+            determine_api_mode("nous", PORTAL_URL, model="hermes-4-405b")
             == "chat_completions"
         )
         # No model → historical OpenAI-wire default (safer than guessing).
@@ -117,7 +117,7 @@ class TestRuntimeResolution:
         monkeypatch.setattr(
             rp,
             "_get_model_config",
-            lambda: {"provider": "nous", "default": "agentfoxxy-4-405b"},
+            lambda: {"provider": "nous", "default": "hermes-4-405b"},
         )
 
         resolved = rp.resolve_runtime_provider(
@@ -439,16 +439,16 @@ class TestAuxiliaryDualWire:
         with (
             patch(
                 "agent.auxiliary_client._try_nous",
-                return_value=(plain, "agentfoxxy-4-405b"),
+                return_value=(plain, "hermes-4-405b"),
             ),
             patch(
                 "agent.anthropic_adapter.build_anthropic_client",
                 side_effect=AssertionError("must not build Anthropic client"),
             ),
         ):
-            client, model = resolve_provider_client("nous", "agentfoxxy-4-405b")
+            client, model = resolve_provider_client("nous", "hermes-4-405b")
 
-        assert model == "agentfoxxy-4-405b"
+        assert model == "hermes-4-405b"
         assert client is plain
         assert not isinstance(client, AnthropicAuxiliaryClient)
 

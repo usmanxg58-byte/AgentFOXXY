@@ -2854,7 +2854,7 @@ def init_agent(
             f"(this must be at least {MINIMUM_CONTEXT_LENGTH // 1000}K)."
         )
 
-    # Nous AgentFOXXY 3/4 are chat models, not tool-call-tuned. The interactive
+    # Nous Hermes 3/4 are chat models, not tool-call-tuned. The interactive
     # CLI already warns via cli.py show_banner() (richer output + /model hint),
     # so skip platform=="cli" here to avoid emitting the warning twice per
     # startup. (Gateway/TUI/cron construct with quiet_mode=True and are already
@@ -2863,12 +2863,12 @@ def init_agent(
     # non-CLI surface to still surface the warning.)
     if not agent.quiet_mode and (agent.platform or "cli") != "cli":
         try:
-            from agentfoxxy_cli.model_switch import _check_agentfoxxy_model_warning
+            from agentfoxxy_cli.model_switch import _check_hermes_model_warning
 
-            _agentfoxxy_warn = _check_agentfoxxy_model_warning(agent.model or "")
-            if _agentfoxxy_warn:
+            _hermes_warn = _check_hermes_model_warning(agent.model or "")
+            if _hermes_warn:
                 _user_msg = (
-                    "⚠ Nous Research AgentFOXXY 3 & 4 models are NOT agentic — they "
+                    "⚠ Nous Research Hermes 3 & 4 models are NOT agentic — they "
                     "lack reliable tool-calling for agent workflows (delegation, "
                     "cron, proactive tools). Consider an agentic model instead "
                     "(Claude, GPT, Gemini, Qwen-Coder, etc.)."
@@ -2877,7 +2877,7 @@ def init_agent(
                     agent._emit_warning(_user_msg)
                 else:
                     print(f"\n{_user_msg}\n", file=sys.stderr)
-                _ra().logger.warning(_agentfoxxy_warn)
+                _ra().logger.warning(_hermes_warn)
         except Exception:
             pass
 

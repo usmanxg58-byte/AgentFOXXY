@@ -1,11 +1,11 @@
 import type {
+  AgentFOXXYConfig,
+  AgentFOXXYConfigRecord,
   ConfigSchemaResponse,
   CustomEndpointsResponse,
   CustomEndpointUpdate,
   CustomEndpointValidationResponse,
   EnvVarInfo,
-  AgentFOXXYConfig,
-  AgentFOXXYConfigRecord,
   LogsResponse,
   OAuthPollResponse,
   OAuthProvidersResponse,
@@ -14,7 +14,7 @@ import type {
   StatusResponse
 } from '@/types/agentfoxxy'
 
-import { capabilityScoped, agentfoxxyApi, type ProfileScope, profileScoped, STARTUP_REQUEST_TIMEOUT_MS } from './client'
+import { agentfoxxyApi, capabilityScoped, type ProfileScope, profileScoped, STARTUP_REQUEST_TIMEOUT_MS } from './client'
 
 export function getStatus(): Promise<StatusResponse> {
   return agentfoxxyApi<StatusResponse>({

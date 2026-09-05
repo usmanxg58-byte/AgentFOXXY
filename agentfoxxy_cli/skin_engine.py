@@ -231,7 +231,7 @@ _BUILTIN_SKINS: Dict[str, Dict[str, Any]] = {
             "completion_menu_bg": "#1a1a2e",
             "completion_menu_current_bg": "#333355",
             "selection_bg": "#3a3a55",
-            "shell_dollar": "#4dabf7",
+            "shell_dollar": "#FF8A3D",
             "voice_status_bg": "#1a1a2e",
         },
         # Light overlay (merged onto `colors`; dark mode renders the vivid
@@ -262,11 +262,11 @@ _BUILTIN_SKINS: Dict[str, Dict[str, Any]] = {
             "status_bar_warn": "#C8961E",
             "status_bar_bad": "#C2410C",
             "status_bar_critical": "#B91C1C",
-            "shell_dollar": "#1E6FC0",
+            "shell_dollar": "#C2410C",
             # Fills: flip the dark navy surfaces to light polarity.
             "completion_menu_bg": "#F5F5F5",
             "completion_menu_current_bg": "#E0D1BF",
-            "selection_bg": "#D4E4F7",
+            "selection_bg": "#F3D9CE",
             "status_bar_bg": "#F5F5F5",
             "voice_status_bg": "#F5F5F5",
         },

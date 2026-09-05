@@ -36,14 +36,17 @@ DEFAULT_SOUL_MD = (
 
 # Legacy SOUL.md boilerplate that older installers (install.sh / install.ps1 /
 # docker/SOUL.md) seeded before they were switched to write DEFAULT_SOUL_MD.
-# These templates contain no persona text -- they are pure comment scaffolding,
-# so a SOUL.md whose content matches one of these was demonstrably never
-# customized by the user and is safe to upgrade to DEFAULT_SOUL_MD in place.
+# Everything here was written BY AN INSTALLER, never by a user: the first two
+# are pure comment scaffolding with no persona text at all, and the third is
+# the fixed persona line the installers used to emit verbatim. A SOUL.md whose
+# content matches one of these was demonstrably never customized, so it is safe
+# to upgrade to DEFAULT_SOUL_MD in place.
 #
 # Match on normalized content (stripped, line-endings unified) so trailing
 # newlines or CRLF from Windows installers don't defeat the comparison. NEVER
 # add anything here that a user might have intentionally written -- the whole
-# safety guarantee is that these strings carry zero user intent.
+# safety guarantee is that these strings carry zero user intent, which is why
+# each entry must be copied byte-for-byte out of an installer, not paraphrased.
 _LEGACY_TEMPLATE_SOULS = (
     (
         "# AgentFOXXY Agent Persona\n"
@@ -76,6 +79,20 @@ _LEGACY_TEMPLATE_SOULS = (
         "This file is loaded fresh each message -- no restart needed.\n"
         "Delete the contents (or this file) to use the default personality.\n"
         "-->"
+    ),
+    # The single-line persona both installers wrote verbatim before this one.
+    # It credited the upstream project's owner rather than AgentFOXXY, and it
+    # shadowed DEFAULT_SOUL_MD forever once installed, so existing installs
+    # would keep introducing the agent as someone else's product. Copied
+    # byte-for-byte from install.sh / install.ps1 as they shipped it.
+    (
+        "You are AgentFOXXY Agent, an intelligent AI assistant created by Nous Research. "
+        "You are helpful, knowledgeable, and direct. You assist users with a wide range of "
+        "tasks including answering questions, writing and editing code, analyzing "
+        "information, creative work, and executing actions via your tools. You communicate "
+        "clearly, admit uncertainty when appropriate, and prioritize being genuinely useful "
+        "over being verbose unless otherwise directed below. Be targeted and efficient in "
+        "your exploration and investigations."
     ),
 )
 

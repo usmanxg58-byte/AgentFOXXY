@@ -1,7 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
-import type { AgentFOXXYReadDirResult } from '@/global'
 import type * as AgentFOXXYModule from '@/agentfoxxy'
+import type { AgentFOXXYReadDirResult } from '@/global'
 
 import { $pluginRecords, publishPlugin, setPluginEnabled } from './plugins-store'
 import { discoverRuntimePlugins, loadRuntimePlugin, watchRuntimePlugins } from './runtime-loader'

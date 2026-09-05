@@ -8,7 +8,7 @@ import type {
 } from '@/types/agentfoxxy'
 import type { ActionResponse } from '@/types/agentfoxxy'
 
-import { capabilityScoped, agentfoxxyApi, type ProfileScope, profileScoped } from './client'
+import { agentfoxxyApi, capabilityScoped, type ProfileScope, profileScoped } from './client'
 
 export function getSkills(profile?: ProfileScope): Promise<SkillInfo[]> {
   return window.agentfoxxyDesktop.api<SkillInfo[]>({

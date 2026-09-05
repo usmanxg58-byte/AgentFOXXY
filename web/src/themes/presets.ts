@@ -184,11 +184,18 @@ export const roseTheme: DashboardTheme = {
   },
 };
 
-/** Light mode — vivid Nous-blue accents on a cream canvas. */
+/**
+ * Light mode — vivid blue accents on a cream canvas.
+ *
+ * The `nous-blue` key is frozen: it is persisted in user prefs and is the
+ * target of the `lens-5i` alias, so renaming it would silently reset anyone
+ * running this skin. The label is the part users see, and that is what carries
+ * the brand.
+ */
 export const nousBlueTheme: DashboardTheme = {
   name: "nous-blue",
-  label: "Nous Blue",
-  description: "Light mode — vivid Nous-blue accents on cream canvas",
+  label: "Vivid Blue",
+  description: "Light mode — vivid blue accents on cream canvas",
   palette: {
     background: { hex: "#E8F2FD", alpha: 1 },
     midground: { hex: "#0053FD", alpha: 1 },

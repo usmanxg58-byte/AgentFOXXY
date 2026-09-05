@@ -512,7 +512,7 @@ Once you've found a plugin, install it by bare name — the name is resolved
 through the index to its `owner/repo` plus the index-pinned commit:
 
 ```bash
-agentfoxxy plugins install agentfoxxy-media-studio
+agentfoxxy plugins install hermes-media-studio
 ```
 
 If a name matches more than one entry, the candidates are listed and nothing
@@ -521,7 +521,7 @@ index and keep working exactly as before. An explicit `--ref <sha>` always
 overrides the index pin.
 
 **How the index is fetched.** The index lives at a canonical URL
-(`https://raw.githubusercontent.com/NousResearch/agentfoxxy-plugin-index/main/index.json`,
+(`https://raw.githubusercontent.com/NousResearch/hermes-plugin-index/main/index.json`,
 overridable via `agentfoxxy config set plugins.index_url <url>`). Fetches are
 cached under `~/.agentfoxxy/cache/plugin_index.json` for 24 hours; when the
 remote is unreachable the stale cache is used, and when there is no cache at
@@ -531,14 +531,14 @@ all a bundled seed copy ships with AgentFOXXY — so search works fully offline.
 
 ```json
 {
-  "name": "agentfoxxy-media-studio",
+  "name": "hermes-media-studio",
   "description": "Generative media workspace plugin.",
   "author": "NousResearch",
   "tags": ["media", "image-gen"],
-  "repo": "NousResearch/agentfoxxy-media-studio",
+  "repo": "NousResearch/hermes-media-studio",
   "ref": "<40-char commit SHA>",
   "subdir": null,
-  "homepage": "https://github.com/NousResearch/agentfoxxy-media-studio",
+  "homepage": "https://github.com/NousResearch/hermes-media-studio",
   "capabilities": ["tools", "dashboard"],
   "api_version": 1,
   "added_at": "2026-08-12"
@@ -551,7 +551,7 @@ SHA, and optional `subdir` supports monorepos. The bundled seed file
 
 **Submitting a plugin.** The index is maintained as a plain JSON file —
 submit a pull request to the
-[agentfoxxy-plugin-index](https://github.com/NousResearch/agentfoxxy-plugin-index)
+[hermes-plugin-index](https://github.com/NousResearch/hermes-plugin-index)
 repository adding your entry (name, description, author, tags, `owner/repo`,
 and a pinned commit SHA). Review covers the entry's *metadata* only.
 
@@ -575,13 +575,13 @@ description: STT + streaming TTS + approval relay
 author: hyper
 version: 1.0.0
 plugins:
-  - name: agentfoxxy-media-studio            # bare community-index name…
+  - name: hermes-media-studio            # bare community-index name…
     ref: e8d59971d2b7901405b39dac7b03bdd616272d0d
   - repo: owner/approval-relay           # …or explicit owner/repo (or git URL)
     ref: 8f3c2d1a9b4e5f6071829304a5b6c7d8e9f00112
     subdir: plugins/relay                # optional monorepo path
 config:                                  # optional, non-secret seeds only
-  agentfoxxy-media-studio:
+  hermes-media-studio:
     default_model: flux-3
 skills: []                               # declared list only (not auto-installed yet)
 ```

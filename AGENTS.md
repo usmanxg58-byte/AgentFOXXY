@@ -917,7 +917,7 @@ plug into `agent/context_engine.py`; image-gen providers into
 `agent/image_gen_provider.py`. Reference / docs-companion plugins
 (`example-dashboard`, `strike-freedom-cockpit`, `plugin-llm-example`,
 `plugin-llm-async-example`) live in the
-[`agentfoxxy-example-plugins`](https://github.com/NousResearch/agentfoxxy-example-plugins)
+[`hermes-example-plugins`](https://github.com/NousResearch/hermes-example-plugins)
 companion repo, not in this tree.
 
 ### Bot Mode (`apps/desktop/src/plugins/agentfoxxy-bots/`)

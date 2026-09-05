@@ -170,7 +170,7 @@ def test_offer_first_run_setup_routes_into_shared_picker(monkeypatch):
     # After the picker "runs", config has a provider and creds resolve.
     monkeypatch.setattr(
         "agentfoxxy_cli.config.load_config",
-        lambda: {"model": {"provider": "nous", "default": "agentfoxxy-4-405b"}},
+        lambda: {"model": {"provider": "nous", "default": "hermes-4-405b"}},
     )
     monkeypatch.setattr(
         "agentfoxxy_cli.runtime_provider.resolve_runtime_provider",
@@ -185,7 +185,7 @@ def test_offer_first_run_setup_routes_into_shared_picker(monkeypatch):
     assert shell._offer_first_run_setup() is True
     assert picker_calls["count"] == 1
     assert shell.requested_provider == "nous"
-    assert shell.model == "agentfoxxy-4-405b"
+    assert shell.model == "hermes-4-405b"
     # Agent must be rebuilt with the new credentials on next use.
     assert shell.agent is None
 

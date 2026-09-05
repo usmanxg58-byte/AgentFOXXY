@@ -37,17 +37,19 @@ import {
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 // Named reference points, with their OKLCH hue — the ones worth comparing while
-// judging an accent. The hue spread across the blues is the whole reason this
-// control exists: they look far apart and are 6° apart.
+// judging an accent. The two brand seeds lead; the blues below them are kept
+// because their spread is the whole reason this control exists: they look far
+// apart and are 6° apart.
 const SWATCHES: ReadonlyArray<{ hex: string; name: string }> = [
-  { hex: '#0053FD', name: 'Nous blue · 263° (light seed)' },
-  { hex: '#4a84fe', name: 'Nous blue · 263° (dark seed)' },
+  { hex: '#ab4a00', name: 'Foxxy orange · 48° (light seed)' },
+  { hex: '#d06c33', name: 'Foxxy orange · 48° (dark seed)' },
+  { hex: '#bc4c00', name: 'GitHub orange · 52°' },
+  { hex: '#0053FD', name: 'Vivid blue · 263°' },
   { hex: '#1540B1', name: 'Psyche blue · 264°' },
   { hex: '#0969da', name: 'GitHub blue · 257°' },
   { hex: '#196d31', name: 'GitHub green · 148°' },
   { hex: '#8250df', name: 'GitHub purple · 303°' },
-  { hex: '#bf3989', name: 'GitHub pink · 354°' },
-  { hex: '#bc4c00', name: 'GitHub orange · 52°' }
+  { hex: '#bf3989', name: 'GitHub pink · 354°' }
 ]
 
 const FIELD_W = 224

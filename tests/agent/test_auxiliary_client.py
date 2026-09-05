@@ -298,11 +298,11 @@ class TestMoaAggregatorSharedResolution:
                             "nous-mix": {
                                 "enabled": True,
                                 "reference_models": [
-                                    {"provider": "nous", "model": "agentfoxxy-4-70b"}
+                                    {"provider": "nous", "model": "hermes-4-70b"}
                                 ],
                                 "aggregator": {
                                     "provider": "nous",
-                                    "model": "agentfoxxy-4-405b",
+                                    "model": "hermes-4-405b",
                                 },
                             },
                         },
@@ -399,7 +399,7 @@ class TestBuildCallKwargsMaxTokens:
             ("zai", "glm-5.2", "https://api.z.ai/api/coding/paas/v4", "max_tokens"),
             ("openrouter", "deepseek/deepseek-v4-flash:nitro", "https://openrouter.ai/api/v1", "max_tokens"),
             ("copilot", "gpt-5.5", "https://api.githubcopilot.com", "max_completion_tokens"),
-            ("nous", "agentfoxxy-4", "https://inference-api.nousresearch.com/v1", "max_tokens"),
+            ("nous", "hermes-4", "https://inference-api.nousresearch.com/v1", "max_tokens"),
         ],
     )
     def test_moa_task_sends_max_tokens_on_openai_compatible(self, provider, model, base_url, expected_key):
@@ -475,7 +475,7 @@ class TestNousTagsScoping:
 
         kwargs = aux._build_call_kwargs(
             provider="nous",
-            model="agentfoxxy-4",
+            model="hermes-4",
             messages=[{"role": "user", "content": "hi"}],
         )
 

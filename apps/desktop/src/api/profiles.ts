@@ -6,7 +6,7 @@ import type {
   ProfilesResponse
 } from '@/types/agentfoxxy'
 
-import { capabilityScoped, agentfoxxyApi, type ProfileScope, STARTUP_REQUEST_TIMEOUT_MS } from './client'
+import { agentfoxxyApi, capabilityScoped, type ProfileScope, STARTUP_REQUEST_TIMEOUT_MS } from './client'
 
 export function getProfiles(): Promise<ProfilesResponse> {
   return agentfoxxyApi<ProfilesResponse>({

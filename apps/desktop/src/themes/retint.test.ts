@@ -10,19 +10,25 @@ const HUES = [0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330]
 // A retint seed for each hue, at the authored accent's lightness/chroma.
 const seedAt = (hue: number) => withHue(nousTheme.colors.primary, hue)
 
-const NOUS_BLUE = '#0053FD'
+/** The Foxxy brand orange, as the CLI wordmark uses it. 7.3:1 on the dark
+ *  sidebar but only 2.6:1 on the light one, so light has to darken it. */
+const FOXXY_ORANGE = '#F97316'
+
+/** A burnt orange: 6.6:1 on the light sidebar, 2.9:1 on the dark one. The
+ *  mirror of FOXXY_ORANGE, so dark is the mode that has to adapt. */
+const DEEP_ORANGE = '#963f02'
 
 describe('themeHue', () => {
   it('reads the accent hue that ships', () => {
-    // Nous blue. Both palettes sit at this hue — light seeds `#0053fd` and dark
-    // `#4a84fe`, the same blue at two lightnesses, which is what lets one pick
-    // serve both appearances.
-    expect(themeHue(nousTheme)).toBe(263)
-    expect(Math.round(hexToOklch(nousTheme.darkColors!.primary)!.h)).toBe(263)
+    // Foxxy orange. Both palettes sit at this hue — light seeds `#ab4a00` and
+    // dark `#d06c33`, the same orange at two lightnesses, which is what lets one
+    // pick serve both appearances.
+    expect(themeHue(nousTheme)).toBe(48)
+    expect(Math.round(hexToOklch(nousTheme.darkColors!.primary)!.h)).toBe(48)
   })
 
   it('reads the upstream GitHub green from the unforked theme', () => {
-    // `github` keeps the original accent, so the fork's blue can move freely
+    // `github` keeps the original accent, so the fork's orange can move freely
     // without redefining what upstream looks like.
     expect(themeHue(githubTheme)).toBe(148)
     expect(Math.round(hexToOklch(githubTheme.darkColors!.primary)!.h)).toBe(148)
@@ -30,13 +36,14 @@ describe('themeHue', () => {
 })
 
 // The two seeds are the whole point of the fork, and both are load-bearing:
-// `#0053FD` is the brand color and passes on the light sidebar, but only 3.6:1
-// on the near-black dark one — so dark carries a lifted twin rather than the
-// literal brand hex. Anything that re-derives these must keep both legible.
+// `#ab4a00` is the brand orange at the deepest lightness that still clears AA on
+// the light sidebar, and dark carries a lifted twin because that same hex is
+// under 4.5:1 on the near-black one. Anything that re-derives these must keep
+// both legible.
 describe('the shipped nous accents', () => {
   const cases = [
-    { appearance: 'light', colors: nousTheme.colors, seed: '#0053fd' },
-    { appearance: 'dark', colors: nousTheme.darkColors!, seed: '#4a84fe' }
+    { appearance: 'light', colors: nousTheme.colors, seed: '#ab4a00' },
+    { appearance: 'dark', colors: nousTheme.darkColors!, seed: '#d06c33' }
   ] as const
 
   it.each(cases)('$appearance seeds every accent slot from $seed', ({ colors, seed }) => {
@@ -53,7 +60,7 @@ describe('the shipped nous accents', () => {
     expect(contrastRatio(seed, colors.primaryForeground)).toBeGreaterThanOrEqual(4.5)
   })
 
-  it('is one blue at two lightnesses, not two blues', () => {
+  it('is one orange at two lightnesses, not two oranges', () => {
     const light = hexToOklch(nousTheme.colors.primary)!
     const dark = hexToOklch(nousTheme.darkColors!.primary)!
 
@@ -156,41 +163,81 @@ describe('retintTheme', () => {
   })
 
   it('accepts any hex form and ignores junk', () => {
-    expect(retintTheme(nousTheme, '#0053FD').colors.primary).toBe(retintTheme(nousTheme, '0053fd').colors.primary)
+    expect(retintTheme(nousTheme, '#F97316').colors.primary).toBe(retintTheme(nousTheme, 'f97316').colors.primary)
     // A half-typed hex from a text input must not blow up the theme.
     expect(retintTheme(nousTheme, '#00').colors).toEqual(nousTheme.colors)
     expect(retintTheme(nousTheme, 'nonsense').colors).toEqual(nousTheme.colors)
   })
 
-  // The real motivating case: Nous blue is legible on GitHub's light sidebar
-  // (5.4:1) but NOT its dark one (3.6:1), so dark has to adapt or ship
-  // invisible section headers.
-  describe('a seed that only works in one mode', () => {
-    const blue = retintTheme(nousTheme, NOUS_BLUE)
+  // Why one hex can't just be dropped into both palettes. GitHub's two sidebars
+  // sit at opposite ends of the lightness range, and an orange accent is legible
+  // on only one of them at a time: a burnt orange dark enough for near-white is
+  // under 4.5:1 on near-black, and a bright orange that sings on near-black is
+  // 2.6:1 on near-white. Each mode therefore adapts the pick to its own surface.
+  describe('a seed that only works in the light mode', () => {
+    // 6.6:1 on the light sidebar, 2.9:1 on the dark one.
+    const deep = retintTheme(nousTheme, DEEP_ORANGE)
 
     it('keeps the picked color where it already passes', () => {
-      expect(blue.colors.primary.toLowerCase()).toBe(NOUS_BLUE.toLowerCase())
+      expect(deep.colors.primary.toLowerCase()).toBe(DEEP_ORANGE.toLowerCase())
     })
 
     it('lightens it for the mode where it does not', () => {
-      const dark = blue.darkColors!.primary
+      const dark = deep.darkColors!.primary
 
-      expect(dark.toLowerCase()).not.toBe(NOUS_BLUE.toLowerCase())
-      expect(contrastRatio(dark, blue.darkColors!.sidebarBackground!)).toBeGreaterThanOrEqual(4.5)
+      expect(dark.toLowerCase()).not.toBe(DEEP_ORANGE.toLowerCase())
+      expect(contrastRatio(dark, deep.darkColors!.sidebarBackground!)).toBeGreaterThanOrEqual(4.5)
     })
 
     it('adapts by lightness, holding the hue — so it still reads as the brand', () => {
-      const picked = hexToOklch(NOUS_BLUE)!
-      const adapted = hexToOklch(blue.darkColors!.primary)!
+      const picked = hexToOklch(DEEP_ORANGE)!
+      const adapted = hexToOklch(deep.darkColors!.primary)!
 
       expect(Math.abs(adapted.h - picked.h)).toBeLessThan(3)
       expect(adapted.l).toBeGreaterThan(picked.l)
-      // Chroma may only fall because sRGB cannot SHOW that colorfulness at the
-      // higher lightness — `#0053FD`'s C 0.26 is out of gamut once lightened,
-      // and the clamp trades it away rather than shifting the hue. What must
-      // not happen is the mix-toward-white collapse, which would also drag the
-      // hue and leave a pastel; staying well clear of half the original chroma
-      // is the line between "same blue, lighter" and "washed out".
+      // A burnt orange is well inside sRGB, so lifting it costs no chroma at
+      // all. Anything that mixed toward white instead would show up here as a
+      // collapse, because that path drags the hue and leaves a pastel.
+      expect(adapted.c).toBeGreaterThan(picked.c * 0.9)
+    })
+  })
+
+  // The mirror case, and the one the fork actually runs into: the brand orange
+  // is the bright one. Blue never exercised this direction — `#0053FD` was
+  // already dark enough for near-white, so the light palette never had to clamp.
+  describe('a seed that only works in the dark mode', () => {
+    // 7.3:1 on the dark sidebar, 2.6:1 on the light one.
+    const bright = retintTheme(nousTheme, FOXXY_ORANGE)
+
+    it('darkens it for the light palette, rather than shipping it unreadable', () => {
+      const light = bright.colors.primary
+
+      expect(light.toLowerCase()).not.toBe(FOXXY_ORANGE.toLowerCase())
+      expect(contrastRatio(light, bright.colors.sidebarBackground!)).toBeGreaterThanOrEqual(4.5)
+      expect(hexToOklch(light)!.l).toBeLessThan(hexToOklch(FOXXY_ORANGE)!.l)
+    })
+
+    it('holds the hue in both directions', () => {
+      const picked = hexToOklch(FOXXY_ORANGE)!
+
+      for (const mode of ['colors', 'darkColors'] as const) {
+        const c = bright[mode] as DesktopThemeColors
+        expect(Math.abs(hexToOklch(c.primary)!.h - picked.h), mode).toBeLessThan(3)
+      }
+    })
+
+    it('trades chroma only where sRGB cannot show it', () => {
+      const picked = hexToOklch(FOXXY_ORANGE)!
+      const adapted = hexToOklch(bright.darkColors!.primary)!
+
+      // Carrying `#F97316` up by this theme's own light→dark offset lands it at
+      // a lightness where its C 0.19 is out of gamut, so the clamp gives some
+      // of it back. That is the honest cost of staying on the hue; what must not
+      // happen is the mix-toward-white collapse, which would drop far more and
+      // drag the hue with it. Half the original chroma is the line between
+      // "same orange, lighter" and "washed out".
+      expect(adapted.l).toBeGreaterThan(picked.l)
+      expect(adapted.c).toBeLessThan(picked.c)
       expect(adapted.c).toBeGreaterThan(picked.c * 0.55)
     })
   })

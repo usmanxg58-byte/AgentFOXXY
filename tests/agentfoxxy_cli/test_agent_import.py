@@ -469,7 +469,7 @@ class TestExistingMemoryStorePreserved:
 # ---------------------------------------------------------------------------
 
 EXISTING_CONFIG = """\
-model: agentfoxxy-4-405b
+model: hermes-4-405b
 api_key_env: OPENROUTER_API_KEY
 command_allowlist:
   - ls *
@@ -488,7 +488,7 @@ telegram:
 """
 
 MALFORMED_CONFIG = """\
-model: agentfoxxy-4-405b
+model: hermes-4-405b
 command_allowlist:
   - ls *
    - cat *
@@ -602,7 +602,7 @@ class TestExistingConfigPreserved:
 
         merged = yaml.safe_load(config_path.read_text(encoding="utf-8"))
         # Untouched sections survive verbatim.
-        assert merged["model"] == "agentfoxxy-4-405b"
+        assert merged["model"] == "hermes-4-405b"
         assert merged["api_key_env"] == "OPENROUTER_API_KEY"
         assert merged["telegram"] == {"enabled": True, "chat_id": 12345}
         # Merged-into sections keep their existing members ...

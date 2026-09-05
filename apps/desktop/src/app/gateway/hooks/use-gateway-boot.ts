@@ -1,9 +1,9 @@
 import { isGatewayReauthRequired, JsonRpcGatewayError, resolveGatewayWsUrl } from '@agentfoxxy/shared'
 import { useEffect, useRef } from 'react'
 
+import { AgentFOXXYGateway } from '@/agentfoxxy'
 import { shouldApplyPostBootProgressError } from '@/components/boot-failure-reauth'
 import type { AgentFOXXYConnection } from '@/global'
-import { AgentFOXXYGateway } from '@/agentfoxxy'
 import { translateNow } from '@/i18n'
 import { desktopDefaultCwd } from '@/lib/desktop-fs'
 import { decideLivenessForceClose, LIVENESS_REPROBE_DELAY_MS } from '@/lib/gateway-liveness-policy'

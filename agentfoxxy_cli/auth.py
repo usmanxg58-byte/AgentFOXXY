@@ -6040,8 +6040,15 @@ def fetch_nous_models(
         model_id = item.get("id")
         if isinstance(model_id, str) and model_id.strip():
             mid = model_id.strip()
-            # Skip AgentFOXXY models — they're not reliable for agentic tool-calling
-            if "agentfoxxy" in mid.lower():
+            # Skip Nous Research's Hermes 3/4 chat models — they are not
+            # tool-call-tuned and are unreliable in an agent loop. Reuses the
+            # shared detector so this list and the /model warning agree on
+            # exactly which families count, instead of a loose "hermes"
+            # substring test that also swallows unrelated tool-capable models
+            # whose tag merely contains the word.
+            from agentfoxxy_cli.model_switch import is_nous_hermes_non_agentic
+
+            if is_nous_hermes_non_agentic(mid):
                 continue
             model_ids.append(mid)
 

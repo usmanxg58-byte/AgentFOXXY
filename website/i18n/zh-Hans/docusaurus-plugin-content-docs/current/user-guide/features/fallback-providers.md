@@ -141,7 +141,7 @@ model:
 
 fallback_model:
   provider: nous
-  model: nous-agentfoxxy-3
+  model: nous-hermes-3
 ```
 
 **以本地模型作为云端的备用：**

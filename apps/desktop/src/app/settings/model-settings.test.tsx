@@ -56,25 +56,25 @@ vi.mock('../hooks/use-on-profile-switch', () => ({
 }))
 
 beforeEach(() => {
-  getGlobalModelInfo.mockResolvedValue({ provider: 'nous', model: 'agentfoxxy-4' })
+  getGlobalModelInfo.mockResolvedValue({ provider: 'nous', model: 'hermes-4' })
   getGlobalModelOptions.mockResolvedValue({
     providers: [
       {
         name: 'Nous',
         slug: 'nous',
-        models: ['agentfoxxy-4', 'agentfoxxy-4-mini'],
+        models: ['hermes-4', 'hermes-4-mini'],
         authenticated: true,
-        capabilities: { 'agentfoxxy-4': { reasoning: true, fast: true } }
+        capabilities: { 'hermes-4': { reasoning: true, fast: true } }
       }
     ]
   })
   getAuxiliaryModels.mockResolvedValue({
-    main: { provider: 'nous', model: 'agentfoxxy-4' },
+    main: { provider: 'nous', model: 'hermes-4' },
     tasks: [{ task: 'vision', provider: 'auto', model: '', base_url: '' }]
   })
   getMoaModels.mockResolvedValue(null)
-  setModelAssignment.mockResolvedValue({ ok: true, provider: 'nous', model: 'agentfoxxy-4', gateway_tools: [] })
-  getRecommendedDefaultModel.mockResolvedValue({ provider: 'nous', model: 'agentfoxxy-4', free_tier: null })
+  setModelAssignment.mockResolvedValue({ ok: true, provider: 'nous', model: 'hermes-4', gateway_tools: [] })
+  getRecommendedDefaultModel.mockResolvedValue({ provider: 'nous', model: 'hermes-4', free_tier: null })
   setEnvVar.mockResolvedValue({ ok: true })
   getAgentFOXXYConfigRecord.mockResolvedValue({ agent: { reasoning_effort: 'medium', service_tier: 'normal' } })
   saveAgentFOXXYConfig.mockResolvedValue({ ok: true })
@@ -202,7 +202,7 @@ describe('ModelSettings', () => {
   it('replaces the selected provider and model when the active profile changes', async () => {
     getGlobalModelInfo
       .mockResolvedValueOnce({ provider: 'custom', model: 'local-a' })
-      .mockResolvedValueOnce({ provider: 'nous', model: 'agentfoxxy-4' })
+      .mockResolvedValueOnce({ provider: 'nous', model: 'hermes-4' })
     getGlobalModelOptions
       .mockResolvedValueOnce({
         providers: [
@@ -219,9 +219,9 @@ describe('ModelSettings', () => {
           {
             name: 'Nous',
             slug: 'nous',
-            models: ['agentfoxxy-4'],
+            models: ['hermes-4'],
             authenticated: true,
-            capabilities: { 'agentfoxxy-4': { reasoning: true, fast: true } }
+            capabilities: { 'hermes-4': { reasoning: true, fast: true } }
           }
         ]
       })
@@ -244,7 +244,7 @@ describe('ModelSettings', () => {
         {
           name: 'Nous',
           slug: 'nous',
-          models: ['agentfoxxy-4'],
+          models: ['hermes-4'],
           authenticated: true
         },
         {
@@ -306,9 +306,9 @@ describe('ModelSettings', () => {
         {
           name: 'Nous',
           slug: 'nous',
-          models: ['agentfoxxy-4'],
+          models: ['hermes-4'],
           authenticated: true,
-          capabilities: { 'agentfoxxy-4': { reasoning: false, fast: false } }
+          capabilities: { 'hermes-4': { reasoning: false, fast: false } }
         }
       ]
     })
@@ -335,7 +335,7 @@ describe('ModelSettings', () => {
 
     await waitFor(() =>
       expect(setModelAssignment).toHaveBeenCalledWith({
-        model: 'agentfoxxy-4',
+        model: 'hermes-4',
         provider: 'nous',
         scope: 'auxiliary',
         task: 'vision'
@@ -384,7 +384,7 @@ describe('ModelSettings', () => {
       provider: 'openrouter',
       model: 'anthropic/claude-opus-4.7',
       gateway_tools: [],
-      stale_aux: [{ task: 'compression', provider: 'nous', model: 'agentfoxxy-4' }]
+      stale_aux: [{ task: 'compression', provider: 'nous', model: 'hermes-4' }]
     })
 
     await renderModelSettings()
@@ -400,7 +400,7 @@ describe('ModelSettings', () => {
 
   it('shows a persistent banner when a loaded aux slot mismatches the main provider', async () => {
     getAuxiliaryModels.mockResolvedValueOnce({
-      main: { provider: 'nous', model: 'agentfoxxy-4' },
+      main: { provider: 'nous', model: 'hermes-4' },
       tasks: [{ task: 'curator', provider: 'openrouter', model: 'anthropic/claude-opus-4.7', base_url: '' }]
     })
 
@@ -418,7 +418,7 @@ describe('ModelSettings MoA preset editor', () => {
     presets: {
       default: {
         reference_models: [
-          { provider: 'nous', model: 'agentfoxxy-4' },
+          { provider: 'nous', model: 'hermes-4' },
           { provider: 'openrouter', model: 'deepseek/deepseek-v4-pro' }
         ],
         aggregator: { provider: 'openrouter', model: 'anthropic/claude-opus-4.8' },
@@ -429,7 +429,7 @@ describe('ModelSettings MoA preset editor', () => {
       }
     },
     reference_models: [
-      { provider: 'nous', model: 'agentfoxxy-4' },
+      { provider: 'nous', model: 'hermes-4' },
       { provider: 'openrouter', model: 'deepseek/deepseek-v4-pro' }
     ],
     aggregator: { provider: 'openrouter', model: 'anthropic/claude-opus-4.8' },
@@ -445,9 +445,9 @@ describe('ModelSettings MoA preset editor', () => {
         {
           name: 'Nous',
           slug: 'nous',
-          models: ['agentfoxxy-4', 'agentfoxxy-4-mini'],
+          models: ['hermes-4', 'hermes-4-mini'],
           authenticated: true,
-          capabilities: { 'agentfoxxy-4': { reasoning: true, fast: true } }
+          capabilities: { 'hermes-4': { reasoning: true, fast: true } }
         },
         {
           name: 'OpenRouter',
@@ -540,7 +540,7 @@ describe('ModelSettings MoA preset editor', () => {
       // Radix treats re-picking the current value as a no-op (no
       // onValueChange), so nothing changes: no save, model still shown.
       expect(saveMoaModels).not.toHaveBeenCalled()
-      expect(screen.getByText('nous · agentfoxxy-4')).toBeTruthy()
+      expect(screen.getByText('nous · hermes-4')).toBeTruthy()
     } finally {
       vi.useRealTimers()
     }
@@ -581,7 +581,7 @@ describe('ModelSettings MoA preset editor', () => {
           presets: expect.objectContaining({
             default: expect.objectContaining({
               reference_models: [
-                expect.objectContaining({ provider: 'nous', model: 'agentfoxxy-4', enabled: false }),
+                expect.objectContaining({ provider: 'nous', model: 'hermes-4', enabled: false }),
                 expect.objectContaining({ provider: 'openrouter', model: 'deepseek/deepseek-v4-pro' })
               ]
             })
