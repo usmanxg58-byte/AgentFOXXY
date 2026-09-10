@@ -7,11 +7,11 @@ const config: Config = {
   tagline: 'The self-improving AI agent',
   favicon: 'img/favicon.ico',
 
-  url: 'https://hermes-agent.nousresearch.com',
-  baseUrl: '/docs/',
+  url: 'https://usmanxg58-byte.github.io',
+  baseUrl: '/AgentFOXXY/docs/',
 
-  organizationName: 'NousResearch',
-  projectName: 'agentfoxxy-agent',
+  organizationName: 'usmanxg58-byte',
+  projectName: 'AgentFOXXY',
 
   onBrokenLinks: 'warn',
 
