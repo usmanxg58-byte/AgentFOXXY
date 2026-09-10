@@ -104,7 +104,7 @@ Your laptop, Docker, a $5 VPS over SSH, a cloud sandbox, or Termux on Android. N
 
 Three ways in. Pick one.
 
-### 1. Desktop app — easiest (Windows)
+### 1. Desktop app — easiest (Windows · macOS)
 
 Download, double-click, done. No terminal.
 
@@ -112,10 +112,16 @@ Download, double-click, done. No terminal.
 
 | File | Use it for |
 |---|---|
+| **Windows** | |
 | `AgentFOXXY-*-win-x64.exe` | Normal install — start here |
 | `AgentFOXXY-*-win-x64.msi` | Company / silent deployment |
+| **macOS** | |
+| `AgentFOXXY-*-mac-arm64.dmg` | Apple Silicon (M1/M2/M3) |
+| `AgentFOXXY-*-mac-x64.dmg` | Intel Mac |
 
-> Windows may warn about an "unknown publisher" the first time — click **More info → Run anyway**. That warning means the installer is not paid-signed yet, not that something is wrong with it.
+> **Windows:** may warn about an "unknown publisher" the first time — click **More info → Run anyway**. That warning means the installer is not paid-signed yet, not that something is wrong with it.
+> 
+> **macOS:** right-click the app → Open (first time only) to bypass Gatekeeper, or run `xattr -cr /Applications/AgentFOXXY.app` in Terminal.
 
 ### 2. One command (Linux · macOS · WSL2 · Termux)
 
