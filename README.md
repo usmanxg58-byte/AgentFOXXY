@@ -189,7 +189,7 @@ agentfoxxy doctor       # something broken? start here
 | **Schedules** | Recurring jobs described in plain words. |
 | **MCP** | Plug in any Model Context Protocol server to add more tools. |
 
-Over 40 tools in total.
+Over 40 POWERS in total.
 
 ---
 
