@@ -237,7 +237,7 @@ MIT. Built on the Hermes Agent open-source project — see [NOTICE.md](NOTICE.md
 
 <div align="center">
 
-🦊 **AgentFOXXY** — built and maintained by [@usmanxg58-byte] (https://x.com/theagentfoxxy?s=11)(https://github.com/usmanxg58-byte)
+🦊 **AgentFOXXY** — built and maintained by [@usmanxg58-byte] (https://x.com/theagentfoxxy?s=11)(https://github.com/usmanxg58-byte)🇵🇰🇵🇰🇵🇰
 
 </div>
 
