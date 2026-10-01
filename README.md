@@ -37,29 +37,35 @@ It runs on your laptop, a server, Docker, a $5 VPS, or even your phone through T
 
 ---
 
-## Why AgentFOXXY? — Comparison
+## 🦊 AgentFOXXY vs The Competition
 
-| Feature | 🦊 AgentFOXXY | Hermes Agent | Claude Code | OpenClaw |
-|---|---|---|---|---|
-| **Open source & free** | Yes (MIT) | Yes (MIT) | No (paid) | Partial |
-| **Self-improving (learns skills)** | Yes | Yes | No | No |
-| **40+ built-in powers** | Yes | Yes | Limited | Limited |
-| **35+ AI model providers** | Yes | Yes | Anthropic only | Few |
-| **Switch models mid-chat** | Yes | Yes | No | No |
-| **Browser automation (real browser)** | Yes | Yes | No | No |
-| **Full desktop control** | Yes | Yes | No | No |
-| **Image/video/audio generation** | Yes | Yes | No | No |
-| **Phone messaging (5 platforms)** | Yes | Yes | No | No |
-| **Cron jobs in plain words** | Yes | Yes | No | No |
-| **Smart home (Home Assistant)** | Yes | Yes | No | No |
-| **Spotify control** | Yes | Yes | No | No |
-| **Multi-agent swarm (TeamFOXXY)** | Yes | Yes | No | No |
-| **Windows desktop app** | Yes | No | No | No |
-| **Runs on phone (Termux)** | Yes | Yes | No | No |
-| **MCP protocol support** | Yes | Yes | Yes | No |
-| **Runs fully offline (Ollama)** | Yes | Yes | No | No |
-| **Persistent memory** | Yes | Yes | No | No |
-| **Free forever** | Yes | Yes | No | Unknown |
+Most AI agents do one or two things. AgentFOXXY does everything — and it is free.
+
+| | 🦊 **AgentFOXXY** | **Hermes Agent** | **Claude Code** |
+|:---|:---:|:---:|:---:|
+| **Price** | Free forever | Free | Paid subscription |
+| **Open source** | ✅ MIT | ✅ MIT | ❌ Closed source |
+| **AI providers** | 35+ (OpenAI, Gemini, DeepSeek, Ollama, etc.) | 35+ | Anthropic only |
+| **Switch model mid-chat** | ✅ | ✅ | ❌ |
+| **Self-improving (saves skills)** | ✅ Learns and reuses solutions | ✅ | ❌ |
+| **Built-in powers** | 40+ | 40+ | ~15 |
+| **Real browser automation** | ✅ See, click, type, log in | ✅ | ❌ |
+| **Full desktop control** | ✅ Mouse, keyboard, screen | ✅ | ❌ |
+| **Generate images & video** | ✅ DALL-E, Stable Diffusion, etc. | ✅ | ❌ |
+| **Text-to-speech & speech-to-text** | ✅ | ✅ | ❌ |
+| **Message from phone** | ✅ Telegram, Discord, Slack, WhatsApp, Signal | ✅ | ❌ |
+| **Cron jobs (plain words)** | ✅ "every morning at 8am..." | ✅ | ❌ |
+| **Smart home control** | ✅ Home Assistant | ✅ | ❌ |
+| **Spotify control** | ✅ | ✅ | ❌ |
+| **Multi-agent swarm** | ✅ TeamFOXXY | ✅ | ❌ |
+| **Windows desktop app** | ✅ | ❌ | ❌ |
+| **Runs on Android (Termux)** | ✅ | ✅ | ❌ |
+| **MCP protocol** | ✅ | ✅ | ✅ |
+| **Run fully offline (Ollama)** | ✅ Nothing leaves your machine | ✅ | ❌ |
+| **Persistent memory** | ✅ Remembers across sessions | ✅ | ❌ |
+| **Search past conversations** | ✅ | ✅ | ❌ |
+
+> **Bottom line:** AgentFOXXY gives you everything Claude Code charges for — plus browser control, desktop control, media generation, phone messaging, smart home, Spotify, multi-agent swarm, and 35+ model providers — all **free and open source**.
 
 ---
 
