@@ -46,9 +46,9 @@ Most AI agents do one or two things. AgentFOXXY does everything — and it is fr
 | **Price** | Free forever | Free | Paid subscription |
 | **Open source** | ✅ MIT | ✅ MIT | ❌ Closed source |
 | **AI providers** | 35+ (OpenAI, Gemini, DeepSeek, Ollama, etc.) | 35+ | Anthropic only |
-| **Switch model mid-chat** | ✅ | ✅ | ❌ |
+| **Autonomous fron day one ** | ✅ | ❌ | ✅  |
 | **Self-improving (saves skills)** | ✅ Learns and reuses solutions | ✅ | ❌ |
-| **Built-in powers** | 40+ | 40+ | ~15 |
+| **Built-in powers** | 40+ | 30+  | ~15 |
 | **Real browser automation** | ✅ See, click, type, log in | ✅ | ❌ |
 | **Full desktop control** | ✅ Mouse, keyboard, screen | ✅ | ❌ |
 | **Generate images & video** | ✅ DALL-E, Stable Diffusion, etc. | ✅ | ❌ |
