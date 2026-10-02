@@ -78,14 +78,16 @@ AGENTFOXXY_AGENT_LOGO = """[bold #FBBF24]███████╗  ████�
 
 # TeamAgentFOXXY emblem: a fox head (the lead agent) drawn from scratch with
 # box-drawing + geometric glyphs, so the branding carries no third-party art.
-AGENTFOXXY_CADUCEUS = """[#FB923C]   ╱╲       ╱╲   [/]
-[#FB923C]  ╱  ╲─────╱  ╲  [/]
-[#FDBA74] ╱   ◕   ◕    ╲ [/]
-[#FED7AA]▕      ╱╲      ▏[/]
-[#FDBA74] ╲     ╲╱     ╱ [/]
-[#FB923C]  ╲    ‿‿    ╱  [/]
-[#EA580C]   ╲────────╱   [/]
-[#F59E0B]  A G E N T   F O X X Y  [/]"""
+AGENTFOXXY_CADUCEUS = """[bold #F97316]   █████   ██████  ███████ ███    ██ ████████[/]
+[bold #FB923C]  ██   ██ ██       ██      ████   ██    ██[/]
+[bold #F59E0B]  ███████ ██   ███ █████   ██ ██  ██    ██[/]
+[bold #FB923C]  ██   ██ ██    ██ ██      ██  ██ ██    ██[/]
+[bold #F97316]  ██   ██  ██████  ███████ ██   ████    ██[/]
+[bold #EA580C]  ███████  ██████  ██   ██ ██   ██ ██    ██[/]
+[bold #F97316]  ██      ██    ██  ██ ██   ██ ██   ██ ██[/]
+[bold #F59E0B]  █████   ██    ██   ███     ███     ████[/]
+[bold #FB923C]  ██      ██    ██  ██ ██   ██ ██     ██[/]
+[bold #EA580C]  ██       ██████  ██   ██ ██   ██   ██[/]"""
 
 
 

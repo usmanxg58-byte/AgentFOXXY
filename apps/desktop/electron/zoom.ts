@@ -18,8 +18,8 @@ const MAX_ZOOM_LEVEL = 9
 /** Half Chromium's default step; matching the shortcuts and View menu. */
 export const ZOOM_STEP = 0.1
 
-/** Appearance 90% preset. Fresh installs + Actual Size / Ctrl+0. */
-export const DEFAULT_ZOOM_LEVEL = Math.log(0.9) / Math.log(ZOOM_FACTOR_BASE)
+/** Appearance 100% preset. Fresh installs + Actual Size / Ctrl+0. */
+export const DEFAULT_ZOOM_LEVEL = Math.log(1.0) / Math.log(ZOOM_FACTOR_BASE)
 
 export function clampZoomLevel(value) {
   if (!Number.isFinite(value)) {
