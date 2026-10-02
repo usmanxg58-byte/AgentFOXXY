@@ -199,9 +199,9 @@ describe('INLINE_RE inline math', () => {
 describe('protocol sentinels', () => {
   it('captures MEDIA: paths with surrounding quotes or backticks', () => {
     expect('MEDIA:/tmp/a.png'.match(MEDIA_LINE_RE)?.[1]).toBe('/tmp/a.png')
-    expect('  MEDIA: /home/me/.agentfoxxy/cache/screenshots/browser_screenshot_ecc.png  '.match(MEDIA_LINE_RE)?.[1]).toBe(
-      '/home/me/.agentfoxxy/cache/screenshots/browser_screenshot_ecc.png'
-    )
+    expect(
+      '  MEDIA: /home/me/.agentfoxxy/cache/screenshots/browser_screenshot_ecc.png  '.match(MEDIA_LINE_RE)?.[1]
+    ).toBe('/home/me/.agentfoxxy/cache/screenshots/browser_screenshot_ecc.png')
     expect('`MEDIA:/tmp/a.png`'.match(MEDIA_LINE_RE)?.[1]).toBe('/tmp/a.png')
     expect('"MEDIA:C:\\files\\a.png"'.match(MEDIA_LINE_RE)?.[1]).toBe('C:\\files\\a.png')
   })

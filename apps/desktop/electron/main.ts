@@ -4634,7 +4634,8 @@ function createActiveBackend(backendArgs) {
 function resolveAgentFOXXYBackend(backendArgs) {
   // 1. Explicit override -- AGENTFOXXY_DESKTOP_AGENTFOXXY_ROOT points at a developer
   //    checkout. Honour it as-is (no bootstrap; the user is driving).
-  const overrideRoot = process.env.AGENTFOXXY_DESKTOP_AGENTFOXXY_ROOT && path.resolve(process.env.AGENTFOXXY_DESKTOP_AGENTFOXXY_ROOT)
+  const overrideRoot =
+    process.env.AGENTFOXXY_DESKTOP_AGENTFOXXY_ROOT && path.resolve(process.env.AGENTFOXXY_DESKTOP_AGENTFOXXY_ROOT)
 
   if (overrideRoot && isAgentFOXXYSourceRoot(overrideRoot)) {
     const backend = createPythonBackend(overrideRoot, `AgentFOXXY source at ${overrideRoot}`, backendArgs)
@@ -4730,7 +4731,10 @@ function resolveAgentFOXXYBackend(backendArgs) {
       // the Nix wrapper), not a discovered PATH candidate. It must not fall
       // through to the install-script bootstrap if the optional probe times
       // out under load; the pinned backend is the only valid runtime there.
-      if (shouldTrustAgentFOXXYOverride(agentfoxxyOverride) || verifyAgentFOXXYCli(agentfoxxyCommand, { shell: shellForProbe })) {
+      if (
+        shouldTrustAgentFOXXYOverride(agentfoxxyOverride) ||
+        verifyAgentFOXXYCli(agentfoxxyCommand, { shell: shellForProbe })
+      ) {
         // `unwrapped` above already answered "is this a Windows venv shim?" —
         // it was null (not a shim, or its import probe failed). Do NOT re-run
         // unwrapWindowsVenvAgentFOXXYCommand here: the second call repeats the
@@ -4960,7 +4964,8 @@ async function ensureRuntime(backend) {
     // If we hit this, the user (or a deleted venv) broke the invariant; tell
     // them to re-run the install.
     throw new Error(
-      `AgentFOXXY venv missing at ${VENV_ROOT}. Re-run the desktop installer or ` + '`scripts/install.ps1` to rebuild it.'
+      `AgentFOXXY venv missing at ${VENV_ROOT}. Re-run the desktop installer or ` +
+        '`scripts/install.ps1` to rebuild it.'
     )
   }
 
@@ -5139,7 +5144,9 @@ function downloadViaTokenToFile(url, token, ctx, options: any = {}) {
       {
         agent,
         method: 'GET',
-        headers: options.bearer ? { Authorization: `Bearer ${options.bearer}` } : { 'X-AgentFOXXY-Session-Token': token }
+        headers: options.bearer
+          ? { Authorization: `Bearer ${options.bearer}` }
+          : { 'X-AgentFOXXY-Session-Token': token }
       },
       res => {
         // Headers arrived — the connection phase is done. Drop the idle timeout
@@ -11619,7 +11626,9 @@ async function openManagedSshUpdateTransport(
     const platform: any = await detectRemotePlatform(ssh, config.remoteAgentFOXXYPath || '')
 
     if (platform.os === 'Windows') {
-      const runtime = platform.agentfoxxyPath ? platform : await probeWindowsRemote(ssh, config.remoteAgentFOXXYPath || '')
+      const runtime = platform.agentfoxxyPath
+        ? platform
+        : await probeWindowsRemote(ssh, config.remoteAgentFOXXYPath || '')
 
       return {
         close: () => ssh.close(),
@@ -14682,7 +14691,9 @@ ipcMain.handle('agentfoxxy:connection-config:test', async (_event, payload) => t
 // get returns the current policy without touching safeStorage; set flips it
 // and re-encodes every stored secret (see applySecretStorageEncryption).
 ipcMain.handle('agentfoxxy:secret-storage:get', async () => ({ on: secretStoragePolicy().on }))
-ipcMain.handle('agentfoxxy:secret-storage:set', async (_event: any, on: any) => applySecretStorageEncryption(on === true))
+ipcMain.handle('agentfoxxy:secret-storage:set', async (_event: any, on: any) =>
+  applySecretStorageEncryption(on === true)
+)
 
 // ── v2 connection registry IPC (multi-source) ───────────────────────────────
 // Storage-level CRUD for named agent sources. Routing/pooling consumption of
@@ -16111,7 +16122,10 @@ ipcMain.handle('agentfoxxy:notify', (_event, payload) => {
 
     // Approvals keep the existing session-scoped channel.
     if (payload?.sessionId && !payload?.notifyId && !payload?.activate) {
-      mainWindow.webContents.send('agentfoxxy:notification-action', { sessionId: payload.sessionId, actionId: action.id })
+      mainWindow.webContents.send('agentfoxxy:notification-action', {
+        sessionId: payload.sessionId,
+        actionId: action.id
+      })
 
       return
     }
@@ -16737,7 +16751,9 @@ ipcMain.handle('agentfoxxy:stop-find-in-page', event => {
 
 // The renderer can't know whether a loopback URL is reachable — only main
 // knows which transport backs this gateway. Ask before loading one.
-ipcMain.handle('agentfoxxy:preview:reach', async (event, url) => reachablePreviewUrl(event.sender.id, String(url || '')))
+ipcMain.handle('agentfoxxy:preview:reach', async (event, url) =>
+  reachablePreviewUrl(event.sender.id, String(url || ''))
+)
 
 ipcMain.handle('agentfoxxy:openPreviewInBrowser', async (_event, url) => {
   if (!(await openPreviewInBrowser(url))) {
@@ -17161,7 +17177,9 @@ ipcMain.handle('agentfoxxy:uninstall:run', async (_event, payload) => {
 ipcMain.handle('agentfoxxy:vscode-theme:fetch', async (_event, id) => fetchMarketplaceThemes(String(id || '')))
 
 // Search the Marketplace for color-theme extensions (empty query = top installs).
-ipcMain.handle('agentfoxxy:vscode-theme:search', async (_event, query) => searchMarketplaceThemes(String(query || ''), 20))
+ipcMain.handle('agentfoxxy:vscode-theme:search', async (_event, query) =>
+  searchMarketplaceThemes(String(query || ''), 20)
+)
 
 // ---------------------------------------------------------------------------
 // agentfoxxy:// deep links (e.g. agentfoxxy://blueprint/morning-brief?time=08:00,

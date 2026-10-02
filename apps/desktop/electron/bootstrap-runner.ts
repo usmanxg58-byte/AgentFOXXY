@@ -224,7 +224,10 @@ function hasExistingGitCheckout(activeRoot) {
 }
 
 function cachedScriptPath(agentfoxxyHome, commit) {
-  return path.join(bootstrapCacheDir(agentfoxxyHome), `install-${commit}.${process.platform === 'win32' ? 'ps1' : 'sh'}`)
+  return path.join(
+    bootstrapCacheDir(agentfoxxyHome),
+    `install-${commit}.${process.platform === 'win32' ? 'ps1' : 'sh'}`
+  )
 }
 
 function downloadInstallScript(ref, destPath) {

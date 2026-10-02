@@ -96,13 +96,18 @@ test('resolveRemovableAppPath returns null for an unrecognized Windows dir', () 
 
 test('resolveRemovableAppPath uses APPIMAGE on Linux when set', () => {
   assert.equal(
-    resolveRemovableAppPath('/tmp/.mount_AgentFOXXYXXXX/agentfoxxy', 'linux', { APPIMAGE: '/home/x/Apps/AgentFOXXY.AppImage' }),
+    resolveRemovableAppPath('/tmp/.mount_AgentFOXXYXXXX/agentfoxxy', 'linux', {
+      APPIMAGE: '/home/x/Apps/AgentFOXXY.AppImage'
+    }),
     '/home/x/Apps/AgentFOXXY.AppImage'
   )
 })
 
 test('resolveRemovableAppPath finds the unpacked dir on Linux', () => {
-  assert.equal(resolveRemovableAppPath('/opt/agentfoxxy/linux-unpacked/agentfoxxy', 'linux', {}), '/opt/agentfoxxy/linux-unpacked')
+  assert.equal(
+    resolveRemovableAppPath('/opt/agentfoxxy/linux-unpacked/agentfoxxy', 'linux', {}),
+    '/opt/agentfoxxy/linux-unpacked'
+  )
   // A system-package install (/usr/bin) → null, left to apt/dnf.
   assert.equal(resolveRemovableAppPath('/usr/bin/agentfoxxy', 'linux', {}), null)
 })

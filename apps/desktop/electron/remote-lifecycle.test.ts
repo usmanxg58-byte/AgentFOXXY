@@ -94,7 +94,11 @@ function fakeSsh(rules: any[] = []) {
       // Existing lifecycle fixtures predate the install-wide relaunch gate.
       // Their default remote has no update marker; focused marker tests below
       // use explicit SSH doubles to exercise live/uncertain transitions.
-      if (cmd.includes('.agentfoxxy-update-in-progress') && !cmd.includes('marker_clear()') && !/setsid|nohup/.test(cmd)) {
+      if (
+        cmd.includes('.agentfoxxy-update-in-progress') &&
+        !cmd.includes('marker_clear()') &&
+        !/setsid|nohup/.test(cmd)
+      ) {
         return 'CLEAR'
       }
 
@@ -330,7 +334,10 @@ test('locateAgentFOXXY returns an explicit remoteAgentFOXXYPath unchanged', asyn
   ])
 
   assert.equal(await locateAgentFOXXY(ssh, '~/.local/bin/agentfoxxy'), '~/.local/bin/agentfoxxy')
-  assert.ok(!ssh.calls.some(cmd => cmd.includes('python3 -c')), 'an explicit remoteAgentFOXXYPath must never be rewritten')
+  assert.ok(
+    !ssh.calls.some(cmd => cmd.includes('python3 -c')),
+    'an explicit remoteAgentFOXXYPath must never be rewritten'
+  )
 })
 
 test('locateAgentFOXXY falls back to ~/.local/bin/agentfoxxy when the login-shell probe misses', async () => {
@@ -545,7 +552,10 @@ test('pidIsOurDashboard requires the exact serve ownership nonce', async () => {
     ),
     false
   )
-  assert.equal(await pidIsOurDashboard(fakeSsh([[/print\("OWNED"/, 'FOREIGN\n']]), 5, SPAWN_NONCE, '/x/agentfoxxy'), false)
+  assert.equal(
+    await pidIsOurDashboard(fakeSsh([[/print\("OWNED"/, 'FOREIGN\n']]), 5, SPAWN_NONCE, '/x/agentfoxxy'),
+    false
+  )
 })
 
 test('pidIsOurDashboard accepts the venv entrypoint an installer wrapper execs into', async () => {
@@ -563,7 +573,15 @@ test('pidIsOurDashboard accepts the venv entrypoint an installer wrapper execs i
   ])
 
   assert.equal(
-    await pidIsOurDashboard(ssh, 5, SPAWN_NONCE, '~/.local/bin/agentfoxxy', '/Users/cd9c/.agentfoxxy', OWNERSHIP_ID, 'ops'),
+    await pidIsOurDashboard(
+      ssh,
+      5,
+      SPAWN_NONCE,
+      '~/.local/bin/agentfoxxy',
+      '/Users/cd9c/.agentfoxxy',
+      OWNERSHIP_ID,
+      'ops'
+    ),
     true
   )
   assert.match(ownershipProbe, /agentfoxxy-agent.*venv.*bin.*agentfoxxy/)
@@ -633,7 +651,15 @@ test.skipIf(process.platform === 'win32')(
     try {
       assert.equal(await waitForEntrypoint(child), true, 'wrapper must exec into the fake installer entrypoint')
       assert.equal(
-        await pidIsOurDashboard(ssh, child.pid, SPAWN_NONCE, launcher, '/unrelated/agentfoxxy-home', OWNERSHIP_ID, 'ops'),
+        await pidIsOurDashboard(
+          ssh,
+          child.pid,
+          SPAWN_NONCE,
+          launcher,
+          '/unrelated/agentfoxxy-home',
+          OWNERSHIP_ID,
+          'ops'
+        ),
         true
       )
       assert.equal(
@@ -904,7 +930,12 @@ test('spawnRemoteDashboard always spawns serve (legacy dashboard path removed)',
     [/setsid|nohup/, '4242\n']
   ])
 
-  await spawnRemoteDashboard(ssh, { agentfoxxyPath: '/x/agentfoxxy', profile: '', token: 'tk', ownershipId: OWNERSHIP_ID })
+  await spawnRemoteDashboard(ssh, {
+    agentfoxxyPath: '/x/agentfoxxy',
+    profile: '',
+    token: 'tk',
+    ownershipId: OWNERSHIP_ID
+  })
   const spawn = ssh.calls.find(c => /setsid|nohup/.test(c))
   assert.match(spawn, /serve --isolated/)
   assert.doesNotMatch(spawn, /\bdashboard\b/)
@@ -924,7 +955,13 @@ test('spawnRemoteDashboard rejects when no pid is returned', async () => {
   ])
 
   await assert.rejects(
-    () => spawnRemoteDashboard(ssh, { agentfoxxyPath: '/x/agentfoxxy', profile: '', token: 't', ownershipId: OWNERSHIP_ID }),
+    () =>
+      spawnRemoteDashboard(ssh, {
+        agentfoxxyPath: '/x/agentfoxxy',
+        profile: '',
+        token: 't',
+        ownershipId: OWNERSHIP_ID
+      }),
     (err: any) => {
       assert.equal(err.kind, 'spawn-failed')
 
@@ -1516,7 +1553,13 @@ test('spawnRemoteDashboard removes a token file when upload reporting fails', as
   ])
 
   await assert.rejects(
-    () => spawnRemoteDashboard(ssh, { agentfoxxyPath: '/x/agentfoxxy', profile: '', token: 'tok', ownershipId: OWNERSHIP_ID }),
+    () =>
+      spawnRemoteDashboard(ssh, {
+        agentfoxxyPath: '/x/agentfoxxy',
+        profile: '',
+        token: 'tok',
+        ownershipId: OWNERSHIP_ID
+      }),
     /channel closed/
   )
   assert.ok(ssh.calls.some(command => /rm -f .*\.token/.test(command)))
@@ -1662,7 +1705,13 @@ test('spawnRemoteDashboard fails with update-required when remote lacks --ssh-se
   const ssh = fakeSsh([[/--ssh-session-token-file/, 'NO\n']])
 
   await assert.rejects(
-    () => spawnRemoteDashboard(ssh, { agentfoxxyPath: '/x/agentfoxxy', profile: '', token: 'tk', ownershipId: OWNERSHIP_ID }),
+    () =>
+      spawnRemoteDashboard(ssh, {
+        agentfoxxyPath: '/x/agentfoxxy',
+        profile: '',
+        token: 'tk',
+        ownershipId: OWNERSHIP_ID
+      }),
     (err: any) => {
       assert.match(err.message, /update|upgrade/i)
       assert.equal(err.kind, 'update-required')
@@ -1691,8 +1740,14 @@ test('cleanupStale never deletes a lock-supplied unexpected log path', async () 
 test('pidIsOurDashboard requires an exact nonce option value', async () => {
   const prefix = `/x/agentfoxxy serve --isolated --ssh-owner-nonce ${SPAWN_NONCE}ff`
   const suffix = `/x/agentfoxxy serve --isolated --ssh-owner-nonce xx${SPAWN_NONCE}`
-  assert.equal(await pidIsOurDashboard(fakeSsh([[/print\("OWNED"/, 'FOREIGN\n']]), 5, SPAWN_NONCE, '/x/agentfoxxy'), false)
-  assert.equal(await pidIsOurDashboard(fakeSsh([[/print\("OWNED"/, 'FOREIGN\n']]), 5, SPAWN_NONCE, '/x/agentfoxxy'), false)
+  assert.equal(
+    await pidIsOurDashboard(fakeSsh([[/print\("OWNED"/, 'FOREIGN\n']]), 5, SPAWN_NONCE, '/x/agentfoxxy'),
+    false
+  )
+  assert.equal(
+    await pidIsOurDashboard(fakeSsh([[/print\("OWNED"/, 'FOREIGN\n']]), 5, SPAWN_NONCE, '/x/agentfoxxy'),
+    false
+  )
 })
 
 test('connect removes the token file when a fresh backend fails after returning a pid', async () => {

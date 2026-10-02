@@ -140,11 +140,16 @@ test('recognizes missing-route shapes only', () => {
   assert.equal(isMissingHealthEndpointError(new Error('404: {"detail":"Not Found"}')), true)
   assert.equal(
     isMissingHealthEndpointError(
-      new Error('Expected JSON from /api/health but got HTML. The endpoint is likely missing on the AgentFOXXY backend.')
+      new Error(
+        'Expected JSON from /api/health but got HTML. The endpoint is likely missing on the AgentFOXXY backend.'
+      )
     ),
     true
   )
-  assert.equal(isMissingHealthEndpointError(new Error('Timed out connecting to AgentFOXXY backend after 15000ms')), false)
+  assert.equal(
+    isMissingHealthEndpointError(new Error('Timed out connecting to AgentFOXXY backend after 15000ms')),
+    false
+  )
   assert.equal(isMissingHealthEndpointError(new Error('500: boom')), false)
 })
 

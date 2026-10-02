@@ -95,7 +95,8 @@ export function resetHudLayout(): void {
 /** Tell main which session this HUD is on. Main holds it (the HUD's renderer
  *  doesn't outlive the window) and hands it back in the close broadcast so the
  *  app window knows what to re-home onto. */
-export const reportHudSession = (sessionId: null | string): void => window.agentfoxxyDesktop?.hud?.setSession?.(sessionId)
+export const reportHudSession = (sessionId: null | string): void =>
+  window.agentfoxxyDesktop?.hud?.setSession?.(sessionId)
 
 /**
  * Track the HUD window's real state so the titlebar toggle can't go stale when

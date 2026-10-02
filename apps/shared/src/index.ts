@@ -101,12 +101,12 @@ export {
   type WindowsBackgroundMaterial
 } from './translucency'
 export {
+  type AgentFOXXYWebSocketUrlOptions,
   buildAgentFOXXYWebSocketUrl,
   type GatewayAuthMode,
   GatewayReauthRequiredError,
   type GatewayWsConnection,
   type GatewayWsUrlResult,
-  type AgentFOXXYWebSocketUrlOptions,
   isGatewayReauthRequired,
   resolveGatewayWsUrl,
   type ResolveGatewayWsUrlDeps,

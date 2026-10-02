@@ -88,7 +88,9 @@ describe('scanDiskPlugins (#66899)', () => {
 
       if (dir === '/local/.agentfoxxy/plugins/my-feature') {
         return {
-          entries: [{ isDirectory: false, name: 'plugin.yaml', path: '/local/.agentfoxxy/plugins/my-feature/plugin.yaml' }]
+          entries: [
+            { isDirectory: false, name: 'plugin.yaml', path: '/local/.agentfoxxy/plugins/my-feature/plugin.yaml' }
+          ]
         }
       }
 

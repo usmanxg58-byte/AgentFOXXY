@@ -44,7 +44,12 @@ const profile = (name: string, isDefault = false): ProfileInfo => ({
 })
 
 const remoteConn = (over: Partial<AgentFOXXYConnection> = {}): AgentFOXXYConnection =>
-  ({ baseUrl: 'https://agentfoxxy-roy.tail.ts.net', mode: 'remote', profile: 'vps-remote', ...over }) as AgentFOXXYConnection
+  ({
+    baseUrl: 'https://agentfoxxy-roy.tail.ts.net',
+    mode: 'remote',
+    profile: 'vps-remote',
+    ...over
+  }) as AgentFOXXYConnection
 
 const localConn = (over: Partial<AgentFOXXYConnection> = {}): AgentFOXXYConnection =>
   ({ baseUrl: '', mode: 'local', profile: 'default', ...over }) as AgentFOXXYConnection

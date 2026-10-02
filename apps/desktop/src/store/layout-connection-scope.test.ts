@@ -89,7 +89,9 @@ describe('connection-scoped sidebar lists (#77318)', () => {
 
     // The remote pin landed under its own gateway scope, not the shared key
     // and not a per-profile fragment.
-    const scoped = readKey(`agentfoxxy.desktop.pinnedSessions.remote.${encodeURIComponent('https://vps-a.example:8443')}`)
+    const scoped = readKey(
+      `agentfoxxy.desktop.pinnedSessions.remote.${encodeURIComponent('https://vps-a.example:8443')}`
+    )
 
     expect(scoped).toBe(JSON.stringify(['a-1']))
   })

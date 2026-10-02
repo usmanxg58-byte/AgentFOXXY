@@ -1,4 +1,9 @@
-import { type ConnectionState, type GatewayEvent, registryBackendScopeKey, resolveGatewayWsUrl } from '@agentfoxxy/shared'
+import {
+  type ConnectionState,
+  type GatewayEvent,
+  registryBackendScopeKey,
+  resolveGatewayWsUrl
+} from '@agentfoxxy/shared'
 import { atom } from 'nanostores'
 
 import { AgentFOXXYGateway, setApiRequestConnection } from '@/agentfoxxy'

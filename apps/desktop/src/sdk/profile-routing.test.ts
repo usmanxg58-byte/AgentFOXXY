@@ -14,7 +14,12 @@ vi.mock('@/components/pane-shell/tree/store', async () => {
   return { $narrowViewport: atom(false) }
 })
 vi.mock('@/contrib/events', () => ({ onGatewayEvent: vi.fn() }))
-vi.mock('@/agentfoxxy', () => ({ deleteProfile: vi.fn(), getLogs: vi.fn(), getStatus: vi.fn(), agentfoxxyApi: vi.fn() }))
+vi.mock('@/agentfoxxy', () => ({
+  deleteProfile: vi.fn(),
+  getLogs: vi.fn(),
+  getStatus: vi.fn(),
+  agentfoxxyApi: vi.fn()
+}))
 vi.mock('@/store/notifications', () => ({ notify: vi.fn(), notifyError: vi.fn() }))
 vi.mock('@/store/system-actions', () => ({ runGatewayRestart: vi.fn() }))
 vi.mock('@/store/session', async () => {

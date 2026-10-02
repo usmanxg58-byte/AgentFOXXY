@@ -20,9 +20,9 @@ export function useGatewayRequest() {
   const gateway = useStore($gateway) as AgentFOXXYGateway | null
   const gatewayRef = useRef<AgentFOXXYGateway | null>(null)
 
-  const connectionRef = useRef<Awaited<ReturnType<NonNullable<typeof window.agentfoxxyDesktop>['getConnection']>> | null>(
-    null
-  )
+  const connectionRef = useRef<Awaited<
+    ReturnType<NonNullable<typeof window.agentfoxxyDesktop>['getConnection']>
+  > | null>(null)
 
   const gatewayStateRef = useRef(gatewayState)
   const reconnectingRef = useRef<Promise<AgentFOXXYGateway | null> | null>(null)

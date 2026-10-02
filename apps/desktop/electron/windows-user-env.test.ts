@@ -7,7 +7,9 @@ import { expandWindowsEnvRefs, parseRegQueryValue, readWindowsUserEnvVar } from 
 // ── parseRegQueryValue ─────────────────────────────────────────────────────
 
 test('parseRegQueryValue extracts a REG_SZ value', () => {
-  const out = ['', 'HKEY_CURRENT_USER\\Environment', '    AGENTFOXXY_HOME    REG_SZ    F:\\AgentFOXXY\\data', ''].join('\r\n')
+  const out = ['', 'HKEY_CURRENT_USER\\Environment', '    AGENTFOXXY_HOME    REG_SZ    F:\\AgentFOXXY\\data', ''].join(
+    '\r\n'
+  )
   assert.equal(parseRegQueryValue(out, 'AGENTFOXXY_HOME'), 'F:\\AgentFOXXY\\data')
 })
 

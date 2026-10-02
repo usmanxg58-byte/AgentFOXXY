@@ -91,7 +91,16 @@ test('fresh bootstrap args include the packaged commit pin', () => {
       activeRoot: '/tmp/agentfoxxy-agent',
       agentfoxxyHome: '/tmp/agentfoxxy'
     }),
-    ['--dir', '/tmp/agentfoxxy-agent', '--agentfoxxy-home', '/tmp/agentfoxxy', '--branch', 'main', '--commit', installStamp.commit]
+    [
+      '--dir',
+      '/tmp/agentfoxxy-agent',
+      '--agentfoxxy-home',
+      '/tmp/agentfoxxy',
+      '--branch',
+      'main',
+      '--commit',
+      installStamp.commit
+    ]
   )
 })
 

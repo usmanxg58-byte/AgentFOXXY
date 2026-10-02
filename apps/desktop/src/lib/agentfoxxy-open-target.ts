@@ -155,7 +155,11 @@ export function resolveAgentFOXXYOpenPath(target: AgentFOXXYOpenTarget | null | 
  * Build a navigate path from a parsed deep-link payload
  * (`agentfoxxy://<kind>/<name>?…` → kind/name/params).
  */
-export function pathFromAgentFOXXYDeepLink(kind: string, name: string, params: Record<string, string> = {}): string | null {
+export function pathFromAgentFOXXYDeepLink(
+  kind: string,
+  name: string,
+  params: Record<string, string> = {}
+): string | null {
   if (!kind || !name) {
     return null
   }

@@ -17,7 +17,9 @@ describe('shouldUseAnsiDim', () => {
 
   it('honors explicit env override', () => {
     expect(shouldUseAnsiDim({ AGENTFOXXY_TUI_DIM: '1', VTE_VERSION: '7603' } as NodeJS.ProcessEnv)).toBe(true)
-    expect(shouldUseAnsiDim({ AGENTFOXXY_TUI_DIM: '1', TERM_PROGRAM: 'Apple_Terminal' } as NodeJS.ProcessEnv)).toBe(true)
+    expect(shouldUseAnsiDim({ AGENTFOXXY_TUI_DIM: '1', TERM_PROGRAM: 'Apple_Terminal' } as NodeJS.ProcessEnv)).toBe(
+      true
+    )
     expect(shouldUseAnsiDim({ AGENTFOXXY_TUI_DIM: '0' } as NodeJS.ProcessEnv)).toBe(false)
   })
 })

@@ -94,7 +94,11 @@ function ConfigSettingsInner({
   // from — and saved back through — the shared config cache, so edits are visible
   // in the MCP/model surfaces and reopening the page doesn't reload-flash.
   const [config, setConfig] = useState<AgentFOXXYConfigRecord | null>(null)
-  const { data: loadedConfig, isError: configLoadFailed, refetch: refetchConfig } = useAgentFOXXYConfigRecord(scopeProfile)
+  const {
+    data: loadedConfig,
+    isError: configLoadFailed,
+    refetch: refetchConfig
+  } = useAgentFOXXYConfigRecord(scopeProfile)
   // Writes land on the same cache key the query above reads (base key when
   // following the active profile, suffixed when a scope override is set).
   const writeConfigCache = useMemo(() => agentfoxxyConfigCacheWriter(scopeProfile), [scopeProfile])
@@ -107,7 +111,9 @@ function ConfigSettingsInner({
     // Base key when following the active profile (matches every pre-existing
     // consumer); suffixed only for an explicit scope override.
     queryKey:
-      scopeProfile == null ? ['agentfoxxy-config-schema'] : ['agentfoxxy-config-schema', normalizeProfileKey(scopeProfile)],
+      scopeProfile == null
+        ? ['agentfoxxy-config-schema']
+        : ['agentfoxxy-config-schema', normalizeProfileKey(scopeProfile)],
     queryFn: () => getAgentFOXXYConfigSchema(scopeProfile),
     staleTime: 5 * 60 * 1000
   })

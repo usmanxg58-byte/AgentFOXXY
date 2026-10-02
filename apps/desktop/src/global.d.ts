@@ -376,7 +376,11 @@ declare global {
         // Codex-style review pane: changed files per scope, per-file diff, and
         // stage / unstage / revert.
         review: {
-          list: (repoPath: string, scope: AgentFOXXYReviewScope, baseRef?: null | string) => Promise<AgentFOXXYReviewList>
+          list: (
+            repoPath: string,
+            scope: AgentFOXXYReviewScope,
+            baseRef?: null | string
+          ) => Promise<AgentFOXXYReviewList>
           diff: (
             repoPath: string,
             filePath: string,

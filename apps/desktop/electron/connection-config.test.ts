@@ -840,7 +840,10 @@ test('resolveProfileApiRequest keeps a stored local profile off a remote primary
 test('normalizeRemoteBaseUrl strips trailing slashes, hash, and query', () => {
   assert.equal(normalizeRemoteBaseUrl('https://gw.example.com/'), 'https://gw.example.com')
   assert.equal(normalizeRemoteBaseUrl('https://gw.example.com/agentfoxxy/'), 'https://gw.example.com/agentfoxxy')
-  assert.equal(normalizeRemoteBaseUrl('https://gw.example.com/agentfoxxy?x=1#frag'), 'https://gw.example.com/agentfoxxy')
+  assert.equal(
+    normalizeRemoteBaseUrl('https://gw.example.com/agentfoxxy?x=1#frag'),
+    'https://gw.example.com/agentfoxxy'
+  )
 })
 
 test('normalizeRemoteBaseUrl preserves a path prefix', () => {
@@ -969,11 +972,19 @@ test('cookiesHaveSession handles non-arrays', () => {
 })
 
 test('AT_COOKIE_VARIANTS covers all three deploy shapes', () => {
-  assert.deepEqual(AT_COOKIE_VARIANTS, ['__Host-agentfoxxy_session_at', '__Secure-agentfoxxy_session_at', 'agentfoxxy_session_at'])
+  assert.deepEqual(AT_COOKIE_VARIANTS, [
+    '__Host-agentfoxxy_session_at',
+    '__Secure-agentfoxxy_session_at',
+    'agentfoxxy_session_at'
+  ])
 })
 
 test('RT_COOKIE_VARIANTS covers all three deploy shapes', () => {
-  assert.deepEqual(RT_COOKIE_VARIANTS, ['__Host-agentfoxxy_session_rt', '__Secure-agentfoxxy_session_rt', 'agentfoxxy_session_rt'])
+  assert.deepEqual(RT_COOKIE_VARIANTS, [
+    '__Host-agentfoxxy_session_rt',
+    '__Secure-agentfoxxy_session_rt',
+    'agentfoxxy_session_rt'
+  ])
 })
 
 // --- cookiesHaveLiveSession (AT or RT — the connectivity check) ---

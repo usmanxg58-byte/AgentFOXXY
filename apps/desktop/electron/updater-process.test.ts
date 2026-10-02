@@ -201,10 +201,13 @@ test('resolveUpdateScriptHandoff falls back to the pre-reorg flat path', () => {
 })
 
 test('resolveUpdateScriptHandoff returns null when the checkout predates the script', () => {
-  const handoff = resolveUpdateScriptHandoff(String.raw`C:\Users\agentfoxxy\AppData\Local\agentfoxxy\agentfoxxy-agent`, {
-    isWindows: true,
-    fileExists: () => false
-  })
+  const handoff = resolveUpdateScriptHandoff(
+    String.raw`C:\Users\agentfoxxy\AppData\Local\agentfoxxy\agentfoxxy-agent`,
+    {
+      isWindows: true,
+      fileExists: () => false
+    }
+  )
 
   assert.equal(handoff, null)
 })

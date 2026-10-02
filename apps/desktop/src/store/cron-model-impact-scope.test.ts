@@ -4,7 +4,11 @@ import type { AgentFOXXYConnection } from '@/global'
 
 import { getCronModelImpactScope, syncCronModelImpactConnection } from './cron-model-impact-scope'
 
-function connection(baseUrl: string, wsUrl: string, overrides: Partial<AgentFOXXYConnection> = {}): AgentFOXXYConnection {
+function connection(
+  baseUrl: string,
+  wsUrl: string,
+  overrides: Partial<AgentFOXXYConnection> = {}
+): AgentFOXXYConnection {
   return {
     baseUrl,
     isFullscreen: false,

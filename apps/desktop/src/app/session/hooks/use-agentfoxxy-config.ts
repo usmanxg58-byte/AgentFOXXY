@@ -65,7 +65,10 @@ export function useAgentFOXXYConfig({ activeSessionIdRef }: AgentFOXXYConfigOpti
       const selectionGeneration = getComposerSelectionGeneration()
 
       try {
-        const [config, defaults] = await Promise.all([getAgentFOXXYConfig(), getAgentFOXXYConfigDefaults().catch(() => ({}))])
+        const [config, defaults] = await Promise.all([
+          getAgentFOXXYConfig(),
+          getAgentFOXXYConfigDefaults().catch(() => ({}))
+        ])
 
         const canPublish = () => profileRefreshEpochRef.current === profileRefreshEpoch && shouldPublish()
 

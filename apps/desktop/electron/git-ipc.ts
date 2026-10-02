@@ -97,7 +97,9 @@ export function registerGitIpc({ resolveGitBinary, resolveGhBinary }: GitIpcDeps
     reviewCommitContext(repoPath, resolveGitBinary())
   )
   ipcMain.handle('agentfoxxy:git:review:push', async (_event, repoPath) => reviewPush(repoPath, resolveGitBinary()))
-  ipcMain.handle('agentfoxxy:git:review:shipInfo', async (_event, repoPath) => reviewShipInfo(repoPath, resolveGhBinary()))
+  ipcMain.handle('agentfoxxy:git:review:shipInfo', async (_event, repoPath) =>
+    reviewShipInfo(repoPath, resolveGhBinary())
+  )
   ipcMain.handle('agentfoxxy:git:review:prList', async (_event, repoPath, branches, numbers) =>
     reviewPrList(repoPath, resolveGhBinary(), branches, numbers)
   )

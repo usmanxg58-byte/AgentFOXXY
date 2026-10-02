@@ -153,10 +153,15 @@ test('normalizeAgentFOXXYHomeRoot maps profile homes back to the global AgentFOX
     '/Users/test/.agentfoxxy'
   )
   assert.equal(
-    normalizeAgentFOXXYHomeRoot('C:\\Users\\test\\AppData\\Local\\agentfoxxy\\profiles\\oracle', { pathModule: path.win32 }),
+    normalizeAgentFOXXYHomeRoot('C:\\Users\\test\\AppData\\Local\\agentfoxxy\\profiles\\oracle', {
+      pathModule: path.win32
+    }),
     'C:\\Users\\test\\AppData\\Local\\agentfoxxy'
   )
-  assert.equal(normalizeAgentFOXXYHomeRoot('/Users/test/.agentfoxxy', { pathModule: path.posix }), '/Users/test/.agentfoxxy')
+  assert.equal(
+    normalizeAgentFOXXYHomeRoot('/Users/test/.agentfoxxy', { pathModule: path.posix }),
+    '/Users/test/.agentfoxxy'
+  )
 })
 
 test('Windows PATH casing and delimiter are preserved without POSIX sane entries', () => {

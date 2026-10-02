@@ -90,7 +90,10 @@ export function getAgentFOXXYConfigSchema(profile?: null | string): Promise<Conf
   })
 }
 
-export function saveAgentFOXXYConfig(config: AgentFOXXYConfigRecord, profile?: null | string): Promise<{ ok: boolean }> {
+export function saveAgentFOXXYConfig(
+  config: AgentFOXXYConfigRecord,
+  profile?: null | string
+): Promise<{ ok: boolean }> {
   return agentfoxxyApi<{ ok: boolean }>({
     ...profileScoped(profile),
     path: '/api/config',

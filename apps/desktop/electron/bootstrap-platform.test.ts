@@ -88,10 +88,13 @@ test('detectRemoteDisplay honors the AGENTFOXXY_DESKTOP_DISABLE_GPU override bot
 
 test('resolveLinuxPasswordStore applies known backends on linux', () => {
   for (const store of ['gnome-libsecret', 'kwallet', 'kwallet5', 'kwallet6', 'basic']) {
-    assert.deepEqual(resolveLinuxPasswordStore({ env: { AGENTFOXXY_DESKTOP_PASSWORD_STORE: store }, platform: 'linux' }), {
-      store,
-      warning: null
-    })
+    assert.deepEqual(
+      resolveLinuxPasswordStore({ env: { AGENTFOXXY_DESKTOP_PASSWORD_STORE: store }, platform: 'linux' }),
+      {
+        store,
+        warning: null
+      }
+    )
   }
 })
 

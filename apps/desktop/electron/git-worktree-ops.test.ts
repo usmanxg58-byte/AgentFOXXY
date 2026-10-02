@@ -335,7 +335,16 @@ function seedRemoteAndClone(label, branches) {
       .trim()
 
   execFileSync('git', ['init', '-b', 'main', remoteDir])
-  remoteGit('-c', 'user.email=agentfoxxy@localhost', '-c', 'user.name=AgentFOXXY', 'commit', '--allow-empty', '-m', 'root')
+  remoteGit(
+    '-c',
+    'user.email=agentfoxxy@localhost',
+    '-c',
+    'user.name=AgentFOXXY',
+    'commit',
+    '--allow-empty',
+    '-m',
+    'root'
+  )
 
   for (const branch of branches) {
     remoteGit('branch', branch)

@@ -1861,7 +1861,8 @@ export const en: Translations = {
       menuItem: 'Connect to a remote host…',
       badge: (host: string) => `Runs on ${host}`,
       title: (profile: string) => `Connect ${profile} to a remote host`,
-      description: 'Sessions in this profile will run on the remote AgentFOXXY you point it at, instead of this computer.',
+      description:
+        'Sessions in this profile will run on the remote AgentFOXXY you point it at, instead of this computer.',
       urlLabel: 'Remote address',
       urlPlaceholder: 'https://agentfoxxy.example.com',
       urlInvalid: 'Enter a full address starting with http:// or https://',
@@ -2598,7 +2599,8 @@ export const en: Translations = {
     maybeLater: 'Maybe later',
     moreChanges: count => `+ ${count} more change${count === 1 ? '' : 's'} included.`,
     manualTitle: 'Update from your terminal',
-    manualBody: 'You installed AgentFOXXY from the command line, so updates run there too. Paste this into your terminal:',
+    manualBody:
+      'You installed AgentFOXXY from the command line, so updates run there too. Paste this into your terminal:',
     manualPickedUp: 'AgentFOXXY will pick up the new version next time you launch it.',
     guiSkewTitle: 'Update the desktop app',
     guiSkewBody:
@@ -2672,7 +2674,8 @@ export const en: Translations = {
     installLocalDesc: 'Download AgentFOXXY, create its Python environment, and run the backend on this computer.',
     localStartUnavailable: 'Local installation could not start. Restart AgentFOXXY Desktop and try again.',
     remoteSetupTitle: 'Connect to existing AgentFOXXY',
-    remoteSetupDesc: 'Enter your gateway URL. AgentFOXXY Desktop will detect whether it needs a token or browser sign-in.',
+    remoteSetupDesc:
+      'Enter your gateway URL. AgentFOXXY Desktop will detect whether it needs a token or browser sign-in.',
     remoteUrlTitle: 'Gateway URL',
     remoteUrlDesc: 'Use the base URL of the AgentFOXXY gateway, including https:// when remote.',
     remoteUrlPlaceholder: 'https://gateway.example.com/agentfoxxy',
@@ -2748,7 +2751,8 @@ export const en: Translations = {
       xai: { short: 'Grok models', description: 'Direct access to xAI Grok models.' },
       local: {
         short: 'self-hosted',
-        description: 'Point AgentFOXXY at a local or self-hosted OpenAI-compatible endpoint (vLLM, llama.cpp, Ollama, etc).'
+        description:
+          'Point AgentFOXXY at a local or self-hosted OpenAI-compatible endpoint (vLLM, llama.cpp, Ollama, etc).'
       }
     },
     backToSignIn: 'Back to sign in',
@@ -3076,7 +3080,8 @@ export const en: Translations = {
       address: 'Address',
       addressPlaceholder: 'Enter address',
       blankPageBody: 'Type an address above to browse, or ask AgentFOXXY to open a page.',
-      finishedRestarting: message => `AgentFOXXY finished restarting the preview server${message ? `: ${message}` : ''}`,
+      finishedRestarting: message =>
+        `AgentFOXXY finished restarting the preview server${message ? `: ${message}` : ''}`,
       failedRestarting: message => `Server restart failed: ${message}`,
       unknownError: 'unknown error',
       restartedTitle: 'Preview server restarted',

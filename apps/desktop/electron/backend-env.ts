@@ -103,7 +103,10 @@ function buildDesktopBackendPath({
   return appendUniquePathEntries([agentfoxxyNodeDirs, venvBin, currentPath, saneEntries], { delimiter })
 }
 
-function normalizeAgentFOXXYHomeRoot(agentfoxxyHome, { pathModule = pathModuleForPlatform(process.platform) }: any = {}) {
+function normalizeAgentFOXXYHomeRoot(
+  agentfoxxyHome,
+  { pathModule = pathModuleForPlatform(process.platform) }: any = {}
+) {
   if (!agentfoxxyHome) {
     return agentfoxxyHome
   }
