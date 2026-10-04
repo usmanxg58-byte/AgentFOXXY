@@ -3,36 +3,12 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'AgentFOXXY',
-  tagline: 'The open-source AI agent that gets the work done',
-  favicon: 'img/favicon.svg',
+  title: 'AgentFOXXY Agent',
+  tagline: 'The self-improving AI agent',
+  favicon: 'img/favicon.ico',
 
   url: 'https://usmanxg58-byte.github.io',
   baseUrl: '/AgentFOXXY/docs/',
-  headTags: [
-    {
-      tagName: 'script',
-      attributes: {type: 'application/ld+json'},
-      innerHTML: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'SoftwareApplication',
-        name: 'AgentFOXXY',
-        applicationCategory: 'DeveloperApplication',
-        operatingSystem: 'Linux, macOS, Windows, Android (Termux)',
-        description:
-          'An open-source autonomous AI agent that plans tasks, uses real tools, writes and runs code, and saves reusable skills.',
-        url: 'https://usmanxg58-byte.github.io/AgentFOXXY/docs/',
-        downloadUrl: 'https://github.com/usmanxg58-byte/AgentFOXXY/releases/latest',
-        codeRepository: 'https://github.com/usmanxg58-byte/AgentFOXXY',
-        license: 'https://opensource.org/license/mit/',
-        isAccessibleForFree: true,
-        sameAs: [
-          'https://github.com/usmanxg58-byte/AgentFOXXY',
-          'https://x.com/theagentfoxxy',
-        ],
-      }),
-    },
-  ],
 
   organizationName: 'usmanxg58-byte',
   projectName: 'AgentFOXXY',
@@ -104,13 +80,9 @@ const config: Config = {
         docs: {
           routeBasePath: '/',  // Docs at the root of /docs/
           sidebarPath: './sidebars.ts',
-          editUrl: 'https://github.com/usmanxg58-byte/AgentFOXXY/edit/main/website/',
+          editUrl: 'https://github.com/NousResearch/hermes-agent/edit/main/website/',
         },
         blog: false,
-        sitemap: {
-          changefreq: 'weekly',
-          priority: 0.5,
-        },
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -120,10 +92,6 @@ const config: Config = {
 
   themeConfig: {
     image: 'img/agentfoxxy-agent-banner.png',
-    metadata: [
-      {name: 'twitter:site', content: '@theagentfoxxy'},
-      {name: 'twitter:creator', content: '@theagentfoxxy'},
-    ],
     // Algolia DocSearch (replaces @easyops-cn/docusaurus-search-local).
     // The local plugin shipped a ~16 MB client-side lunr index that every
     // visitor downloaded and hydrated before their first result; DocSearch
@@ -149,7 +117,7 @@ const config: Config = {
       },
     },
     navbar: {
-      title: 'AgentFOXXY',
+      title: 'AgentFOXXY Agent',
       logo: {
         alt: 'AgentFOXXY Agent',
         src: 'img/logo.png',
@@ -167,8 +135,8 @@ const config: Config = {
           position: 'left',
         },
         {
-          to: '/getting-started/installation',
-          label: 'Install',
+          href: 'https://hermes-agent.nousresearch.com/',
+          label: 'Download',
           position: 'left',
         },
         {
@@ -176,13 +144,18 @@ const config: Config = {
           position: 'right',
         },
         {
-          href: 'https://github.com/usmanxg58-byte/AgentFOXXY',
+          href: 'https://hermes-agent.nousresearch.com',
+          label: 'Home',
+          position: 'right',
+        },
+        {
+          href: 'https://github.com/NousResearch/hermes-agent',
           label: 'GitHub',
           position: 'right',
         },
         {
-          href: 'https://x.com/theagentfoxxy',
-          label: 'X',
+          href: 'https://discord.gg/NousResearch',
+          label: 'Discord',
           position: 'right',
         },
       ],
@@ -202,21 +175,21 @@ const config: Config = {
         {
           title: 'Community',
           items: [
-            { label: 'X (@theagentfoxxy)', href: 'https://x.com/theagentfoxxy' },
-            { label: 'GitHub Issues', href: 'https://github.com/usmanxg58-byte/AgentFOXXY/issues' },
+            { label: 'Discord', href: 'https://discord.gg/NousResearch' },
+            { label: 'GitHub Issues', href: 'https://github.com/NousResearch/hermes-agent/issues' },
             { label: 'Skills Hub', href: 'https://agentskills.io' },
           ],
         },
         {
           title: 'More',
           items: [
-            { label: 'Desktop downloads', href: 'https://github.com/usmanxg58-byte/AgentFOXXY/releases/latest' },
-            { label: 'GitHub repository', href: 'https://github.com/usmanxg58-byte/AgentFOXXY' },
-            { label: 'Follow @theagentfoxxy', href: 'https://x.com/theagentfoxxy' },
+            { label: 'Desktop Download', href: 'https://hermes-agent.nousresearch.com/' },
+            { label: 'GitHub', href: 'https://github.com/NousResearch/hermes-agent' },
+            { label: 'Nous Research', href: 'https://nousresearch.com' },
           ],
         },
       ],
-      copyright: `AgentFOXXY · MIT License · ${new Date().getFullYear()}`,
+      copyright: `Built by <a href="https://nousresearch.com">Nous Research</a> · MIT License · ${new Date().getFullYear()}`,
     },
     prism: {
       theme: prismThemes.github,

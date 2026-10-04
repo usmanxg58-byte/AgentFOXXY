@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://usmanxg58-byte.github.io/AgentFOXXY/docs/sitemap.xml
