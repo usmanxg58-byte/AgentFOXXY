@@ -1,155 +1,196 @@
 ---
 slug: /
 sidebar_position: 0
-title: "AgentFOXXY Agent Documentation"
-description: "The self-improving autonomous AI agent. A built-in learning loop that creates skills from experience, improves them during use, and remembers across sessions."
+title: "AgentFOXXY — Open-Source AI Agent"
+description: "Meet AgentFOXXY, an open-source AI agent that plans, uses real tools, writes and fixes code, and turns what it learns into reusable skills."
+image: /img/agentfoxxy-agent-banner.png
+keywords:
+  - AgentFOXXY
+  - open-source AI agent
+  - autonomous AI agent
+  - AI coding agent
+  - local AI agent
+  - browser automation agent
+hide_title: true
 hide_table_of_contents: true
-displayed_sidebar: docs
 ---
 
 import Link from "@docusaurus/Link";
+import useBaseUrl from "@docusaurus/useBaseUrl";
 
-# AgentFOXXY Agent
+const screenImage = useBaseUrl("/img/agentfoxxy-session.jpg");
 
-The self-improving AI agent built by [Nous Research](https://nousresearch.com). The only agent with a built-in learning loop — it creates skills from experience, improves them during use, nudges itself to persist knowledge, and builds a deepening model of who you are across sessions.
+<div className="foxxy-landing">
+  <section className="foxxy-hero" aria-labelledby="foxxy-title">
+    <div className="foxxy-hero-copy">
+      <p className="foxxy-eyebrow"><span aria-hidden="true">✦</span> OPEN SOURCE · BUILT TO DO THE WORK</p>
+      <h1 id="foxxy-title">Give it the task.<br /><span>Get the work done.</span></h1>
+      <p className="foxxy-lede">
+        AgentFOXXY is an autonomous AI agent that can plan a job, use real tools,
+        write and run code, and turn hard-won solutions into reusable skills.
+        Choose your model, your machine, and how you want to work.
+      </p>
+      <div className="foxxy-actions">
+        <Link className="foxxy-button foxxy-button--primary" to="/getting-started/installation">
+          Get started <span aria-hidden="true">↗</span>
+        </Link>
+        <a className="foxxy-button foxxy-button--quiet" href="https://github.com/usmanxg58-byte/AgentFOXXY">
+          Explore the source <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+      <p className="foxxy-hero-note">MIT licensed · 35+ AI providers · Linux, macOS, Windows &amp; Android</p>
+    </div>
 
-<div
-  style={{
-    display: "flex",
-    gap: "1rem",
-    marginBottom: "2rem",
-    flexWrap: "wrap",
-  }}
->
-  <Link
-    to="/getting-started/installation"
-    style={{
-      display: "inline-block",
-      padding: "0.6rem 1.2rem",
-      backgroundColor: "#FFD700",
-      color: "#07070d",
-      borderRadius: "8px",
-      fontWeight: 600,
-      textDecoration: "none",
-    }}
-  >
-    Get Started →
-  </Link>
-  <Link
-    to="/user-guide/bot-mode"
-    style={{
-      display: "inline-block",
-      padding: "0.6rem 1.2rem",
-      border: "1px solid rgba(255,215,0,0.2)",
-      borderRadius: "8px",
-      textDecoration: "none",
-    }}
-  >
-    Explore Bot Mode
-  </Link>
-  <a
-    href="https://hermes-agent.nousresearch.com/"
-    style={{
-      display: "inline-block",
-      padding: "0.6rem 1.2rem",
-      border: "1px solid rgba(255,215,0,0.2)",
-      borderRadius: "8px",
-      textDecoration: "none",
-    }}
-  >
-    Download Desktop
-  </a>
-  <a
-    href="https://github.com/NousResearch/hermes-agent"
-    style={{
-      display: "inline-block",
-      padding: "0.6rem 1.2rem",
-      border: "1px solid rgba(255,215,0,0.2)",
-      borderRadius: "8px",
-      textDecoration: "none",
-    }}
-  >
-    View on GitHub
-  </a>
+    <div className="foxxy-hero-art">
+      <div className="foxxy-orbit foxxy-orbit--one" aria-hidden="true" />
+      <div className="foxxy-orbit foxxy-orbit--two" aria-hidden="true" />
+      <div className="foxxy-screen-frame">
+        <div className="foxxy-screen-topbar">
+          <span className="foxxy-window-dots" aria-hidden="true"><i /><i /><i /></span>
+          <span>AgentFOXXY · ready when you are</span>
+          <span className="foxxy-live-dot" aria-hidden="true" />
+        </div>
+        <img
+          className="foxxy-screen-image"
+          src={screenImage}
+          alt="AgentFOXXY interface with a prompt field ready for a task"
+          loading="eager"
+        />
+      </div>
+      <div className="foxxy-float-note"><span aria-hidden="true">✳</span> Plain words in. Real work out.</div>
+    </div>
+  </section>
+
+  <div className="foxxy-proof-strip" aria-label="AgentFOXXY highlights">
+    <div><strong>35+</strong><span>AI providers</span></div>
+    <div><strong>40+</strong><span>built-in powers</span></div>
+    <div><strong>MIT</strong><span>open-source license</span></div>
+    <div><strong>Yours</strong><span>models, keys &amp; machine</span></div>
+  </div>
+
+  <section className="foxxy-section foxxy-intro" aria-labelledby="foxxy-intro-title">
+    <div className="foxxy-section-heading">
+      <p className="foxxy-eyebrow">MORE THAN A CHAT WINDOW</p>
+      <h2 id="foxxy-intro-title">An agent that keeps going.</h2>
+      <p>
+        Describe the outcome in plain language. AgentFOXXY breaks it into steps,
+        works with your files, terminal and browser, checks its work, and keeps
+        useful knowledge for next time.
+      </p>
+    </div>
+    <div className="foxxy-feature-grid">
+      <article className="foxxy-feature-card">
+        <span className="foxxy-feature-icon" aria-hidden="true">↗</span>
+        <h3>Plans, then acts</h3>
+        <p>Move from a request to real terminal commands, browser actions, file edits and finished tasks.</p>
+      </article>
+      <article className="foxxy-feature-card">
+        <span className="foxxy-feature-icon" aria-hidden="true">⌘</span>
+        <h3>Gets better with use</h3>
+        <p>Save solutions as reusable skills, improve them through experience, and keep context between sessions.</p>
+      </article>
+      <article className="foxxy-feature-card">
+        <span className="foxxy-feature-icon" aria-hidden="true">◈</span>
+        <h3>Your choice of model</h3>
+        <p>Connect 35+ providers, use an OpenAI-compatible endpoint, or run locally with Ollama.</p>
+      </article>
+      <article className="foxxy-feature-card">
+        <span className="foxxy-feature-icon" aria-hidden="true">⌁</span>
+        <h3>Works where you do</h3>
+        <p>Run on a laptop, server, Docker or Termux, and reach it from supported messaging platforms.</p>
+      </article>
+      <article className="foxxy-feature-card">
+        <span className="foxxy-feature-icon" aria-hidden="true">⏱</span>
+        <h3>Automates the repeat work</h3>
+        <p>Schedule recurring jobs in plain language and let the agent send results where you need them.</p>
+      </article>
+      <article className="foxxy-feature-card">
+        <span className="foxxy-feature-icon" aria-hidden="true">✓</span>
+        <h3>You stay in control</h3>
+        <p>Pick your tools and providers. Risky commands can pause for your approval before they run.</p>
+      </article>
+    </div>
+  </section>
+
+  <section className="foxxy-section foxxy-install-section" aria-labelledby="foxxy-install-title">
+    <div className="foxxy-section-heading">
+      <p className="foxxy-eyebrow">UP AND RUNNING</p>
+      <h2 id="foxxy-install-title">Pick your setup.</h2>
+      <p>Use the desktop app, run the installer, or install from source. The installer handles the main runtime dependencies.</p>
+    </div>
+    <div className="foxxy-install-grid">
+      <article className="foxxy-install-card foxxy-install-card--featured">
+        <p className="foxxy-install-label">LINUX · macOS · WSL2 · ANDROID / TERMUX</p>
+        <h3>One-command install</h3>
+        <pre><code>{`curl -fsSL https://raw.githubusercontent.com/usmanxg58-byte/AgentFOXXY/main/scripts/install.sh | bash
+source ~/.bashrc
+agentfoxxy setup`}</code></pre>
+        <p>The setup wizard helps configure your model, keys and tools.</p>
+      </article>
+      <article className="foxxy-install-card">
+        <p className="foxxy-install-label">WINDOWS</p>
+        <h3>PowerShell</h3>
+        <pre><code>{`iex (irm https://raw.githubusercontent.com/usmanxg58-byte/AgentFOXXY/main/scripts/install.ps1)
+agentfoxxy setup`}</code></pre>
+        <p>For the graphical installer, grab the latest Windows release.</p>
+      </article>
+      <article className="foxxy-install-card">
+        <p className="foxxy-install-label">NO TERMINAL REQUIRED</p>
+        <h3>Desktop downloads</h3>
+        <p>Get the latest Windows installer or macOS disk image for Apple Silicon or Intel.</p>
+        <a className="foxxy-text-link" href="https://github.com/usmanxg58-byte/AgentFOXXY/releases/latest">
+          Download the latest release <span aria-hidden="true">↗</span>
+        </a>
+      </article>
+    </div>
+    <details className="foxxy-source-install">
+      <summary>Installing from source?</summary>
+      <pre><code>{`git clone https://github.com/usmanxg58-byte/AgentFOXXY.git
+cd AgentFOXXY
+uv pip install -e ".[all]"
+agentfoxxy setup`}</code></pre>
+    </details>
+    <p className="foxxy-cost-note">
+      AgentFOXXY is MIT-licensed. Your selected model provider or hosted services may charge separately;
+      local models such as Ollama are an option if you want to keep model inference on your machine.
+      Read the <a href="https://github.com/usmanxg58-byte/AgentFOXXY/blob/main/README.md">full README</a> before installing.
+    </p>
+  </section>
+
+  <section className="foxxy-next-step" aria-labelledby="foxxy-next-title">
+    <div>
+      <p className="foxxy-eyebrow">YOUR NEXT TASK, HANDLED</p>
+      <h2 id="foxxy-next-title">Start with one thing you’re tired of doing manually.</h2>
+      <p>Set up your model, give AgentFOXXY a job, and see where it can take the busywork off your plate.</p>
+    </div>
+    <div className="foxxy-actions foxxy-actions--stacked">
+      <Link className="foxxy-button foxxy-button--primary" to="/getting-started/quickstart">
+        Read the quickstart <span aria-hidden="true">↗</span>
+      </Link>
+      <a className="foxxy-button foxxy-button--quiet" href="https://github.com/usmanxg58-byte/AgentFOXXY">
+        Star or contribute on GitHub <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </section>
+
+  <section className="foxxy-faq" aria-labelledby="foxxy-faq-title">
+    <p className="foxxy-eyebrow">GOOD TO KNOW</p>
+    <h2 id="foxxy-faq-title">A few quick answers.</h2>
+    <details>
+      <summary>Is AgentFOXXY free?</summary>
+      <p>AgentFOXXY is open source under the MIT license. The model provider, API, or hosted service you choose may have its own costs.</p>
+    </details>
+    <details>
+      <summary>Which AI models can I use?</summary>
+      <p>The project supports 35+ providers, including OpenAI, Anthropic, Gemini, DeepSeek and Ollama. You choose the provider and credentials.</p>
+    </details>
+    <details>
+      <summary>Where does AgentFOXXY run?</summary>
+      <p>Use it on Linux, macOS, Windows, Android via Termux, Docker, or a server. Check the installation guide for current platform requirements.</p>
+    </details>
+    <details>
+      <summary>Where can I follow the project?</summary>
+      <p>Find releases and source on <a href="https://github.com/usmanxg58-byte/AgentFOXXY">GitHub</a>, or follow <a href="https://x.com/theagentfoxxy">@theagentfoxxy on X</a>.</p>
+    </details>
+  </section>
 </div>
-
-## Install
-
-### Windows or macOS
-
-To easily install the command-line and desktop applications, [download the AgentFOXXY Desktop installer](https://hermes-agent.nousresearch.com/) from our website and run it.
-
-### Without AgentFOXXY Desktop:
-
-For a command-line only install without AgentFOXXY Desktop, run:
-
-#### Linux / macOS / WSL2 / Android (Termux)
-
-```bash
-curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash
-```
-
-#### Windows (native)
-
-Run in powershell:
-
-```powershell
-iex (irm https://hermes-agent.nousresearch.com/install.ps1)
-```
-
-See the full **[Installation Guide](/getting-started/installation)** for what the installer does, the per-user vs root layout, and Windows-specific notes. For the complete platform support matrix, see **[Platform Support](/getting-started/platform-support)**.
-
-:::tip Fastest path to a working agent
-After installing, run `agentfoxxy setup --portal` — one OAuth covers a model plus all four Tool Gateway tools (web search, image generation, TTS, browser). See [Nous Portal](/integrations/nous-portal).
-:::
-
-## What is AgentFOXXY Agent?
-
-It's not a coding copilot tethered to an IDE or a chatbot wrapper around a single API. It's an **autonomous agent** that gets more capable the longer it runs. It lives wherever you put it — a $5 VPS, a GPU cluster, or serverless infrastructure (Daytona, Modal) that costs nearly nothing when idle. Talk to it from Telegram while it works on a cloud VM you never SSH into yourself. It's not tied to your laptop.
-
-## Quick Links
-
-|                                                                         |                                                                       |
-| ----------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| 🚀 **[Installation](/getting-started/installation)**                    | Install in 60 seconds on Linux, macOS, WSL2, native Windows, Nix & NixOS or Android |
-| 📖 **[Quickstart Tutorial](/getting-started/quickstart)**               | Your first conversation and key features to try                       |
-| 🗺️ **[Learning Path](/getting-started/learning-path)**                  | Find the right docs for your experience level                         |
-| ⚙️ **[Configuration](/user-guide/configuration)**                       | Config file, providers, models, and options                           |
-| 💬 **[Messaging Gateway](/user-guide/messaging)**                       | Set up Telegram, Discord, Slack, WhatsApp, Teams, or more             |
-| 🤖 **[Bot Mode](/user-guide/bot-mode)**                                | Named Bots with their own model, memory, skills, routines, and chats  |
-| 🔧 **[Tools & Toolsets](/user-guide/features/tools)**                   | 60+ built-in tools and how to configure them                          |
-| 🧠 **[Memory System](/user-guide/features/memory)**                     | Persistent memory that grows across sessions                          |
-| 📚 **[Skills System](/user-guide/features/skills)**                     | Procedural memory the agent creates and reuses                        |
-| 🔌 **[MCP Integration](/user-guide/features/mcp)**                      | Connect to MCP servers, filter their tools, and extend AgentFOXXY safely  |
-| 🧭 **[Use MCP with AgentFOXXY](/guides/use-mcp-with-agentfoxxy)**               | Practical MCP setup patterns, examples, and tutorials                 |
-| 🎙️ **[Voice Mode](/user-guide/features/voice-mode)**                    | Real-time voice interaction in CLI, Telegram, Discord, and Discord VC |
-| 🗣️ **[Use Voice Mode with AgentFOXXY](/guides/use-voice-mode-with-agentfoxxy)** | Hands-on setup and usage patterns for AgentFOXXY voice workflows          |
-| 🎭 **[Personality & SOUL.md](/user-guide/features/personality)**        | Define AgentFOXXY' default voice with a global SOUL.md                    |
-| 📄 **[Context Files](/user-guide/features/context-files)**              | Project context files that shape every conversation                   |
-| 🔒 **[Security](/user-guide/security)**                                 | Command approval, authorization, container isolation                  |
-| 💡 **[Tips & Best Practices](/guides/tips)**                            | Quick wins to get the most out of AgentFOXXY                              |
-| 🏗️ **[Architecture](/developer-guide/architecture)**                    | How it works under the hood                                           |
-| ❓ **[FAQ & Troubleshooting](/reference/faq)**                          | Common questions and solutions                                        |
-
-## Key Features
-
-- **A closed learning loop** — Agent-curated memory with periodic nudges, autonomous skill creation, skill self-improvement during use, FTS5 cross-session recall with LLM summarization, and [Honcho](https://github.com/plastic-labs/honcho) dialectic user modeling
-- **Runs anywhere, not just your laptop** — 6 terminal backends: local, Docker, SSH, Daytona, Singularity, Modal. Daytona and Modal offer serverless persistence — your environment hibernates when idle, costing nearly nothing
-- **Lives where you do** — CLI, Telegram, Discord, Slack, WhatsApp, Signal, Matrix, Mattermost, Email, SMS, DingTalk, Feishu, WeCom, Weixin, QQ Bot, Yuanbao, BlueBubbles, Home Assistant, Microsoft Teams, Google Chat, and more — 20+ platforms from one gateway
-- **Built by model trainers** — Created by [Nous Research](https://nousresearch.com), the lab behind AgentFOXXY, Nomos, and Psyche. Works with [Nous Portal](https://portal.nousresearch.com), [OpenRouter](https://openrouter.ai), OpenAI, or any endpoint
-- **Scheduled automations** — Built-in cron with delivery to any platform
-- **[Bot Mode](/user-guide/bot-mode)** — Build a durable team of specialist Bots that work together in group chats and through `@mentions`
-- **Delegates & parallelizes** — Spawn isolated subagents for parallel workstreams. Programmatic Tool Calling via `execute_code` collapses multi-step pipelines into single inference calls
-- **Open standard skills** — Compatible with [agentskills.io](https://agentskills.io). Skills are portable, shareable, and community-contributed via the Skills Hub
-- **Full web control** — Search, extract, browse, vision, image generation, TTS — one subscription via [Nous Portal](/integrations/nous-portal) bundles all of them
-- **MCP support** — Connect to any MCP server for extended tool capabilities
-- **Research-ready** — Batch processing, trajectory export, RL training with Atropos. Built by [Nous Research](https://nousresearch.com) — the lab behind AgentFOXXY, Nomos, and Psyche models
-
-## For LLMs and coding agents
-
-Machine-readable entry points to this documentation:
-
-- **[`/llms.txt`](/llms.txt)** — curated index of every doc page with short descriptions. ~17 KB, safe to load into an LLM context.
-- **[`/llms-full.txt`](/llms-full.txt)** — every doc page concatenated into a single markdown file for one-shot ingestion. ~1.8 MB.
-
-Both files also resolve at `/docs/llms.txt` and `/docs/llms-full.txt`. Generated fresh on every deploy.
