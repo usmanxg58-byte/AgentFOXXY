@@ -202,7 +202,7 @@ const config: Config = {
         {
           title: 'Community',
           items: [
-            { label: 'Discord', href: 'https://discord.gg/NousResearch' },
+            { label: 'X (@theagentfoxxy)', href: 'https://x.com/theagentfoxxy' },
             { label: 'GitHub Issues', href: 'https://github.com/usmanxg58-byte/AgentFOXXY/issues' },
             { label: 'Skills Hub', href: 'https://agentskills.io' },
           ],
