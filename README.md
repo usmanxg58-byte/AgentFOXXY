@@ -7,6 +7,7 @@ Ultimate all-in-one autonomous agent (Hermes fork).
 Combines the main powers of Hermes • Goose • Cline/Aider • OpenCode/OpenHands • Browser Use • Smolagents • Plandex • PR Agent into one Agent.
 Plans. Codes. Browses. Thinks. All in one**
 
+https://usmanxg58-byte.github.io/AgentFOXXY/
 ### Self-improving. Model-free. 40+ powers. Runs anywhere.
 
 You tell it what to do in plain words. It plans, codes, runs, fixes, and finishes — then **teaches itself** so next time it is even faster.
