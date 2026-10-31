@@ -4,8 +4,11 @@
 
 ## **Agent FOXXY
 Ultimate all-in-one autonomous agent .
-Combines the main powers of Hermes • Goose • Cline/Aider • OpenCode/OpenHands • Browser Use • Smolagents • Plandex • PR Agent into one Agent.
-Plans. Codes. Browses. Thinks. All in one**
+AgentFOXXY, a free, open-source AI agent.
+
+It can handle autonomous coding, browser automation, and computer tasks. 
+self improvement and he always make a skill of takes before starting The task . 
+and One standout feature is its parallel sub-agents and each with the same capabilities as the main AgentFOXXY.
 
 https://usmanxg58-byte.github.io/AgentFOXXY/
 ### Self-improving. Model-free. 40+ powers. Runs anywhere.
