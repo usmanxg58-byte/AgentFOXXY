@@ -10,7 +10,7 @@ It can handle autonomous coding, browser automation, and computer tasks.
 self improvement and he always make a skill of takes before starting The task . 
 and One standout feature is its parallel sub-agents and each with the same capabilities as the main AgentFOXXY.
 
-https://usmanxg58-byte.github.io/AgentFOXXY/
+
 ### Self-improving. Model-free. 40+ powers. Runs anywhere.
 
 You tell it what to do in plain words. It plans, codes, runs, fixes, and finishes — then **teaches itself** so next time it is even faster.
