@@ -44,6 +44,92 @@ AgentFOXXY is not just another chatbot or code completion tool. It is a **fully 
 
 ---
 
+## 🚀 Install AgentFOXXY
+
+Three ways to install. Pick the one that works for you.
+
+### 1. Desktop App — Easiest (Windows and macOS)
+
+Download, double-click, done. No terminal needed. No Python needed.
+
+**➡️ [Download Latest Release](https://github.com/usmanxg58-byte/AgentFOXXY/releases/latest)**
+
+| File | Platform |
+|---|---|
+| `AgentFOXXY-*-win-x64.exe` | Windows (normal install) |
+| `AgentFOXXY-*-win-x64.msi` | Windows (silent / company deploy) |
+| `AgentFOXXY-*-mac-arm64.dmg` | macOS Apple Silicon (M1/M2/M3/M4) |
+| `AgentFOXXY-*-mac-x64.dmg` | macOS Intel |
+
+> **Windows:** First launch may warn "unknown publisher" — click **More info → Run anyway**.
+> **macOS:** Right-click → Open (first time only), or run `xattr -cr /Applications/AgentFOXXY.app`.
+
+### 2. One Command Install (Linux, macOS, WSL2, Termux)
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/usmanxg58-byte/AgentFOXXY/main/scripts/install.sh | bash
+```
+
+**Windows PowerShell:**
+
+```powershell
+iex (irm https://raw.githubusercontent.com/usmanxg58-byte/AgentFOXXY/main/scripts/install.ps1)
+```
+
+The installer brings its own Python 3.11, Node.js, ripgrep, and ffmpeg. No admin rights needed.
+
+```bash
+source ~/.bashrc
+agentfoxxy
+```
+
+### 3. From Source (For Developers)
+
+```bash
+git clone https://github.com/usmanxg58-byte/AgentFOXXY.git
+cd AgentFOXXY
+uv pip install -e ".[all]"
+agentfoxxy
+```
+
+---
+
+## 🎯 Quick Start Guide
+
+```bash
+agentfoxxy setup        # one wizard: model, keys, tools — everything
+agentfoxxy              # start talking
+```
+
+Useful commands:
+
+```bash
+agentfoxxy model        # switch AI provider or model
+agentfoxxy tools        # turn powers on and off
+agentfoxxy gateway      # connect Telegram / Discord / Slack / WhatsApp / Signal
+agentfoxxy -z "..."     # run one job and exit
+agentfoxxy update       # update in place
+agentfoxxy doctor       # something broken? start here
+```
+
+---
+
+## 💬 Use From Terminal or Phone
+
+Two ways into the same agent. Most commands work in both.
+
+| | Terminal | Telegram · Discord · Slack · WhatsApp · Signal |
+|---|---|---|
+| Start | `agentfoxxy` | `agentfoxxy gateway setup` → `gateway start` → message the bot |
+| New session | `/new` | `/new` |
+| Switch model | `/model` | `/model` |
+| Change personality | `/personality` | `/personality` |
+| Retry / Undo | `/retry`, `/undo` | `/retry`, `/undo` |
+| Run a skill | `/skills` | `/<name>` |
+| Stop | `Ctrl+C` | `/stop` |
+
+---
+
 ## 🦊 AgentFOXXY vs The Competition — Complete Comparison
 
 Most AI tools do one or two things well. AgentFOXXY does everything — and it is completely free. Here is how AgentFOXXY compares to every major AI agent, coding assistant, and automation tool on the market in 2025 and 2026.
@@ -258,92 +344,6 @@ AgentFOXXY does not work alone. It commands a team of 12 specialized sub-agents,
 | 🛡️ **Security** | Security auditing | Scans code for vulnerabilities, checks dependencies, reviews authentication, and ensures security best practices. |
 | 👀 **Reviewer** | Code review | Reviews code for quality, performance, maintainability, and adherence to best practices. |
 | 👑 **Team Boss** | Orchestration | Coordinates all sub-agents, manages task dependencies, and ensures the team delivers results efficiently. |
-
----
-
-## 🚀 Install AgentFOXXY
-
-Three ways to install. Pick the one that works for you.
-
-### 1. Desktop App — Easiest (Windows and macOS)
-
-Download, double-click, done. No terminal needed. No Python needed.
-
-**➡️ [Download Latest Release](https://github.com/usmanxg58-byte/AgentFOXXY/releases/latest)**
-
-| File | Platform |
-|---|---|
-| `AgentFOXXY-*-win-x64.exe` | Windows (normal install) |
-| `AgentFOXXY-*-win-x64.msi` | Windows (silent / company deploy) |
-| `AgentFOXXY-*-mac-arm64.dmg` | macOS Apple Silicon (M1/M2/M3/M4) |
-| `AgentFOXXY-*-mac-x64.dmg` | macOS Intel |
-
-> **Windows:** First launch may warn "unknown publisher" — click **More info → Run anyway**.
-> **macOS:** Right-click → Open (first time only), or run `xattr -cr /Applications/AgentFOXXY.app`.
-
-### 2. One Command Install (Linux, macOS, WSL2, Termux)
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/usmanxg58-byte/AgentFOXXY/main/scripts/install.sh | bash
-```
-
-**Windows PowerShell:**
-
-```powershell
-iex (irm https://raw.githubusercontent.com/usmanxg58-byte/AgentFOXXY/main/scripts/install.ps1)
-```
-
-The installer brings its own Python 3.11, Node.js, ripgrep, and ffmpeg. No admin rights needed.
-
-```bash
-source ~/.bashrc
-agentfoxxy
-```
-
-### 3. From Source (For Developers)
-
-```bash
-git clone https://github.com/usmanxg58-byte/AgentFOXXY.git
-cd AgentFOXXY
-uv pip install -e ".[all]"
-agentfoxxy
-```
-
----
-
-## 🎯 Quick Start Guide
-
-```bash
-agentfoxxy setup        # one wizard: model, keys, tools — everything
-agentfoxxy              # start talking
-```
-
-Useful commands:
-
-```bash
-agentfoxxy model        # switch AI provider or model
-agentfoxxy tools        # turn powers on and off
-agentfoxxy gateway      # connect Telegram / Discord / Slack / WhatsApp / Signal
-agentfoxxy -z "..."     # run one job and exit
-agentfoxxy update       # update in place
-agentfoxxy doctor       # something broken? start here
-```
-
----
-
-## 💬 Use From Terminal or Phone
-
-Two ways into the same agent. Most commands work in both.
-
-| | Terminal | Telegram · Discord · Slack · WhatsApp · Signal |
-|---|---|---|
-| Start | `agentfoxxy` | `agentfoxxy gateway setup` → `gateway start` → message the bot |
-| New session | `/new` | `/new` |
-| Switch model | `/model` | `/model` |
-| Change personality | `/personality` | `/personality` |
-| Retry / Undo | `/retry`, `/undo` | `/retry`, `/undo` |
-| Run a skill | `/skills` | `/<name>` |
-| Stop | `Ctrl+C` | `/stop` |
 
 ---
 
